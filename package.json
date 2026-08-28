@@ -1,0 +1,14 @@
+{
+  "name": "code-of-game",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "my-code-game"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=my-code-game",
+    "build": "npm run build --workspace=my-code-game",
+    "start": "npm run start --workspace=my-code-game",
+    "lint": "npm run lint --workspace=my-code-game"
+  }
+}
