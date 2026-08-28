@@ -1,0 +1,14 @@
+1|What is the worst-case time complexity of finding a specific element in an unsorted array?|A) O(1)|B) O(log n)|C) O(n)|D) O(n^2)|C
+2|Which fundamental principle dictates how a Stack processes data?|A) FIFO (First In, First Out)|B) LIFO (Last In, First Out)|C) Random Access|D) Priority Queueing|B
+3|Which fundamental principle dictates how a standard Queue processes data?|A) FIFO (First In, First Out)|B) LIFO (Last In, First Out)|C) Binary Tree Traversal|D) Hashing|A
+4|When traversing a standard singly linked list, which condition correctly identifies that you have reached the end?|A) temp->next == head|B) temp->next == NULL|C) temp == head->next|D) temp->data == 0|B
+5|Which data structure allocates memory in strictly contiguous (side-by-side) blocks?|A) Linked List|B) Binary Tree|C) Array|D) Graph|C
+6|What is the maximum number of children a node can have in a standard Binary Tree?|A) 1|B) 2|C) 3|D) Infinite|B
+7|Which data structure is typically used to implement a cache for O(1) average lookup times?|A) Hash Table|B) Stack|C) Queue|D) Linked List|A
+8|What is the absolute worst-case time complexity of the QuickSort algorithm?|A) O(n)|B) O(n log n)|C) O(n^2)|D) O(1)|C
+9|Which traversal algorithm is best for finding the shortest path in an unweighted graph?|A) Depth First Search|B) Breadth First Search|C) Bubble Sort|D) Binary Search|B
+10|What is a standard Turing Machine fundamentally?|A) A physical hardware prototype|B) A mathematical model of computation|C) A software debugging tool|D) A modern processor architecture|B
+11|The Halting Problem proves that it is impossible to write a program that can always determine if another program will:|A) Have syntax errors|B) Compile successfully|C) Eventually stop or run forever|D) Execute in O(1) time|C
+12|Who mathematically proved that the general Halting Problem is undecidable?|A) Alan Turing|B) John von Neumann|C) Charles Babbage|D) Donald Knuth|A
+13|Which of the following best describes the "tape" in a theoretical Turing Machine?|A) Finite read-only storage|B) A Last-In-First-Out (LIFO) stack|C) A First-In-First-Out (FIFO) queue|D) Infinite memory divided into discrete cells|D
+14|If a problem is Turing-decidable, a Turing machine will:|A) Always halt and return a correct Yes/No answer|B) Only halt if the answer is Yes|C) Run infinitely if the answer is No|D) Require exponential time to compute the answer|A
