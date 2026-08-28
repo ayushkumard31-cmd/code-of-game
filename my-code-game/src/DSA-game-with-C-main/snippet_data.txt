@@ -1,0 +1,11 @@
+1|Loop Injection|// Print the numbers 1, 2, and 3 back-to-back~_____;|123
+2|Array Traversal|int arr[] = {4, 5, 6};~// Print the elements back-to-back~for(int i = 0; i < 3; i++) {~    _____;~}|456
+3|Pointer Basics|int val = 99;~int *ptr = &val;~// Print the value using the pointer~_____;|99
+4|Conditional Logic|int num = 8;~// Print "Even" if the number is divisible by 2~if(_____) {~    printf("Even");~}|Even
+5|Array Accumulation|int arr[] = {5, 10, 15};~int sum = 0;~for(int i = 0; i < 3; i++) {~    _____; // Add current element to sum~}~printf("%d", sum);|30
+6|Linked List Traversal|struct Node { int data; struct Node* next; };~struct Node n3 = {99, NULL};~struct Node n2 = {45, &n3};~struct Node n1 = {12, &n2};~struct Node* temp = &n1;~// Traverse until temp is sitting on the very last node~while(_____) {~    temp = temp->next;~}~printf("%d", temp->data);|99
+7|Stack Pop|int stack[] = {10, 20, 88};~int top = 2;~// Pop the top element into the variable 'val'~int val = _____;~printf("%d", val);|88
+8|Queue Enqueue|int queue[5];~int rear = -1;~// Enqueue the value 77 into the queue~_____;~printf("%d", queue[rear]);|77
+9|Queue Dequeue|int queue[] = {10, 20, 30};~int front = 0;~// Dequeue the front element into the variable 'val'~int val = _____;~printf("Val:%d Front:%d", val, front);|Val:10 Front:1
+10|Linked List Head Insert|struct Node { int data; struct Node* next; };~struct Node n1 = {10, NULL};~struct Node* head = &n1;~struct Node new_node = {5, NULL};~// Link new_node to point to the current head~_____;~head = &new_node;~printf("%d->%d", head->data, head->next->data);|5->10
+11|Stack Peek|int stack[] = {5, 15, 25};~int top = 2;~// Read the top element without popping it~int val = _____;~printf("Val:%d Top:%d", val, top);|Val:25 Top:2
