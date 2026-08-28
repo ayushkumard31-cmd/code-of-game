@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npm --prefix my-code-game run dev",
+    "build": "npm --prefix my-code-game run build",
+    "start": "npm --prefix my-code-game run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +22,7 @@
   },
   "homepage": "https://github.com/ayushkumard31-cmd/code-of-game#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "firebase": "^12.18.0"
   }
 }

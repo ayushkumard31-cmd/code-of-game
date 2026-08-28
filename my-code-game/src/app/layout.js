@@ -1,4 +1,5 @@
 import "./globals.css";
+import FirebaseAnalytics from "./FirebaseAnalytics";
 
 export const metadata = {
   title: "DSA Dungeon | C Programming Game",
@@ -6,5 +7,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body><FirebaseAnalytics />{children}</body></html>;
 }

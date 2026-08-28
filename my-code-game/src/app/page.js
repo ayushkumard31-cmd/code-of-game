@@ -1,85 +1,27 @@
 "use client";
-
+/* eslint-disable react/jsx-no-comment-textnodes */
 import { useState } from "react";
-
-const questions = [
-  ["What is the worst-case time complexity of finding an element in an unsorted array?", "O(1)", "O(log n)", "O(n)", "O(n²)", 2],
-  ["Which principle dictates how a Stack processes data?", "FIFO", "LIFO", "Random access", "Priority queueing", 1],
-  ["Which principle dictates how a standard Queue processes data?", "FIFO", "LIFO", "Binary tree traversal", "Hashing", 0],
-  ["Which condition identifies the end of a singly linked list?", "temp->next == head", "temp->next == NULL", "temp == head->next", "temp->data == 0", 1],
-  ["Which data structure uses contiguous memory blocks?", "Linked List", "Binary Tree", "Array", "Graph", 2],
-  ["Maximum children of a node in a standard Binary Tree?", "1", "2", "3", "Infinite", 1],
-  ["Which structure gives O(1) average cache lookups?", "Hash Table", "Stack", "Queue", "Linked List", 0],
-  ["Absolute worst-case time complexity of QuickSort?", "O(n)", "O(n log n)", "O(n²)", "O(1)", 2],
-  ["Which traversal finds shortest paths in an unweighted graph?", "DFS", "BFS", "Bubble Sort", "Binary Search", 1],
-  ["What is a Turing Machine fundamentally?", "Hardware", "A model of computation", "A debugging tool", "A processor", 1],
-  ["The Halting Problem asks whether a program will...", "Have errors", "Compile", "Stop or run forever", "Run in O(1)", 2],
-  ["Who proved the Halting Problem undecidable?", "Alan Turing", "John von Neumann", "Charles Babbage", "Donald Knuth", 0],
-  ["The tape in a Turing Machine represents...", "Read-only storage", "A stack", "A queue", "Infinite cell-based memory", 3],
-  ["A Turing-decidable machine will...", "Always halt with a correct answer", "Only halt for Yes", "Loop for No", "Need exponential time", 0],
-];
-
-const codeLevels = [
-  ["Loop Injection", "// Print 1, 2, and 3 back-to-back\n_____ ;", "123", ["printf(\"123\")"], "A single printf can emit all three digits."],
-  ["Array Traversal", "int arr[] = {4, 5, 6};\nfor(int i = 0; i < 3; i++) {\n  _____ ;\n}", "456", ["printf(\"%d\",arr[i])"], "Print the element at index i."],
-  ["Pointer Basics", "int val = 99;\nint *ptr = &val;\n_____ ;", "99", ["printf(\"%d\",*ptr)"], "Dereference ptr using *."],
-  ["Conditional Logic", "int num = 8;\nif(_____) {\n  printf(\"Even\");\n}", "Even", ["num%2==0", "!(num%2)"], "The remainder after division by 2 should be zero."],
-  ["Array Accumulation", "int sum = 0;\nfor(int i = 0; i < 3; i++) {\n  _____ ;\n}", "30", ["sum+=arr[i]", "sum=sum+arr[i]"], "Add arr[i] into sum."],
-  ["Linked List Traversal", "struct Node* temp = &n1;\nwhile(_____) {\n  temp = temp->next;\n}", "99", ["temp->next!=null", "temp->next"], "Continue while another node exists."],
-  ["Stack Pop", "int stack[] = {10, 20, 88};\nint top = 2;\nint val = _____ ;", "88", ["stack[top--]"], "Read top, then decrement it."],
-  ["Queue Enqueue", "int queue[5];\nint rear = -1;\n_____ ;", "77", ["queue[++rear]=77", "rear++;queue[rear]=77"], "Advance rear, then store 77."],
-  ["Queue Dequeue", "int front = 0;\nint val = _____ ;", "Val:10 Front:1", ["queue[front++]"], "Read front, then increment it."],
-  ["Linked List Head Insert", "struct Node* head = &n1;\nstruct Node new_node = {5, NULL};\n_____ ;\nhead = &new_node;", "5->10", ["new_node.next=head"], "Point the new node at the current head."],
-  ["Stack Peek", "int stack[] = {5, 15, 25};\nint top = 2;\nint val = _____ ;", "Val:25 Top:2", ["stack[top]"], "Read top without changing it."],
-];
-
-const clean = (v) => v.toLowerCase().replace(/\s|;+$/g, "");
+import { buildCampaign, getRank, tierConfig } from "./questionBank";
+import usePlayer from "./usePlayer";
 
 export default function Home() {
-  const [mode, setMode] = useState("home");
-  const [level, setLevel] = useState(0);
-  const [state, setState] = useState("play");
-  const [choice, setChoice] = useState(null);
-  const [code, setCode] = useState("");
-  const [message, setMessage] = useState("");
-  const [hint, setHint] = useState(false);
-  const total = mode === "quiz" ? questions.length : codeLevels.length;
-
-  function start(next) { setMode(next); setLevel(0); setState("play"); setChoice(null); setCode(""); setMessage(""); setHint(false); }
-  function advance() { if (level + 1 === total) setState("win"); else { setLevel(level + 1); setChoice(null); setCode(""); setMessage(""); setHint(false); } }
-  function submitQuiz() { if (choice === questions[level][5]) { setMessage("ACCESS GRANTED"); setTimeout(advance, 600); } else setState("lost"); }
-  function submitCode() {
-    if (!code.trim()) return;
-    if (codeLevels[level][3].some((item) => clean(item) === clean(code))) { setMessage(`OUTPUT: ${codeLevels[level][2]}`); setTimeout(advance, 750); }
-    else setMessage("COMPILE ERROR — OUTPUT MISMATCH");
-  }
-
-  return <main className="shell">
-    <div className="grid-bg" />
-    <header><button className="logo" onClick={() => setMode("home")}><b>DS</b> DUNGEON</button><span className="online"><i /> SYSTEM ONLINE <small>v1.0.4</small></span></header>
-    {mode === "home" ? <section className="home">
-      <p className="kicker"><b>01</b> TERMINAL TRAINING PROTOCOL</p>
-      <h1>MASTER THE<br/><em>ALGORITHM.</em></h1>
-      <p className="intro">Descend into a gauntlet of data structures, logic traps, and broken C code. One wrong answer ends the run.</p>
-      <div className="cards">
-        <button className="card quiz" onClick={() => start("quiz")}><small>01 / THEORY</small><i>?</i><strong>THE DSA<br/>DUNGEON</strong><span>14 rooms · multiple choice · sudden death</span><b>ENTER DUNGEON →</b></button>
-        <button className="card code" onClick={() => start("code")}><small>02 / PRACTICAL</small><i>&lt;/&gt;</i><strong>CODE<br/>INJECTION</strong><span>11 levels · repair C code · live validation</span><b>START INJECTION →</b></button>
-      </div>
-      <div className="stats"><span><b>25</b>TOTAL CHALLENGES</span><span><b>2</b>TRAINING PATHS</span><span><b>1</b>LIFE PER RUN</span></div>
-    </section> : state !== "play" ? <section className={`ending ${state}`}>
-      <code>{state === "win" ? "RUN_COMPLETE" : "FATAL_ERROR"}</code><h2>{state === "win" ? "DUNGEON\nCLEARED." : "SYSTEM\nLOCKED."}</h2>
-      <p>{state === "win" ? `All ${total} challenges cleared. Your logic survived the dungeon.` : `Your run ended at ${mode === "quiz" ? "room" : "level"} ${level + 1}.`}</p>
-      {state === "lost" && mode === "quiz" && <div className="reveal">CORRECT: {String.fromCharCode(65 + questions[level][5])} — {questions[level][questions[level][5] + 1]}</div>}
-      <button className="primary" onClick={() => start(mode)}>RESTART RUN</button><button className="ghost" onClick={() => setMode("home")}>EXIT TO LOBBY</button>
-    </section> : <section className="game">
-      <aside><small>CURRENT RUN</small><h3>{mode === "quiz" ? "DSA DUNGEON" : "CODE INJECTION"}</h3><div className="counter"><b>{String(level + 1).padStart(2,"0")}</b> / {String(total).padStart(2,"0")}</div><div className="bar"><i style={{width:`${level / total * 100}%`}}/></div><div className="life">♥ <span><b>ONE LIFE</b><small>NO CHECKPOINTS</small></span></div><button onClick={() => setMode("home")}>× ABORT RUN</button></aside>
-      <article>
-        <div className="panel-head"><span>{mode === "quiz" ? `ROOM_${String(level + 1).padStart(2,"0")}` : `INJECTION_${String(level + 1).padStart(2,"0")}`}</span><b>{mode === "quiz" ? "KNOWLEDGE CHECK" : codeLevels[level][0].toUpperCase()}</b></div>
-        {mode === "quiz" ? <><h2>{questions[level][0]}</h2><div className="options">{questions[level].slice(1,5).map((item,i)=><button key={item} className={choice===i?"active":""} onClick={()=>setChoice(i)}><b>{String.fromCharCode(65+i)}</b>{item}<i>↗</i></button>)}</div><div className="submit"><span className="success">{message}</span><button className="primary" disabled={choice===null||message} onClick={submitQuiz}>LOCK ANSWER →</button></div></> : <>
-          <p className="instruction">Replace the highlighted blank so the program produces the expected output.</p><div className="editor"><div><i/><i/><i/><span>challenge_{level+1}.c</span></div><pre>{codeLevels[level][1]}</pre></div><div className="expected"><span>EXPECTED OUTPUT</span><code>{codeLevels[level][2]}</code></div><label>INJECT MISSING CODE</label><div className="input"><b>&gt;</b><input autoFocus value={code} onChange={e=>setCode(e.target.value)} onKeyDown={e=>e.key==="Enter"&&submitCode()} placeholder="type C code here..."/><button onClick={submitCode}>RUN CODE</button></div><div className="under"><button onClick={()=>setHint(!hint)}>+ {hint?"HIDE HINT":"REQUEST HINT"}</button><span className={message.startsWith("OUTPUT")?"success":"error"}>{message}</span></div>{hint&&<p className="hint">{"// HINT: "}{codeLevels[level][4]}</p>}
-        </>}
-      </article>
-    </section>}
-    <footer><span>© 2026 DSA DUNGEON</span><span>BUILT FOR C PROGRAMMERS</span></footer>
-  </main>;
+  const [screen, setScreen] = useState("home"), [mode, setMode] = useState("dsa"), [level, setLevel] = useState(0), [choice, setChoice] = useState(null), [lives, setLives] = useState(3), [xp, setXp] = useState(0), [hint, setHint] = useState(false), [message, setMessage] = useState(""), [loginOpen, setLoginOpen] = useState(false), [pendingMode, setPendingMode] = useState("dsa"), [authError, setAuthError] = useState(""), [email, setEmail] = useState(""), [password, setPassword] = useState(""), [createMode, setCreateMode] = useState(false);
+  const { user, stats, loading, login, loginWithPassword, createAccount, resetPassword, logout, recordScore } = usePlayer();
+  const campaign = buildCampaign(mode), current = campaign[level], rank = getRank(xp), tier = tierConfig[current?.tier || 0];
+  function enterCampaign(nextMode) { setMode(nextMode); setScreen("game"); setLevel(0); setChoice(null); setLives(3); setXp(0); setHint(false); setMessage(""); }
+  function start(nextMode = "dsa") { if (!user) { setPendingMode(nextMode); setLoginOpen(true); return; } enterCampaign(nextMode); }
+  async function handleLogin() { setAuthError(""); try { await login(); setLoginOpen(false); enterCampaign(pendingMode); } catch (error) { if (error?.code !== "auth/popup-closed-by-user") setAuthError("Google sign-in failed. Please try again."); } }
+  async function handlePasswordLogin(event) { event.preventDefault(); setAuthError(""); try { if (createMode) await createAccount(email.trim(), password); else await loginWithPassword(email.trim(), password); setLoginOpen(false); enterCampaign(pendingMode); } catch (error) { const messages = { "auth/invalid-credential": "Wrong password, or this email only uses Google login. Try Google or create a password account.", "auth/user-not-found": "No password account exists for this email. Create an account first.", "auth/wrong-password": "The password is incorrect. Use Forgot password to reset it.", "auth/email-already-in-use": "This email already has an account. Sign in or use Google.", "auth/weak-password": "Use a password with at least 6 characters.", "auth/invalid-email": "Enter a valid email address.", "auth/operation-not-allowed": "Email/password login is disabled in Firebase Console. Enable it under Authentication → Sign-in method.", "auth/network-request-failed": "Network error. Check your connection and try again.", "auth/too-many-requests": "Too many attempts. Wait a moment or reset your password." }; setAuthError(messages[error?.code] || `Firebase sign-in failed (${error?.code || "unknown error"}).`); } }
+  async function handlePasswordReset() { setAuthError(""); if (!email.trim()) { setAuthError("Enter your email above before requesting a reset."); return; } try { await resetPassword(email.trim()); setAuthError("Password reset email sent. Check your inbox and spam folder."); } catch (error) { const messages = { "auth/invalid-email": "Enter a valid email address.", "auth/operation-not-allowed": "Email/password login is disabled in Firebase Console.", "auth/too-many-requests": "Too many requests. Please wait and try again." }; setAuthError(messages[error?.code] || `Password reset failed (${error?.code || "unknown error"}).`); } }
+  async function handleLogout() { await logout(); setScreen("home"); }
+  function navigateTo(id) { setScreen("home"); window.setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 0); }
+  function next() { if (level === campaign.length - 1) setScreen("win"); else { setLevel(level + 1); setChoice(null); setHint(false); setMessage(""); } }
+  function submit() { if (choice === current.answer) { const nextXp = xp + current.xpReward; setXp(nextXp); recordScore(current.xpReward, nextXp); setMessage(`LEVEL CLEAR  +${current.xpReward} XP`); setTimeout(next, 650); return; } const remaining = lives - 1; setLives(remaining); setChoice(null); setMessage(remaining ? "LIFE LOST — TRY AGAIN" : "OUT OF LIVES"); if (!remaining) setTimeout(() => setScreen("lost"), 700); }
+  return <main className={`shell ${screen === "home" ? "storefront" : ""}`}><div className="grid-bg" />
+    <header className="topbar"><button className="wordmark" onClick={() => navigateTo("top")}><span>BQ</span> BYTEQUEST</button><nav><button onClick={() => navigateTo("quests")}>Quests</button><button onClick={() => navigateTo("benefits")}>Rewards</button><button onClick={() => navigateTo("about")}>How it works</button></nav><div className="account">{loading ? <span className="account-loading">LOADING...</span> : user ? <div className="user-menu"><span className="avatar">{user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase() || "P"}</span><span className="user-name"><b>{user.displayName || user.email?.split("@")[0] || "Player"}</b><small>{stats.totalXp} XP · HIGH {stats.highScore}</small></span><button onClick={handleLogout}>LOG OUT</button></div> : <button className="login-nav" onClick={() => { setPendingMode("dsa"); setLoginOpen(true); }}>SIGN IN</button>}</div></header>
+    {screen === "home" && <><section className="choice-hero"><div className="hero-copy"><p className="eyebrow">BYTEQUEST <b>CHOICE</b></p><h1>CODE MORE.<br/>LEVEL UP <em>FASTER.</em></h1><p>Three complete campaigns with 50 challenges each. Rise from beginner to expert, earn increasing XP, and unlock a higher coding rank.</p><button className="hero-cta" onClick={() => start("dsa")}>START YOUR QUEST</button><small>150 total questions · 4 difficulty tiers · 6 ranks</small></div><div className="hero-art" aria-hidden="true"><div className="orb"/><div className="cover cover-one"><small>DSA</small><b>ALGORITHM<br/>ASCENT</b><span>01</span></div><div className="cover cover-two"><small>C CODE</small><b>THE<br/>FORGE</b><span>02</span></div><div className="cover cover-three"><small>DEBUG</small><b>BUG<br/>HUNTER</b><span>03</span></div></div></section><section className="monthly" id="quests"><div className="section-title"><div><p>CHOOSE YOUR CAMPAIGN</p><h2>Three ways to play</h2></div><span>50 questions in every section</span></div><div className="game-shelf"><button className="game-tile tile-dsa" onClick={() => start("dsa")}><span className="tile-tag">KNOWLEDGE · 50 QUESTIONS</span><div>?</div><h3>DSA TRIALS</h3><p>Think fast. Choose wisely.</p></button><button className="game-tile tile-code" onClick={() => start("code")}><span className="tile-tag">CODE REPAIR · 50 QUESTIONS</span><div>&lt;/&gt;</div><h3>CODE FORGE</h3><p>Complete real C programs.</p></button><button className="game-tile tile-bug" onClick={() => start("bugs")}><span className="tile-tag">BUG FIX · 50 QUESTIONS</span><div>!</div><h3>BUG HUNT</h3><p>Track down dangerous errors.</p></button></div><div className="tier-strip">{tierConfig.map((item, i) => <div key={item.name}><b style={{color:item.color}}>LEVEL {i + 1}</b><span>{item.count} QUESTIONS</span><small>+{item.xp} XP EACH</small></div>)}</div></section><section className="benefits" id="benefits"><p className="eyebrow">YOUR ADVENTURE, YOUR PROGRESS</p><h2>Everything you earn builds your rank</h2><div className="benefit-grid"><article><i>♥</i><h3>Three lives</h3><p>Make mistakes, learn, and fight back before your run ends.</p></article><article><i>XP</i><h3>Scaled rewards</h3><p>Earn 50, 100, 175, or 300 XP based on difficulty.</p></article><article><i>★</i><h3>Six ranks</h3><p>Rise from Rookie all the way to ByteQuest Legend.</p></article></div></section><section className="final-cta" id="about"><p>READY FOR YOUR NEXT CHALLENGE?</p><h2>Your coding adventure starts here.</h2><button className="hero-cta" onClick={() => start("dsa")}>PLAY BYTEQUEST</button></section></>}
+    {screen === "game" && <section className="game"><aside><small>CURRENT CAMPAIGN</small><h3>{current.type}</h3><div className="tier-badge" style={{borderColor:tier.color,color:tier.color}}>{tier.name}</div><div className="counter"><b>{String(current.tierQuestion).padStart(2,"0")}</b> / {String(current.tierTotal).padStart(2,"0")}</div><div className="bar"><i style={{width:`${((level + 1) / campaign.length) * 100}%`}}/></div><div className="player-stats"><span>XP <b>{xp}</b></span><span>RANK <b>{rank.name}</b></span></div><div className="rank-progress"><i style={{width:`${Math.min(100, xp / rank.next * 100)}%`}}/><small>{rank.name === "LEGEND" ? "MAX RANK" : `${rank.next - xp} XP TO NEXT RANK`}</small></div><div className="life"><span className="hearts">{"♥".repeat(lives)}{"♡".repeat(3-lives)}</span><span><b>{lives} LIVES LEFT</b><small>WRONG ANSWERS COST ONE</small></span></div><button onClick={() => setScreen("home")}>× EXIT QUEST</button></aside><article><div className="panel-head"><span>QUESTION {level + 1} / {campaign.length}</span><b>REWARD +{current.xpReward} XP</b></div><h2>{current.title}</h2>{current.code && <div className="editor"><div><i/><i/><i/><span>challenge.c</span></div><pre>{current.code}</pre></div>}<p className="instruction">{current.prompt}</p><div className="options">{current.choices.map((item, i) => <button key={item} className={choice === i ? "active" : ""} onClick={() => setChoice(i)}><b>{String.fromCharCode(65 + i)}</b>{item}<i>→</i></button>)}</div><div className="submit"><button className="hint-button" onClick={() => setHint(!hint)}>💡 {hint ? "HIDE HINT" : "USE HINT"}</button><span className={message.includes("CLEAR") ? "success" : "error"}>{message}</span><button className="primary" disabled={choice === null || message.includes("CLEAR")} onClick={submit}>CONFIRM →</button></div>{hint && <p className="hint">// HINT: {current.hint}</p>}</article></section>}
+    {(screen === "win" || screen === "lost") && <section className={`ending ${screen === "lost" ? "lost" : ""}`}><code>{screen === "win" ? "CAMPAIGN_COMPLETE" : "RUN_ENDED"}</code><h2>{screen === "win" ? "QUEST\nCLEARED." : "OUT OF\nLIVES."}</h2><p>{screen === "win" ? `You earned ${xp} XP and finished as ${rank.name}.` : `You reached ${rank.name} with ${xp} XP. Refill your hearts and try again.`}</p><button className="primary" onClick={() => start(mode)}>PLAY AGAIN</button><button className="ghost" onClick={() => setScreen("home")}>LOBBY</button></section>}
+    {loginOpen && <div className="login-backdrop" role="dialog" aria-modal="true" aria-labelledby="login-title"><div className="login-modal"><button className="modal-close" onClick={() => setLoginOpen(false)} aria-label="Close">×</button><span className="login-logo">BQ</span><p>PLAYER ACCESS</p><h2 id="login-title">{createMode ? "Create your account" : "Sign in to play"}</h2><span className="login-copy">Save your XP, highest score, and rank with Firebase.</span><button className="google-login" onClick={handleLogin}><b>G</b> CONTINUE WITH GOOGLE</button><div className="auth-divider"><span>OR USE EMAIL</span></div><form className="email-login" onSubmit={handlePasswordLogin}><label>EMAIL<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="player@example.com" autoComplete="email" required /></label><label>PASSWORD<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="6 or more characters" autoComplete={createMode ? "new-password" : "current-password"} minLength="6" required /></label><button type="submit">{createMode ? "CREATE ACCOUNT" : "SIGN IN WITH PASSWORD"}</button></form>{!createMode && <button className="forgot-password" onClick={handlePasswordReset}>FORGOT PASSWORD?</button>}{authError && <small className={authError.includes("sent") ? "auth-success" : "auth-error"}>{authError}</small>}<button className="auth-switch" onClick={() => { setCreateMode(!createMode); setAuthError(""); }}>{createMode ? "Already registered? Sign in" : "New player? Create an account"}</button><small>Login is required before entering a campaign.</small></div></div>}
+    <footer><span>© 2026 BYTEQUEST</span><span>LEARN C · MASTER DSA · FIX BUGS</span></footer></main>;
 }
