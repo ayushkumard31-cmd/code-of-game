@@ -1,0 +1,62 @@
+[
+{
+    "id": 1,
+    "topic" : "Theory",
+    "question": "What is the worst-case time complexity of finding a specific element in an unsorted array?",
+    "options": [
+        "A) O(1)",
+        "B) O(log n)",
+        "C) O(n)",
+        "D) O(n^2)"
+    ],
+    "correct_index":1
+},
+  {
+    "id": 2,
+    "topic": "Stacks",
+    "question": "Which fundamental principle dictates how a Stack processes data?",
+    "options": [
+      "A) FIFO (First In, First Out)",
+      "B) LIFO (Last In, First Out)",
+      "C) Random Access",
+      "D) Priority Queueing"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": 3,
+    "topic": "Queues",
+    "question": "Which fundamental principle dictates how a standard Queue processes data?",
+    "options": [
+      "A) FIFO (First In, First Out)",
+      "B) LIFO (Last In, First Out)",
+      "C) Binary Tree Traversal",
+      "D) Hashing"
+    ],
+    "correct_index": 0
+  },
+  {
+    "id": 4,
+    "topic": "Linked Lists",
+    "question": "When traversing a standard singly linked list, which condition correctly identifies that you have reached the end?",
+    "options": [
+      "A) temp->next == head",
+      "B) temp->next == NULL",
+      "C) temp == head->next",
+      "D) temp->data == 0"
+    ],
+    "correct_index": 1
+  },
+  {
+    "id": 5,
+    "topic": "Arrays",
+    "question": "Which data structure allocates memory in strictly contiguous (side-by-side) blocks?",
+    "options": [
+      "A) Linked List",
+      "B) Binary Tree",
+      "C) Array",
+      "D) Graph"
+    ],
+    "correct_index": 2
+  }
+]

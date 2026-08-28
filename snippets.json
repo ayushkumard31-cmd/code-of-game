@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "topic": "Loops",
+    "title": "Loop Injection",
+    "code": "#include <stdio.h>\n\nint main() {\n    // Print the numbers 1, 2, and 3 back-to-back\n    _____;\n    return 0;\n}",
+    "expected_output": "123"
+  },
+  {
+    "id": 2,
+    "topic": "Arrays",
+    "title": "Array Traversal",
+    "code": "#include <stdio.h>\n\nint main() {\n    int arr[] = {4, 5, 6};\n    // Print the elements back-to-back\n    for(int i = 0; i < 3; i++) {\n        _____;\n    }\n    return 0;\n}",
+    "expected_output": "456"
+  },
+  {
+    "id": 3,
+    "topic": "Pointers",
+    "title": "Pointer Basics",
+    "code": "#include <stdio.h>\n\nint main() {\n    int val = 99;\n    int *ptr = &val;\n    // Print the value using the pointer\n    _____;\n    return 0;\n}",
+    "expected_output": "99"
+  },
+  {
+    "id": 4,
+    "topic": "Conditionals",
+    "title": "Conditional Logic",
+    "code": "#include <stdio.h>\n\nint main() {\n    int num = 8;\n    // Print \"Even\" if the number is divisible by 2\n    if(_____) {\n        printf(\"Even\");\n    }\n    return 0;\n}",
+    "expected_output": "Even"
+  },
+  {
+    "id": 5,
+    "topic": "Arrays",
+    "title": "Array Accumulation",
+    "code": "#include <stdio.h>\n\nint main() {\n    int arr[] = {5, 10, 15};\n    int sum = 0;\n    for(int i = 0; i < 3; i++) {\n        _____; // Add current element to sum\n    }\n    printf(\"%d\", sum);\n    return 0;\n}",
+    "expected_output": "30"
+  }
+]
