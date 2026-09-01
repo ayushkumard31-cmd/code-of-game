@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
@@ -17,8 +17,12 @@ const auth = getAuth(firebaseApp);
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 
-const emptyStats = { totalXp: 0, highScore: 0 };
+const emptyStats = { totalXp: 0, highScore: 0, campaigns: {}, activeGame: null };
 const storageKey = (uid) => `bytequest-player-${uid}`;
+
+function normaliseStats(value) {
+  return { ...emptyStats, ...value, campaigns: value?.campaigns || {}, activeGame: value?.activeGame || null };
+}
 
 export default function usePlayer() {
   const [user, setUser] = useState(null);
@@ -29,7 +33,7 @@ export default function usePlayer() {
     setUser(nextUser);
     if (nextUser) {
       try {
-        setStats(JSON.parse(localStorage.getItem(storageKey(nextUser.uid))) || emptyStats);
+        setStats(normaliseStats(JSON.parse(localStorage.getItem(storageKey(nextUser.uid)))));
       } catch {
         setStats(emptyStats);
       }
@@ -62,17 +66,31 @@ export default function usePlayer() {
     await signOut(auth);
   }
 
-  function recordScore(xpEarned, runScore) {
+  const updateStats = useCallback((updater) => {
     if (!auth.currentUser) return;
     setStats((previous) => {
-      const next = {
-        totalXp: previous.totalXp + xpEarned,
-        highScore: Math.max(previous.highScore, runScore),
-      };
+      const next = normaliseStats(updater(normaliseStats(previous)));
       localStorage.setItem(storageKey(auth.currentUser.uid), JSON.stringify(next));
       return next;
     });
+  }, []);
+
+  const saveRun = useCallback((mode, run) => {
+    updateStats((previous) => ({ ...previous, campaigns: { ...previous.campaigns, [mode]: { ...(previous.campaigns[mode] || {}), ...run } }, activeGame: { mode, ...run } }));
+  }, [updateStats]);
+
+  function completeLevel(mode, completedLevel, nextRun) {
+    updateStats((previous) => {
+      const oldCampaign = previous.campaigns[mode] || { completedLevels: [], xp: 0 };
+      const completedLevels = [...new Set([...(oldCampaign.completedLevels || []), completedLevel])];
+      const newlyCompleted = !(oldCampaign.completedLevels || []).includes(completedLevel);
+      const earned = newlyCompleted ? nextRun.xpReward : 0;
+      const campaign = { ...oldCampaign, ...nextRun, completedLevels, xp: (oldCampaign.xp || 0) + earned };
+      return { ...previous, totalXp: previous.totalXp + earned, highScore: Math.max(previous.highScore, campaign.xp), campaigns: { ...previous.campaigns, [mode]: campaign }, activeGame: { mode, ...campaign } };
+    });
   }
 
-  return { user, stats, loading, login, loginWithPassword, createAccount, resetPassword, logout, recordScore };
+  function finishRun(mode) { updateStats((previous) => ({ ...previous, activeGame: previous.activeGame?.mode === mode ? null : previous.activeGame })); }
+
+  return { user, stats, loading, login, loginWithPassword, createAccount, resetPassword, logout, saveRun, completeLevel, finishRun };
 }
