@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
@@ -66,18 +66,18 @@ export default function usePlayer() {
     await signOut(auth);
   }
 
-  function updateStats(updater) {
+  const updateStats = useCallback((updater) => {
     if (!auth.currentUser) return;
     setStats((previous) => {
       const next = normaliseStats(updater(normaliseStats(previous)));
       localStorage.setItem(storageKey(auth.currentUser.uid), JSON.stringify(next));
       return next;
     });
-  }
+  }, []);
 
-  function saveRun(mode, run) {
+  const saveRun = useCallback((mode, run) => {
     updateStats((previous) => ({ ...previous, campaigns: { ...previous.campaigns, [mode]: { ...(previous.campaigns[mode] || {}), ...run } }, activeGame: { mode, ...run } }));
-  }
+  }, [updateStats]);
 
   function completeLevel(mode, completedLevel, nextRun) {
     updateStats((previous) => {
