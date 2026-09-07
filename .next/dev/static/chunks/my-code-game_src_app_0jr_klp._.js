@@ -9,10 +9,14 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my-code-game/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 /* eslint-disable react/jsx-no-comment-textnodes */ var __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my-code-game/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$questionBank$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my-code-game/src/app/questionBank.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$rewardsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my-code-game/src/app/rewardsData.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$practiceData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my-code-game/src/app/practiceData.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$usePlayer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my-code-game/src/app/usePlayer.js [app-client] (ecmascript)");
 ;
-var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature(), _s3 = __turbopack_context__.k.signature();
 "use client";
+;
+;
 ;
 ;
 ;
@@ -81,7 +85,7 @@ const dsaTopics = [
 function StackQuestionVisual({ prompt }) {
     _s();
     const [items, setItems] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
-        "StackQuestionVisual.useState": ()=>(prompt.match(/\d+/g) || []).slice(-3).map(Number)
+        "StackQuestionVisual.useState": ()=>(prompt?.match(/\d+/g) || []).slice(-3).map(Number)
     }["StackQuestionVisual.useState"]);
     const [status, setStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("READ FROM BOTTOM → TOP");
     function push() {
@@ -90,8 +94,8 @@ function StackQuestionVisual({ prompt }) {
             return;
         }
         const value = Math.floor(Math.random() * 90) + 10;
-        setItems((currentItems)=>[
-                ...currentItems,
+        setItems((curr)=>[
+                ...curr,
                 value
             ]);
         setStatus(`PUSHED ${value} TO TOP`);
@@ -102,7 +106,7 @@ function StackQuestionVisual({ prompt }) {
             return;
         }
         const value = items[items.length - 1];
-        setItems((currentItems)=>currentItems.slice(0, -1));
+        setItems((curr)=>curr.slice(0, -1));
         setStatus(`POPPED ${value} FROM TOP`);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -114,29 +118,29 @@ function StackQuestionVisual({ prompt }) {
                         children: "LIVE STACK VISUALIZER"
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 25,
-                        columnNumber: 51
+                        lineNumber: 40,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
                         children: "Which item leaves first?"
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 25,
-                        columnNumber: 87
+                        lineNumber: 41,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: "In LIFO, the newest top item is removed first."
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 25,
-                        columnNumber: 118
+                        lineNumber: 42,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
                         children: status
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 25,
-                        columnNumber: 171
+                        lineNumber: 43,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
@@ -146,8 +150,8 @@ function StackQuestionVisual({ prompt }) {
                                 children: "+ PUSH"
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 25,
-                                columnNumber: 197
+                                lineNumber: 45,
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: pop,
@@ -156,20 +160,20 @@ function StackQuestionVisual({ prompt }) {
                                 children: "− POP"
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 25,
-                                columnNumber: 249
+                                lineNumber: 46,
+                                columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 25,
-                        columnNumber: 192
+                        lineNumber: 44,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/my-code-game/src/app/page.js",
-                lineNumber: 25,
-                columnNumber: 46
+                lineNumber: 39,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "question-stack",
@@ -178,8 +182,8 @@ function StackQuestionVisual({ prompt }) {
                         children: "TOP ↓"
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 25,
-                        columnNumber: 368
+                        lineNumber: 50,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
@@ -188,46 +192,443 @@ function StackQuestionVisual({ prompt }) {
                                 children: item
                             }, `${item}-${items.length - index}`, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 25,
-                                columnNumber: 434
+                                lineNumber: 51,
+                                columnNumber: 57
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 25,
-                        columnNumber: 386
+                        lineNumber: 51,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                         children: "BOTTOM"
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 25,
-                        columnNumber: 495
+                        lineNumber: 52,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/my-code-game/src/app/page.js",
-                lineNumber: 25,
-                columnNumber: 336
+                lineNumber: 49,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/my-code-game/src/app/page.js",
-        lineNumber: 25,
-        columnNumber: 10
+        lineNumber: 38,
+        columnNumber: 5
     }, this);
 }
-_s(StackQuestionVisual, "FY/TzQK9jc4NDhzVZ7iijnEgGME=");
+_s(StackQuestionVisual, "33WWxqPaeLoENUV9tX/M0u0BwCM=");
 _c = StackQuestionVisual;
-function Home() {
+function QueueInteractiveVisualizer() {
     _s1();
-    const [screen, setScreen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("home"), [mode, setMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("dsa"), [level, setLevel] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0), [choice, setChoice] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null), [lives, setLives] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(3), [xp, setXp] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0), [hint, setHint] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false), [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(""), [loginOpen, setLoginOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false), [profileOpen, setProfileOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false), [pendingMode, setPendingMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("dsa"), [pendingLevel, setPendingLevel] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null), [selectedTopic, setSelectedTopic] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null), [stackItems, setStackItems] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([
+    const [items, setItems] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([
+        14,
+        28,
+        42
+    ]);
+    const [status, setStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("FIFO: Front exits first");
+    function enqueue() {
+        if (items.length >= 6) {
+            setStatus("QUEUE FULL (MAX 6)");
+            return;
+        }
+        const val = Math.floor(Math.random() * 90) + 10;
+        setItems((curr)=>[
+                ...curr,
+                val
+            ]);
+        setStatus(`ENQUEUE ${val} AT REAR`);
+    }
+    function dequeue() {
+        if (!items.length) {
+            setStatus("QUEUE EMPTY (UNDERFLOW)");
+            return;
+        }
+        const val = items[0];
+        setItems((curr)=>curr.slice(1));
+        setStatus(`DEQUEUE ${val} FROM FRONT`);
+    }
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "queue-lab",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                style: {
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center"
+                },
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
+                        style: {
+                            color: "#46d8e7",
+                            fontFamily: "var(--font-mono)",
+                            fontSize: 10,
+                            letterSpacing: "1.5px"
+                        },
+                        children: "INTERACTIVE FIFO QUEUE LAB"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 76,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
+                        style: {
+                            color: "#46d8e7",
+                            fontSize: 10
+                        },
+                        children: status
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 77,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/my-code-game/src/app/page.js",
+                lineNumber: 75,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "queue-lane",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "queue-tag",
+                        children: "FRONT →"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 80,
+                        columnNumber: 9
+                    }, this),
+                    items.map((it, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "queue-item",
+                            children: it
+                        }, `${it}-${idx}`, false, {
+                            fileName: "[project]/my-code-game/src/app/page.js",
+                            lineNumber: 82,
+                            columnNumber: 11
+                        }, this)),
+                    !items.length && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        style: {
+                            color: "#555",
+                            fontSize: 11
+                        },
+                        children: "[ EMPTY QUEUE ]"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 86,
+                        columnNumber: 27
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "queue-tag",
+                        style: {
+                            marginLeft: "auto"
+                        },
+                        children: "← REAR"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 87,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/my-code-game/src/app/page.js",
+                lineNumber: 79,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                style: {
+                    display: "flex",
+                    gap: 10
+                },
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: enqueue,
+                        className: "adm-btn adm-btn-primary",
+                        type: "button",
+                        children: "+ ENQUEUE (REAR)"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 90,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: dequeue,
+                        className: "adm-btn",
+                        type: "button",
+                        disabled: !items.length,
+                        children: "− DEQUEUE (FRONT)"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 91,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/my-code-game/src/app/page.js",
+                lineNumber: 89,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/my-code-game/src/app/page.js",
+        lineNumber: 74,
+        columnNumber: 5
+    }, this);
+}
+_s1(QueueInteractiveVisualizer, "8aI2GRCgLSYdx5hcLdS1VXK/FLk=");
+_c1 = QueueInteractiveVisualizer;
+function LinkedListInteractiveVisualizer() {
+    _s2();
+    const [nodes, setNodes] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([
+        10,
+        25,
+        40
+    ]);
+    const [status, setStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("HEAD → 10 → 25 → 40 → NULL");
+    function insertHead() {
+        const val = Math.floor(Math.random() * 90) + 10;
+        const next = [
+            val,
+            ...nodes
+        ];
+        setNodes(next);
+        setStatus(`INSERTED ${val} AT HEAD (O(1))`);
+    }
+    function insertTail() {
+        const val = Math.floor(Math.random() * 90) + 10;
+        const next = [
+            ...nodes,
+            val
+        ];
+        setNodes(next);
+        setStatus(`APPENDED ${val} AT TAIL (O(1) with tail ptr)`);
+    }
+    function deleteHead() {
+        if (!nodes.length) {
+            setStatus("LIST IS EMPTY");
+            return;
+        }
+        const removed = nodes[0];
+        setNodes(nodes.slice(1));
+        setStatus(`DELETED HEAD NODE ${removed}`);
+    }
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "ll-lab",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                style: {
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center"
+                },
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
+                        style: {
+                            color: "#b377ff",
+                            fontFamily: "var(--font-mono)",
+                            fontSize: 10,
+                            letterSpacing: "1.5px"
+                        },
+                        children: "SINGLY LINKED LIST LAB"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 121,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
+                        style: {
+                            color: "#b377ff",
+                            fontSize: 10
+                        },
+                        children: status
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 122,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/my-code-game/src/app/page.js",
+                lineNumber: 120,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "ll-chain",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        style: {
+                            color: "#a9ff43",
+                            font: "700 11px var(--font-mono)"
+                        },
+                        children: "HEAD →"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 125,
+                        columnNumber: 9
+                    }, this),
+                    nodes.map((val, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            style: {
+                                display: "flex",
+                                alignItems: "center",
+                                gap: 8
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "ll-node",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
+                                            children: val
+                                        }, void 0, false, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 129,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "next*"
+                                        }, void 0, false, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 130,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                    lineNumber: 128,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "ll-arrow",
+                                    children: "→"
+                                }, void 0, false, {
+                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                    lineNumber: 132,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, `${val}-${idx}`, true, {
+                            fileName: "[project]/my-code-game/src/app/page.js",
+                            lineNumber: 127,
+                            columnNumber: 11
+                        }, this)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        style: {
+                            color: "#ff7875",
+                            font: "700 11px var(--font-mono)"
+                        },
+                        children: "NULL"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 135,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/my-code-game/src/app/page.js",
+                lineNumber: 124,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                style: {
+                    display: "flex",
+                    gap: 8,
+                    flexWrap: "wrap"
+                },
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: insertHead,
+                        className: "adm-btn",
+                        type: "button",
+                        children: "+ INSERT HEAD"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 138,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: insertTail,
+                        className: "adm-btn",
+                        type: "button",
+                        children: "+ APPEND TAIL"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 139,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: deleteHead,
+                        className: "adm-btn adm-btn-danger",
+                        type: "button",
+                        disabled: !nodes.length,
+                        children: "− DELETE HEAD"
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 140,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/my-code-game/src/app/page.js",
+                lineNumber: 137,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/my-code-game/src/app/page.js",
+        lineNumber: 119,
+        columnNumber: 5
+    }, this);
+}
+_s2(LinkedListInteractiveVisualizer, "Lf3ZwlgYHE6admgKVZZ/U0Hr/rY=");
+_c2 = LinkedListInteractiveVisualizer;
+function Home() {
+    _s3();
+    const [screen, setScreen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("home");
+    const [mode, setMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("dsa");
+    const [level, setLevel] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [choice, setChoice] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [lives, setLives] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(3);
+    const [xp, setXp] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [hint, setHint] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [loginOpen, setLoginOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [profileOpen, setProfileOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [pendingMode, setPendingMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("dsa");
+    const [pendingLevel, setPendingLevel] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [selectedTopic, setSelectedTopic] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [stackItems, setStackItems] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([
         12,
         27,
         41
-    ]), [stackMessage, setStackMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("TOP → 41"), [authError, setAuthError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(""), [email, setEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(""), [password, setPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(""), [createMode, setCreateMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const { user, stats, loading, login, loginWithPassword, createAccount, resetPassword, logout, saveRun, completeLevel, finishRun } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$usePlayer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])();
-    const campaign = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$questionBank$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["buildCampaign"])(mode), current = campaign[level], rank = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$questionBank$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getRank"])(xp), tier = __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$questionBank$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["tierConfig"][current?.tier || 0];
+    ]);
+    const [stackMessage, setStackMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("TOP → 41");
+    const [authError, setAuthError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [email, setEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [password, setPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [createMode, setCreateMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Rewards & Shop feedback
+    const [rewardToast, setRewardToast] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    // Subjective practice filters & local open states
+    const [practiceTopic, setPracticeTopic] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("All");
+    const [revealedSolutions, setRevealedSolutions] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
+    const [revealedHints, setRevealedHints] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
+    const [checkedRubrics, setCheckedRubrics] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
+    const [writtenAnswers, setWrittenAnswers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
+    // 50/50 lifeline used in current level
+    const [eliminatedChoices, setEliminatedChoices] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const { user, stats, loading, login, loginWithPassword, createAccount, resetPassword, logout, saveRun, completeLevel, finishRun, claimReward, togglePerk, setPracticeStatus, savePracticeNote } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$usePlayer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])();
+    const campaign = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$questionBank$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["buildCampaign"])(mode);
+    const current = campaign[level] || campaign[0];
+    const rank = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$questionBank$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getRank"])(xp);
+    const tier = __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$questionBank$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["tierConfig"][current?.tier || 0] || __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$questionBank$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["tierConfig"][0];
     const hasResumed = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(false);
+    const totalClearedLevels = Object.values(stats.campaigns || {}).reduce((total, run)=>total + (run.completedLevels?.length || 0), 0);
+    const hasExtraHeartPerk = stats.equippedPerks?.includes("perk-extra-heart") && stats.claimedRewards?.includes("perk-extra-heart");
+    const maxLives = hasExtraHeartPerk ? 4 : 3;
+    const has5050Perk = stats.equippedPerks?.includes("perk-50-50") && stats.claimedRewards?.includes("perk-50-50");
+    const hasNeonTheme = stats.equippedPerks?.includes("perk-cyber-glow") && stats.claimedRewards?.includes("perk-cyber-glow");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Home.useEffect": ()=>{
             if (hasResumed.current) return;
@@ -240,7 +641,7 @@ function Home() {
                         "Home.useEffect.resume": ()=>{
                             setMode(run.mode);
                             setLevel(run.currentLevel || 0);
-                            setLives(run.lives || 3);
+                            setLives(run.lives || maxLives);
                             setXp(run.xp || 0);
                             setChoice(Number.isInteger(run.selectedChoice) ? run.selectedChoice : null);
                             setHint(Boolean(run.hint));
@@ -251,7 +652,6 @@ function Home() {
                         "Home.useEffect": ()=>window.clearTimeout(resume)
                     })["Home.useEffect"];
                 } else {
-                    // No active game to resume — mark so we never re-attempt.
                     hasResumed.current = true;
                 }
             }
@@ -259,17 +659,20 @@ function Home() {
     }["Home.useEffect"], [
         loading,
         user,
-        stats.activeGame
-    ]); // eslint-disable-line react-hooks/exhaustive-deps
+        stats.activeGame,
+        maxLives
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Home.useEffect": ()=>{
-            if (user && screen === "game") saveRun(mode, {
-                currentLevel: level,
-                lives,
-                xp,
-                selectedChoice: choice,
-                hint
-            });
+            if (user && screen === "game") {
+                saveRun(mode, {
+                    currentLevel: level,
+                    lives,
+                    xp,
+                    selectedChoice: choice,
+                    hint
+                });
+            }
         }
     }["Home.useEffect"], [
         choice,
@@ -281,7 +684,11 @@ function Home() {
         screen,
         user,
         xp
-    ]); // Save in-progress quiz interaction without replacing level-completion checkpoints.
+    ]);
+    function triggerRewardToast(msg) {
+        setRewardToast(msg);
+        setTimeout(()=>setRewardToast(""), 3000);
+    }
     function enterCampaign(nextMode, targetLevel = null) {
         const queuedTopic = typeof nextMode === "string" && nextMode.startsWith("topic:") ? nextMode.split(":") : null;
         const queuedLevel = queuedTopic ? Number(queuedTopic[2]) : typeof nextMode === "string" && nextMode.startsWith("level:") ? Number(nextMode.split(":")[1]) : null;
@@ -289,9 +696,10 @@ function Home() {
         const selectedLevel = targetLevel ?? queuedLevel;
         const saved = stats.campaigns?.[campaignMode];
         const canResume = saved && saved.currentLevel < (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$questionBank$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["buildCampaign"])(campaignMode).length;
+        const startingHearts = hasExtraHeartPerk ? 4 : 3;
         const run = {
             currentLevel: selectedLevel ?? (canResume ? saved.currentLevel : 0),
-            lives: canResume ? saved.lives || 3 : 3,
+            lives: canResume ? saved.lives || startingHearts : startingHearts,
             xp: canResume ? saved.xp || 0 : 0,
             selectedChoice: null,
             hint: false,
@@ -305,17 +713,19 @@ function Home() {
         setXp(run.xp);
         setHint(false);
         setMessage("");
+        setEliminatedChoices([]);
         saveRun(campaignMode, run);
     }
     function start(nextMode = "dsa") {
         const mapLevel = screen === "home" ? ({
             dsa: 0,
             code: 1,
-            bugs: 2
+            bugs: 2,
+            boss: 0
         })[nextMode] : null;
-        const campaignMode = mapLevel === null || mapLevel === undefined ? nextMode : "dsa";
+        const campaignMode = mapLevel === null || mapLevel === undefined ? nextMode : nextMode;
         if (!user) {
-            setPendingMode(mapLevel === null || mapLevel === undefined ? campaignMode : `level:${mapLevel}`);
+            setPendingMode(campaignMode);
             setPendingLevel(mapLevel ?? null);
             setLoginOpen(true);
             return;
@@ -333,6 +743,13 @@ function Home() {
         }
         setSelectedTopic(null);
         enterCampaign(challengeMode, topicLevel);
+    }
+    function use5050Lifeline() {
+        if (!current || eliminatedChoices.length > 0) return;
+        const wrongIndices = current.choices.map((_, i)=>i).filter((i)=>i !== current.answer);
+        const toEliminate = wrongIndices.slice(0, 2);
+        setEliminatedChoices(toEliminate);
+        setMessage("🔮 ORACLE ELIMINATED 2 WRONG CHOICES");
     }
     function pushStack() {
         if (stackItems.length >= 5) {
@@ -381,7 +798,7 @@ function Home() {
                 "auth/email-already-in-use": "This email already has an account. Sign in or use Google.",
                 "auth/weak-password": "Use a password with at least 6 characters.",
                 "auth/invalid-email": "Enter a valid email address.",
-                "auth/operation-not-allowed": "Email/password login is disabled in Firebase Console. Enable it under Authentication → Sign-in method.",
+                "auth/operation-not-allowed": "Email/password login is disabled in Firebase Console.",
                 "auth/network-request-failed": "Network error. Check your connection and try again.",
                 "auth/too-many-requests": "Too many attempts. Wait a moment or reset your password."
             };
@@ -398,12 +815,7 @@ function Home() {
             await resetPassword(email.trim());
             setAuthError("Password reset email sent. Check your inbox and spam folder.");
         } catch (error) {
-            const messages = {
-                "auth/invalid-email": "Enter a valid email address.",
-                "auth/operation-not-allowed": "Email/password login is disabled in Firebase Console.",
-                "auth/too-many-requests": "Too many requests. Please wait and try again."
-            };
-            setAuthError(messages[error?.code] || `Password reset failed (${error?.code || "unknown error"}).`);
+            setAuthError("Password reset failed. Check the email entered.");
         }
     }
     async function handleLogout() {
@@ -426,6 +838,7 @@ function Home() {
             setChoice(null);
             setHint(false);
             setMessage("");
+            setEliminatedChoices([]);
         }
     }
     function submit() {
@@ -454,15 +867,25 @@ function Home() {
         setMessage(remaining ? "LIFE LOST — TRY AGAIN" : "OUT OF LIVES");
         if (!remaining) setTimeout(()=>setScreen("lost"), 700);
     }
+    const filteredPractices = __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$practiceData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["subjectivePracticeQuestions"].filter((q)=>practiceTopic === "All" || q.topic === practiceTopic);
+    const masteredPracticeCount = Object.values(stats.practiceStatus || {}).filter((s)=>s === "mastered").length;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-        className: `shell ${screen === "home" ? "storefront" : ""}`,
+        className: `shell ${screen === "home" ? "storefront" : ""} ${hasNeonTheme ? "neon-glow" : ""}`,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "grid-bg"
             }, void 0, false, {
                 fileName: "[project]/my-code-game/src/app/page.js",
-                lineNumber: 63,
-                columnNumber: 77
+                lineNumber: 422,
+                columnNumber: 7
+            }, this),
+            rewardToast && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "adm-toast",
+                children: rewardToast
+            }, void 0, false, {
+                fileName: "[project]/my-code-game/src/app/page.js",
+                lineNumber: 423,
+                columnNumber: 23
             }, this),
             user && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("details", {
                 className: "profile-panel",
@@ -471,8 +894,8 @@ function Home() {
                         children: "PROFILE"
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 63,
-                        columnNumber: 148
+                        lineNumber: 427,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
@@ -480,48 +903,64 @@ function Home() {
                                 children: user.displayName || user.email?.split("@")[0] || "Player"
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 63,
-                                columnNumber: 179
+                                lineNumber: 429,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: [
                                     stats.totalXp,
                                     " XP · ",
-                                    Object.values(stats.campaigns || {}).reduce((total, run)=>total + (run.completedLevels?.length || 0), 0),
-                                    " / 150 LEVELS CLEARED"
+                                    totalClearedLevels,
+                                    " / 200 LEVELS CLEARED"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 63,
-                                columnNumber: 245
+                                lineNumber: 430,
+                                columnNumber: 13
                             }, this),
                             [
                                 "dsa",
                                 "code",
-                                "bugs"
+                                "bugs",
+                                "boss"
                             ].map((campaignMode)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                                     children: [
                                         campaignMode.toUpperCase(),
                                         ": ",
                                         stats.campaigns?.[campaignMode]?.completedLevels?.length || 0,
-                                        " / 50 COMPLETE"
+                                        " COMPLETE"
                                     ]
                                 }, campaignMode, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 63,
-                                    columnNumber: 455
-                                }, this))
+                                    lineNumber: 432,
+                                    columnNumber: 15
+                                }, this)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
+                                style: {
+                                    color: "#a9ff43"
+                                },
+                                children: [
+                                    "REWARDS CLAIMED: ",
+                                    stats.claimedRewards?.length || 0,
+                                    " · PRACTICES MASTERED: ",
+                                    masteredPracticeCount
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/my-code-game/src/app/page.js",
+                                lineNumber: 436,
+                                columnNumber: 13
+                            }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 63,
-                        columnNumber: 174
+                        lineNumber: 428,
+                        columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/my-code-game/src/app/page.js",
-                lineNumber: 63,
-                columnNumber: 113
+                lineNumber: 426,
+                columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
                 className: "topbar",
@@ -534,15 +973,15 @@ function Home() {
                                 children: "DS"
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 64,
-                                columnNumber: 95
+                                lineNumber: 445,
+                                columnNumber: 11
                             }, this),
                             " DSA DUNGEON"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 64,
-                        columnNumber: 32
+                        lineNumber: 444,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                         children: [
@@ -551,39 +990,55 @@ function Home() {
                                 children: "Quests"
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 64,
-                                columnNumber: 136
+                                lineNumber: 448,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>navigateTo("practice"),
+                                children: "Practice (0 XP)"
+                            }, void 0, false, {
+                                fileName: "[project]/my-code-game/src/app/page.js",
+                                lineNumber: 449,
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>navigateTo("benefits"),
-                                children: "Rewards"
+                                children: "Rewards & Shop"
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 64,
-                                columnNumber: 196
+                                lineNumber: 450,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>navigateTo("top"),
+                                children: "Dungeon Map"
+                            }, void 0, false, {
+                                fileName: "[project]/my-code-game/src/app/page.js",
+                                lineNumber: 451,
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>navigateTo("about"),
                                 children: "How it works"
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 64,
-                                columnNumber: 259
+                                lineNumber: 452,
+                                columnNumber: 11
                             }, this),
-                            user?.uid === "ayush1212" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            (user?.uid === "ayush1212" || user?.email?.toLowerCase() === "ayushkumard31@gmail.com") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 className: "admin-nav-btn",
                                 onClick: ()=>window.location.href = "/admin",
                                 children: "⚙ ADMIN"
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 64,
-                                columnNumber: 354
+                                lineNumber: 454,
+                                columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 64,
-                        columnNumber: 131
+                        lineNumber: 447,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "account",
@@ -592,8 +1047,8 @@ function Home() {
                             children: "LOADING..."
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 64,
-                            columnNumber: 495
+                            lineNumber: 461,
+                            columnNumber: 13
                         }, this) : user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "user-menu",
                             children: [
@@ -602,8 +1057,8 @@ function Home() {
                                     children: user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase() || "P"
                                 }, void 0, false, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 64,
-                                    columnNumber: 583
+                                    lineNumber: 464,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "user-name",
@@ -612,8 +1067,8 @@ function Home() {
                                             children: user.displayName || user.email?.split("@")[0] || "Player"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 64,
-                                            columnNumber: 732
+                                            lineNumber: 468,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                                             children: [
@@ -623,28 +1078,28 @@ function Home() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 64,
-                                            columnNumber: 798
+                                            lineNumber: 469,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 64,
-                                    columnNumber: 704
+                                    lineNumber: 467,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: handleLogout,
                                     children: "LOG OUT"
                                 }, void 0, false, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 64,
-                                    columnNumber: 863
+                                    lineNumber: 471,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 64,
-                            columnNumber: 556
+                            lineNumber: 463,
+                            columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             className: "login-nav",
                             onClick: ()=>{
@@ -654,19 +1109,19 @@ function Home() {
                             children: "SIGN IN"
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 64,
-                            columnNumber: 919
+                            lineNumber: 474,
+                            columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 64,
-                        columnNumber: 459
+                        lineNumber: 459,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/my-code-game/src/app/page.js",
-                lineNumber: 64,
-                columnNumber: 5
+                lineNumber: 443,
+                columnNumber: 7
             }, this),
             screen === "home" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                 children: [
@@ -680,68 +1135,68 @@ function Home() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
-                                                children: "THE LEARNING PATH"
+                                                children: "THE LEARNING PATH & DUNGEON MAP"
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 65,
-                                                columnNumber: 105
+                                                lineNumber: 487,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                                 children: "Master the dungeon, one structure at a time."
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 65,
-                                                columnNumber: 137
+                                                lineNumber: 488,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                children: "Choose a topic, then pick how you want to train."
+                                                children: "Click any node to explore interactive visualizer labs or start campaign trials."
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 65,
-                                                columnNumber: 190
+                                                lineNumber: 489,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 65,
-                                        columnNumber: 100
+                                        lineNumber: 486,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "map-progress",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
-                                                children: Object.values(stats.campaigns || {}).reduce((total, run)=>total + (run.completedLevels?.length || 0), 0)
+                                                children: totalClearedLevels
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 65,
-                                                columnNumber: 281
+                                                lineNumber: 492,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: [
                                                     "CHALLENGES",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                                        lineNumber: 65,
-                                                        columnNumber: 412
+                                                        lineNumber: 493,
+                                                        columnNumber: 33
                                                     }, this),
                                                     "CLEARED"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 65,
-                                                columnNumber: 396
+                                                lineNumber: 493,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 65,
-                                        columnNumber: 251
+                                        lineNumber: 491,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 65,
-                                columnNumber: 71
+                                lineNumber: 485,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "topic-path",
@@ -756,8 +1211,8 @@ function Home() {
                                                 children: topic.icon
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 65,
-                                                columnNumber: 626
+                                                lineNumber: 503,
+                                                columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: [
@@ -768,52 +1223,52 @@ function Home() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                                        lineNumber: 65,
-                                                        columnNumber: 651
+                                                        lineNumber: 505,
+                                                        columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
                                                         children: topic.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                                        lineNumber: 65,
-                                                        columnNumber: 708
+                                                        lineNumber: 506,
+                                                        columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
                                                         children: topic.detail
                                                     }, void 0, false, {
                                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                                        lineNumber: 65,
-                                                        columnNumber: 727
+                                                        lineNumber: 507,
+                                                        columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 65,
-                                                columnNumber: 645
+                                                lineNumber: 504,
+                                                columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                 children: "→"
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 65,
-                                                columnNumber: 757
+                                                lineNumber: 509,
+                                                columnNumber: 19
                                             }, this)
                                         ]
                                     }, topic.name, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 65,
-                                        columnNumber: 504
+                                        lineNumber: 498,
+                                        columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 65,
-                                columnNumber: 443
+                                lineNumber: 496,
+                                columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 65,
-                        columnNumber: 29
+                        lineNumber: 484,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                         id: "quests",
@@ -825,40 +1280,43 @@ function Home() {
                                     className: "hs-head",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
-                                            children: "CAMPAIGNS"
+                                            children: "CAMPAIGNS & BOSS RAIDS"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 896
+                                            lineNumber: 519,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                             children: "Pick your quest type"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 920
+                                            lineNumber: 520,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            children: "Three challenge modes for mastering DSA in C."
+                                            children: "Four challenge modes for mastering DSA in C from novice trials to the Final DSA Boss Test."
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 949
+                                            lineNumber: 521,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 65,
-                                    columnNumber: 871
+                                    lineNumber: 518,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "mode-cards",
+                                    style: {
+                                        gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))"
+                                    },
                                     children: [
                                         {
                                             mode: "dsa",
                                             icon: "?",
                                             label: "DSA Trial",
-                                            sub: "Concept quizzes across all 10 core topics",
+                                            sub: "Concept quizzes across all core DSA topics",
                                             color: "#a9ff43"
                                         },
                                         {
@@ -872,11 +1330,19 @@ function Home() {
                                             mode: "bugs",
                                             icon: "!",
                                             label: "Bug Hunt",
-                                            sub: "Spot and fix common C programming bugs",
+                                            sub: "Spot and fix common memory & pointer bugs",
                                             color: "#ff7875"
+                                        },
+                                        {
+                                            mode: "boss",
+                                            icon: "👹",
+                                            label: "Final DSA Test",
+                                            sub: "10-Stage Boss Raid: Time attacks & complexity battles",
+                                            color: "#ff5340",
+                                            isBoss: true
                                         }
                                     ].map((m)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            className: "mode-card",
+                                            className: `mode-card ${m.isBoss ? "boss-mode-card" : ""}`,
                                             style: {
                                                 "--mc": m.color
                                             },
@@ -886,40 +1352,40 @@ function Home() {
                                                     children: m.icon
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 1446
+                                                    lineNumber: 536,
+                                                    columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
                                                     children: m.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 1461
+                                                    lineNumber: 537,
+                                                    columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: m.sub
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 1477
+                                                    lineNumber: 538,
+                                                    columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
                                                     children: "START QUEST →"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 1497
+                                                    lineNumber: 539,
+                                                    columnNumber: 21
                                                 }, this)
                                             ]
                                         }, m.mode, true, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 1350
+                                            lineNumber: 530,
+                                            columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 65,
-                                    columnNumber: 1007
+                                    lineNumber: 523,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "tier-info",
@@ -936,8 +1402,8 @@ function Home() {
                                                     children: t.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 1670
+                                                    lineNumber: 546,
+                                                    columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: [
@@ -948,30 +1414,444 @@ function Home() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 1709
+                                                    lineNumber: 547,
+                                                    columnNumber: 21
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 1597
+                                            lineNumber: 545,
+                                            columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 65,
-                                    columnNumber: 1536
+                                    lineNumber: 543,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 65,
-                            columnNumber: 845
+                            lineNumber: 517,
+                            columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 65,
-                        columnNumber: 802
+                        lineNumber: 516,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                        id: "practice",
+                        className: "hs-practice",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "hs-inner",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "zero-xp-badge",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "0 XP"
+                                        }, void 0, false, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 558,
+                                            columnNumber: 17
+                                        }, this),
+                                        " · ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
+                                            children: "TEST YOUR LEARNING (NO XP / NO PRESSURE)"
+                                        }, void 0, false, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 558,
+                                            columnNumber: 37
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                    lineNumber: 557,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "hs-head",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
+                                            children: "SUBJECTIVE DSA DEEP DIVE"
+                                        }, void 0, false, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 561,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            children: "Self-Evaluation & Conceptual Mastery"
+                                        }, void 0, false, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 562,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            children: "Write out your algorithmic reasoning, proof of complexity, and architectural trade-offs. The primary goal is testing genuine comprehension."
+                                        }, void 0, false, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 563,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                    lineNumber: 560,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "practice-progress-strip",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    children: "YOUR MASTERY TRACKER"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 568,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
+                                                    style: {
+                                                        display: "block",
+                                                        marginTop: 4
+                                                    },
+                                                    children: [
+                                                        masteredPracticeCount,
+                                                        " / ",
+                                                        __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$practiceData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["subjectivePracticeQuestions"].length,
+                                                        " Questions Mastered (",
+                                                        Math.round(masteredPracticeCount / __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$practiceData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["subjectivePracticeQuestions"].length * 100),
+                                                        "%)"
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 569,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 567,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            className: "adm-btn adm-sm",
+                                            onClick: ()=>{
+                                                const allKeys = __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$practiceData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["subjectivePracticeQuestions"].map((q)=>q.id);
+                                                const allOpen = allKeys.every((k)=>revealedSolutions[k]);
+                                                const next = {};
+                                                allKeys.forEach((k)=>{
+                                                    next[k] = !allOpen;
+                                                });
+                                                setRevealedSolutions(next);
+                                            },
+                                            children: "TOGGLE ALL SOLUTIONS"
+                                        }, void 0, false, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 573,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                    lineNumber: 566,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "practice-filter-bar",
+                                    children: [
+                                        "All",
+                                        "Arrays & Memory",
+                                        "Linked Lists",
+                                        "Stacks & Queues",
+                                        "Trees & BST",
+                                        "Hash Tables",
+                                        "Graphs & Searching",
+                                        "Sorting & Complexity",
+                                        "System & Architecture"
+                                    ].map((top)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            className: `practice-pill ${practiceTopic === top ? "active" : ""}`,
+                                            onClick: ()=>setPracticeTopic(top),
+                                            children: top
+                                        }, top, false, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 590,
+                                            columnNumber: 19
+                                        }, this))
+                                }, void 0, false, {
+                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                    lineNumber: 588,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "practice-list",
+                                    children: filteredPractices.map((q)=>{
+                                        const isRevealed = Boolean(revealedSolutions[q.id]);
+                                        const isHintRevealed = Boolean(revealedHints[q.id]);
+                                        const currentStatus = stats.practiceStatus?.[q.id] || "unattempted";
+                                        const savedNote = writtenAnswers[q.id] ?? (stats.practiceNotes?.[q.id] || "");
+                                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "practice-card",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "practice-card-head",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "practice-topic-tag",
+                                                            children: q.topic
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 611,
+                                                            columnNumber: 25
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: `practice-diff diff-${q.difficulty}`,
+                                                            children: q.difficulty
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 612,
+                                                            columnNumber: 25
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 610,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    children: q.title
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 614,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "practice-prompt",
+                                                    children: q.prompt
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 615,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                                    className: "practice-textarea",
+                                                    placeholder: "Type your explanation, algorithmic approach, and time/space complexity analysis...",
+                                                    value: savedNote,
+                                                    onChange: (e)=>{
+                                                        const val = e.target.value;
+                                                        setWrittenAnswers((prev)=>({
+                                                                ...prev,
+                                                                [q.id]: val
+                                                            }));
+                                                        savePracticeNote(q.id, val);
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 618,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "practice-actions-row",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            className: "practice-hint-btn",
+                                                            onClick: ()=>setRevealedHints((prev)=>({
+                                                                        ...prev,
+                                                                        [q.id]: !isHintRevealed
+                                                                    })),
+                                                            children: [
+                                                                "💡 ",
+                                                                isHintRevealed ? "HIDE HINT" : "SHOW HINT"
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 630,
+                                                            columnNumber: 25
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            className: "practice-reveal-btn",
+                                                            onClick: ()=>setRevealedSolutions((prev)=>({
+                                                                        ...prev,
+                                                                        [q.id]: !isRevealed
+                                                                    })),
+                                                            children: isRevealed ? "HIDE MODEL SOLUTION" : "👁️ CHECK CONCEPTS & REVEAL SOLUTION"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 637,
+                                                            columnNumber: 25
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 629,
+                                                    columnNumber: 23
+                                                }, this),
+                                                isHintRevealed && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "hint",
+                                                    style: {
+                                                        marginBottom: 16
+                                                    },
+                                                    children: [
+                                                        "// HINT: ",
+                                                        q.hint
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 647,
+                                                    columnNumber: 25
+                                                }, this),
+                                                isRevealed && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "practice-solution-box",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                            children: "KEY CONCEPTS CHECKLIST (Did you include these?):"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 655,
+                                                            columnNumber: 27
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "checklist-group",
+                                                            children: q.keyConcepts.map((item, idx)=>{
+                                                                const checkKey = `${q.id}-rubric-${idx}`;
+                                                                const isChecked = Boolean(checkedRubrics[checkKey]);
+                                                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                    className: `checklist-item ${isChecked ? "checked" : ""}`,
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                            type: "checkbox",
+                                                                            checked: isChecked,
+                                                                            onChange: (e)=>{
+                                                                                setCheckedRubrics((prev)=>({
+                                                                                        ...prev,
+                                                                                        [checkKey]: e.target.checked
+                                                                                    }));
+                                                                            }
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                                            lineNumber: 662,
+                                                                            columnNumber: 35
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            children: item
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                                            lineNumber: 669,
+                                                                            columnNumber: 35
+                                                                        }, this)
+                                                                    ]
+                                                                }, checkKey, true, {
+                                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                                    lineNumber: 661,
+                                                                    columnNumber: 33
+                                                                }, this);
+                                                            })
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 656,
+                                                            columnNumber: 27
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                            children: "DETAILED ARCHITECTURE & MODEL PROOF:"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 675,
+                                                            columnNumber: 27
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("pre", {
+                                                            className: "practice-model-code",
+                                                            children: q.modelAnswer
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 676,
+                                                            columnNumber: 27
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "self-eval-box",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    children: "HOW DID YOU DO?"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                                    lineNumber: 680,
+                                                                    columnNumber: 29
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    type: "button",
+                                                                    className: `self-eval-btn ${currentStatus === "mastered" ? "eval-active-mastered" : ""}`,
+                                                                    onClick: ()=>{
+                                                                        setPracticeStatus(q.id, "mastered");
+                                                                        triggerRewardToast(`Marked "${q.title}" as Mastered!`);
+                                                                    },
+                                                                    children: "🟢 Mastered Concept"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                                    lineNumber: 681,
+                                                                    columnNumber: 29
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    type: "button",
+                                                                    className: `self-eval-btn ${currentStatus === "review" ? "eval-active-review" : ""}`,
+                                                                    onClick: ()=>{
+                                                                        setPracticeStatus(q.id, "review");
+                                                                        triggerRewardToast(`Marked "${q.title}" for Practice`);
+                                                                    },
+                                                                    children: "🟡 Needs Practice"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                                    lineNumber: 691,
+                                                                    columnNumber: 29
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    type: "button",
+                                                                    className: `self-eval-btn ${currentStatus === "revisit" ? "eval-active-revisit" : ""}`,
+                                                                    onClick: ()=>{
+                                                                        setPracticeStatus(q.id, "revisit");
+                                                                        triggerRewardToast(`Marked "${q.title}" to Revisit Later`);
+                                                                    },
+                                                                    children: "⏳ Revisit Later"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                                    lineNumber: 701,
+                                                                    columnNumber: 29
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 679,
+                                                            columnNumber: 27
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 654,
+                                                    columnNumber: 25
+                                                }, this)
+                                            ]
+                                        }, q.id, true, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 609,
+                                            columnNumber: 21
+                                        }, this);
+                                    })
+                                }, void 0, false, {
+                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                    lineNumber: 601,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/my-code-game/src/app/page.js",
+                            lineNumber: 556,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/my-code-game/src/app/page.js",
+                        lineNumber: 555,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                         id: "benefits",
@@ -983,31 +1863,168 @@ function Home() {
                                     className: "hs-head",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
-                                            children: "REWARDS"
+                                            children: "WORKABLE REWARDS & SHOP"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 1887
+                                            lineNumber: 725,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                            children: "Earn XP, climb ranks"
+                                            children: "Claim Badges, Equip In-Game Perks"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 1909
+                                            lineNumber: 726,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            children: "Every cleared level awards XP. Reach LEGEND to complete your run."
+                                            children: "Earn XP and clear levels to unlock badges, life containers, and tactical lifelines."
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 1938
+                                            lineNumber: 727,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 65,
-                                    columnNumber: 1862
+                                    lineNumber: 724,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "rewards-grid",
+                                    children: __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$rewardsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["rewardBadges"].map((badge)=>{
+                                        const isClaimed = stats.claimedRewards?.includes(badge.id);
+                                        const isPerk = badge.type === "perk" || badge.type === "theme";
+                                        const isEquipped = isPerk && stats.equippedPerks?.includes(badge.id);
+                                        const meetsReq = badge.reqType === "xp" ? (stats.totalXp || 0) >= badge.reqVal : totalClearedLevels >= badge.reqVal;
+                                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: `reward-card ${meetsReq ? "unlocked" : ""} ${isClaimed ? "claimed" : ""}`,
+                                            style: {
+                                                "--rc": badge.color
+                                            },
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "reward-head",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "reward-icon",
+                                                            children: badge.icon
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 749,
+                                                            columnNumber: 25
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "reward-type-chip",
+                                                            children: badge.category
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 750,
+                                                            columnNumber: 25
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 748,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
+                                                    children: badge.name
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 752,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    children: badge.desc
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 753,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "reward-perk",
+                                                    children: [
+                                                        "⚡ ",
+                                                        badge.perk
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 754,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "reward-req",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            children: "REQUIREMENT:"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 756,
+                                                            columnNumber: 25
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
+                                                            children: badge.reqType === "xp" ? `${badge.reqVal.toLocaleString()} XP (${stats.totalXp || 0}/${badge.reqVal})` : `${badge.reqVal} Levels Cleared (${totalClearedLevels}/${badge.reqVal})`
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                                            lineNumber: 757,
+                                                            columnNumber: 25
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 755,
+                                                    columnNumber: 23
+                                                }, this),
+                                                !isClaimed ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    className: "reward-action-btn",
+                                                    disabled: !meetsReq,
+                                                    onClick: ()=>{
+                                                        if (!user) {
+                                                            setLoginOpen(true);
+                                                            return;
+                                                        }
+                                                        claimReward(badge.id);
+                                                        triggerRewardToast(`🎉 Claimed reward: ${badge.name}!`);
+                                                    },
+                                                    children: meetsReq ? "CLAIM REWARD" : "LOCKED"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 765,
+                                                    columnNumber: 25
+                                                }, this) : isPerk ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    className: `reward-action-btn ${isEquipped ? "btn-perk-active" : "btn-claimed"}`,
+                                                    onClick: ()=>{
+                                                        togglePerk(badge.id);
+                                                        triggerRewardToast(isEquipped ? `Unequipped ${badge.name}` : `⚡ Equipped ${badge.name}!`);
+                                                    },
+                                                    children: isEquipped ? "EQUIPPED ⚡ (CLICK TO UNEQUIP)" : "EQUIP PERK"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 778,
+                                                    columnNumber: 25
+                                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    className: "reward-action-btn btn-claimed",
+                                                    disabled: true,
+                                                    children: "CLAIMED ✓"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 789,
+                                                    columnNumber: 25
+                                                }, this)
+                                            ]
+                                        }, badge.id, true, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 743,
+                                            columnNumber: 21
+                                        }, this);
+                                    })
+                                }, void 0, false, {
+                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                    lineNumber: 731,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "rank-ladder",
@@ -1053,51 +2070,51 @@ function Home() {
                                                     children: String(i + 1).padStart(2, "0")
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 2442
+                                                    lineNumber: 813,
+                                                    columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
                                                     children: r.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 2505
+                                                    lineNumber: 814,
+                                                    columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
                                                     children: r.xp === 0 ? "Starting rank" : `${r.xp.toLocaleString()}+ XP required`
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 2520
+                                                    lineNumber: 815,
+                                                    columnNumber: 21
                                                 }, this),
                                                 (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$questionBank$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getRank"])(stats.totalXp || 0).name === r.name && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("mark", {
                                                     children: "YOUR RANK"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 2637
+                                                    lineNumber: 816,
+                                                    columnNumber: 69
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 2321
+                                            lineNumber: 808,
+                                            columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 65,
-                                    columnNumber: 2016
+                                    lineNumber: 799,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 65,
-                            columnNumber: 1836
+                            lineNumber: 723,
+                            columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 65,
-                        columnNumber: 1789
+                        lineNumber: 722,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                         id: "about",
@@ -1112,21 +2129,21 @@ function Home() {
                                             children: "HOW IT WORKS"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 2782
+                                            lineNumber: 827,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                            children: "Three steps to mastery"
+                                            children: "Master Data Structures in 3 Dimensions"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 2809
+                                            lineNumber: 828,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 65,
-                                    columnNumber: 2757
+                                    lineNumber: 826,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "steps-grid",
@@ -1134,20 +2151,20 @@ function Home() {
                                         {
                                             n: "01",
                                             icon: "⌘",
-                                            title: "Choose a topic",
-                                            body: "Pick from 10 DSA topics on the learning path — Arrays, Stacks, Trees, Graphs and more."
+                                            title: "Visualizer & Practice",
+                                            body: "Play with live Stack, Queue and Linked List machines. Complete 0 XP subjective concept tests."
                                         },
                                         {
                                             n: "02",
                                             icon: "◎",
-                                            title: "Answer challenges",
-                                            body: "Three modes: concept quizzes, C code completion, and bug hunts. Wrong answers cost a life."
+                                            title: "Campaign Quests",
+                                            body: "Solve concept trials, complete real C code, and fix pointer bugs without running out of lives."
                                         },
                                         {
                                             n: "03",
                                             icon: "★",
-                                            title: "Earn XP and rank up",
-                                            body: "Clear levels to earn XP. Reach LEGEND by completing all 150 challenges across all three modes."
+                                            title: "Boss Raids & Perks",
+                                            body: "Fight the Algorithmic Overlord in the Final DSA Test, earn XP, and unlock workable Heart Containers and 50/50 sight."
                                         }
                                     ].map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "step-card",
@@ -1157,57 +2174,57 @@ function Home() {
                                                     children: s.n
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 3346
+                                                    lineNumber: 837,
+                                                    columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
                                                     children: s.icon
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 3383
+                                                    lineNumber: 838,
+                                                    columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
                                                     children: s.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 3398
+                                                    lineNumber: 839,
+                                                    columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: s.body
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 65,
-                                                    columnNumber: 3414
+                                                    lineNumber: 840,
+                                                    columnNumber: 21
                                                 }, this)
                                             ]
                                         }, s.n, true, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 65,
-                                            columnNumber: 3309
+                                            lineNumber: 836,
+                                            columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 65,
-                                    columnNumber: 2846
+                                    lineNumber: 830,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 65,
-                            columnNumber: 2731
+                            lineNumber: 825,
+                            columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 65,
-                        columnNumber: 2690
+                        lineNumber: 824,
+                        columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/my-code-game/src/app/page.js",
-                lineNumber: 65,
-                columnNumber: 27
+                lineNumber: 482,
+                columnNumber: 9
             }, this),
             selectedTopic && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "topic-backdrop",
@@ -1218,7 +2235,7 @@ function Home() {
                     if (event.target === event.currentTarget) setSelectedTopic(null);
                 },
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: `topic-modal ${selectedTopic.name === "Stacks" ? "stack-topic-modal" : ""}`,
+                    className: "topic-modal stack-topic-modal",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             className: "topic-close",
@@ -1227,44 +2244,44 @@ function Home() {
                             children: "×"
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 66,
-                            columnNumber: 305
+                            lineNumber: 861,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "topic-symbol",
                             children: selectedTopic.icon
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 66,
-                            columnNumber: 405
+                            lineNumber: 862,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                             children: [
-                                "LEVEL ",
+                                "TOPIC LAB ",
                                 String(selectedTopic.index + 1).padStart(2, "0")
                             ]
                         }, void 0, true, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 66,
-                            columnNumber: 461
+                            lineNumber: 863,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             id: "topic-title",
                             children: selectedTopic.name
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 66,
-                            columnNumber: 532
+                            lineNumber: 864,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             children: [
                                 selectedTopic.detail,
-                                ". Choose your challenge type."
+                                ". Test the interactive machine or launch campaign challenges."
                             ]
                         }, void 0, true, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 66,
-                            columnNumber: 578
+                            lineNumber: 865,
+                            columnNumber: 13
                         }, this),
                         selectedTopic.name === "Stacks" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "stack-lab",
@@ -1276,22 +2293,22 @@ function Home() {
                                             children: "INTERACTIVE LIFO LAB"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 727
+                                            lineNumber: 871,
+                                            columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
                                             children: "Last in, first out"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 762
+                                            lineNumber: 872,
+                                            columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: "Push adds to the top. Pop removes the top item."
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 787
+                                            lineNumber: 873,
+                                            columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "stack-actions",
@@ -1301,8 +2318,8 @@ function Home() {
                                                     children: "+ PUSH"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 66,
-                                                    columnNumber: 872
+                                                    lineNumber: 875,
+                                                    columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: popStack,
@@ -1310,27 +2327,27 @@ function Home() {
                                                     children: "− POP"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 66,
-                                                    columnNumber: 915
+                                                    lineNumber: 876,
+                                                    columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 841
+                                            lineNumber: 874,
+                                            columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
                                             children: stackMessage
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 992
+                                            lineNumber: 878,
+                                            columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 66,
-                                    columnNumber: 699
+                                    lineNumber: 870,
+                                    columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "stack-machine",
@@ -1340,8 +2357,8 @@ function Home() {
                                             children: "TOP ↓"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1056
+                                            lineNumber: 881,
+                                            columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "stack-values",
@@ -1351,32 +2368,42 @@ function Home() {
                                                     children: item
                                                 }, `${item}-${stackItems.length - index}`, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 66,
-                                                    columnNumber: 1174
+                                                    lineNumber: 884,
+                                                    columnNumber: 23
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1096
+                                            lineNumber: 882,
+                                            columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                             children: "STACK"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1240
+                                            lineNumber: 887,
+                                            columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 66,
-                                    columnNumber: 1025
+                                    lineNumber: 880,
+                                    columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 66,
-                            columnNumber: 672
+                            lineNumber: 869,
+                            columnNumber: 15
+                        }, this),
+                        selectedTopic.name === "Queues" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(QueueInteractiveVisualizer, {}, void 0, false, {
+                            fileName: "[project]/my-code-game/src/app/page.js",
+                            lineNumber: 892,
+                            columnNumber: 49
+                        }, this),
+                        selectedTopic.name === "Linked Lists" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(LinkedListInteractiveVisualizer, {}, void 0, false, {
+                            fileName: "[project]/my-code-game/src/app/page.js",
+                            lineNumber: 893,
+                            columnNumber: 55
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "challenge-types",
@@ -1388,8 +2415,8 @@ function Home() {
                                             children: "?"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1351
+                                            lineNumber: 897,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: [
@@ -1397,34 +2424,34 @@ function Home() {
                                                     children: "DSA Trial"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 66,
-                                                    columnNumber: 1365
+                                                    lineNumber: 898,
+                                                    columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                                                     children: "Test your concepts"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 66,
-                                                    columnNumber: 1381
+                                                    lineNumber: 898,
+                                                    columnNumber: 39
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1359
+                                            lineNumber: 898,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                             children: "→"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1421
+                                            lineNumber: 899,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 66,
-                                    columnNumber: 1308
+                                    lineNumber: 896,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>launchTopic("code"),
@@ -1433,8 +2460,8 @@ function Home() {
                                             children: "</>"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1492
+                                            lineNumber: 902,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: [
@@ -1442,34 +2469,34 @@ function Home() {
                                                     children: "Code Forge"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 66,
-                                                    columnNumber: 1514
+                                                    lineNumber: 903,
+                                                    columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                                                     children: "Complete the C code"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 66,
-                                                    columnNumber: 1531
+                                                    lineNumber: 903,
+                                                    columnNumber: 40
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1508
+                                            lineNumber: 903,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                             children: "→"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1572
+                                            lineNumber: 904,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 66,
-                                    columnNumber: 1448
+                                    lineNumber: 901,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>launchTopic("bugs"),
@@ -1478,8 +2505,8 @@ function Home() {
                                             children: "!"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1643
+                                            lineNumber: 907,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: [
@@ -1487,51 +2514,96 @@ function Home() {
                                                     children: "Bug Hunt"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 66,
-                                                    columnNumber: 1657
+                                                    lineNumber: 908,
+                                                    columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                                                     children: "Find and fix errors"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                                    lineNumber: 66,
-                                                    columnNumber: 1672
+                                                    lineNumber: 908,
+                                                    columnNumber: 38
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1651
+                                            lineNumber: 908,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                             children: "→"
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 66,
-                                            columnNumber: 1713
+                                            lineNumber: 909,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 66,
-                                    columnNumber: 1599
+                                    lineNumber: 906,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>launchTopic("boss"),
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
+                                            children: "👹"
+                                        }, void 0, false, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 912,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
+                                                    children: "Final DSA Boss"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 913,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
+                                                    children: "Engage boss battle"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                                    lineNumber: 913,
+                                                    columnNumber: 44
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 913,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                            children: "→"
+                                        }, void 0, false, {
+                                            fileName: "[project]/my-code-game/src/app/page.js",
+                                            lineNumber: 914,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/my-code-game/src/app/page.js",
+                                    lineNumber: 911,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 66,
-                            columnNumber: 1275
+                            lineNumber: 895,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/my-code-game/src/app/page.js",
-                    lineNumber: 66,
-                    columnNumber: 212
+                    lineNumber: 860,
+                    columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/my-code-game/src/app/page.js",
-                lineNumber: 66,
-                columnNumber: 23
+                lineNumber: 851,
+                columnNumber: 9
             }, this),
             screen === "game" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "game",
@@ -1542,15 +2614,15 @@ function Home() {
                                 children: "CURRENT CAMPAIGN"
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 60
+                                lineNumber: 925,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                 children: current.type
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 91
+                                lineNumber: 926,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "tier-badge",
@@ -1561,26 +2633,26 @@ function Home() {
                                 children: tier.name
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 114
+                                lineNumber: 927,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "counter",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
-                                        children: String(current.tierQuestion).padStart(2, "0")
+                                        children: String(current.tierQuestion || level + 1).padStart(2, "0")
                                     }, void 0, false, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 234
+                                        lineNumber: 931,
+                                        columnNumber: 15
                                     }, this),
                                     " / ",
-                                    String(current.tierTotal).padStart(2, "0")
+                                    String(current.tierTotal || campaign.length).padStart(2, "0")
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 209
+                                lineNumber: 930,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "bar",
@@ -1590,13 +2662,13 @@ function Home() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 67,
-                                    columnNumber: 360
+                                    lineNumber: 934,
+                                    columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 339
+                                lineNumber: 933,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "player-stats",
@@ -1608,14 +2680,14 @@ function Home() {
                                                 children: xp
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 67,
-                                                columnNumber: 469
+                                                lineNumber: 937,
+                                                columnNumber: 24
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 460
+                                        lineNumber: 937,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: [
@@ -1624,20 +2696,20 @@ function Home() {
                                                 children: rank.name
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 67,
-                                                columnNumber: 498
+                                                lineNumber: 938,
+                                                columnNumber: 26
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 487
+                                        lineNumber: 938,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 430
+                                lineNumber: 936,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "rank-progress",
@@ -1648,21 +2720,21 @@ function Home() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 560
+                                        lineNumber: 941,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                                         children: rank.name === "LEGEND" ? "MAX RANK" : `${rank.next - xp} XP TO NEXT RANK`
                                     }, void 0, false, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 622
+                                        lineNumber: 942,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 529
+                                lineNumber: 940,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "life",
@@ -1671,57 +2743,58 @@ function Home() {
                                         className: "hearts",
                                         children: [
                                             "♥".repeat(lives),
-                                            "♡".repeat(3 - lives)
+                                            "♡".repeat(Math.max(0, maxLives - lives))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 740
+                                        lineNumber: 945,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
                                                 children: [
                                                     lives,
-                                                    " LIVES LEFT"
+                                                    " LIVES LEFT ",
+                                                    hasExtraHeartPerk ? "(HEART CONTAINER ACTIVE)" : ""
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 67,
-                                                columnNumber: 818
+                                                lineNumber: 950,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                                                 children: "WRONG ANSWERS COST ONE"
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 67,
-                                                columnNumber: 843
+                                                lineNumber: 951,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 812
+                                        lineNumber: 949,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 718
+                                lineNumber: 944,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>setScreen("home"),
                                 children: "× EXIT QUEST"
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 893
+                                lineNumber: 954,
+                                columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 67,
-                        columnNumber: 53
+                        lineNumber: 924,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
                         children: [
@@ -1737,8 +2810,8 @@ function Home() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 1001
+                                        lineNumber: 959,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
                                         children: [
@@ -1748,21 +2821,21 @@ function Home() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 1054
+                                        lineNumber: 960,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 973
+                                lineNumber: 958,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 children: current.title
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 1096
+                                lineNumber: 962,
+                                columnNumber: 13
                             }, this),
                             current.code && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "editor",
@@ -1771,114 +2844,142 @@ function Home() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {}, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 67,
-                                                columnNumber: 1166
+                                                lineNumber: 965,
+                                                columnNumber: 22
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {}, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 67,
-                                                columnNumber: 1170
+                                                lineNumber: 965,
+                                                columnNumber: 27
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {}, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 67,
-                                                columnNumber: 1174
+                                                lineNumber: 965,
+                                                columnNumber: 32
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "challenge.c"
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 67,
-                                                columnNumber: 1178
+                                                lineNumber: 965,
+                                                columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 1161
+                                        lineNumber: 965,
+                                        columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("pre", {
                                         children: current.code
                                     }, void 0, false, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 1208
+                                        lineNumber: 966,
+                                        columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 1137
+                                lineNumber: 964,
+                                columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "instruction",
                                 children: current.prompt
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 1240
+                                lineNumber: 969,
+                                columnNumber: 13
                             }, this),
                             current.title === "Stack behavior" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StackQuestionVisual, {
                                 prompt: current.prompt
                             }, `${mode}-${level}`, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 1326
+                                lineNumber: 972,
+                                columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "options",
-                                children: current.choices.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        className: choice === i ? "active" : "",
+                                children: current.choices.map((item, i)=>{
+                                    const isEliminated = eliminatedChoices.includes(i);
+                                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        className: `${choice === i ? "active" : ""} ${isEliminated ? "option-hidden" : ""}`,
+                                        disabled: isEliminated,
                                         onClick: ()=>setChoice(i),
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
                                                 children: String.fromCharCode(65 + i)
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 67,
-                                                columnNumber: 1546
+                                                lineNumber: 985,
+                                                columnNumber: 21
                                             }, this),
                                             item,
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
                                                 children: "→"
                                             }, void 0, false, {
                                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                                lineNumber: 67,
-                                                columnNumber: 1588
+                                                lineNumber: 987,
+                                                columnNumber: 21
                                             }, this)
                                         ]
                                     }, item, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 1457
-                                    }, this))
+                                        lineNumber: 979,
+                                        columnNumber: 19
+                                    }, this);
+                                })
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 1398
+                                lineNumber: 975,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "submit",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        className: "hint-button",
-                                        onClick: ()=>setHint(!hint),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        style: {
+                                            display: "flex",
+                                            gap: 10,
+                                            alignItems: "center"
+                                        },
                                         children: [
-                                            "💡 ",
-                                            hint ? "HIDE HINT" : "USE HINT"
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                className: "hint-button",
+                                                onClick: ()=>setHint(!hint),
+                                                children: [
+                                                    "💡 ",
+                                                    hint ? "HIDE HINT" : "USE HINT"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/my-code-game/src/app/page.js",
+                                                lineNumber: 995,
+                                                columnNumber: 17
+                                            }, this),
+                                            has5050Perk && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                type: "button",
+                                                className: "lifeline-5050",
+                                                disabled: eliminatedChoices.length > 0,
+                                                onClick: use5050Lifeline,
+                                                children: "🔮 50/50 LIFELINE"
+                                            }, void 0, false, {
+                                                fileName: "[project]/my-code-game/src/app/page.js",
+                                                lineNumber: 999,
+                                                columnNumber: 19
+                                            }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 1637
+                                        lineNumber: 994,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: message.includes("CLEAR") ? "success" : "error",
                                         children: message
                                     }, void 0, false, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 1745
+                                        lineNumber: 1009,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         className: "primary",
@@ -1887,14 +2988,14 @@ function Home() {
                                         children: "CONFIRM →"
                                     }, void 0, false, {
                                         fileName: "[project]/my-code-game/src/app/page.js",
-                                        lineNumber: 67,
-                                        columnNumber: 1827
+                                        lineNumber: 1010,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 1613
+                                lineNumber: 993,
+                                columnNumber: 13
                             }, this),
                             hint && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "hint",
@@ -1904,20 +3005,20 @@ function Home() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 67,
-                                columnNumber: 1961
+                                lineNumber: 1018,
+                                columnNumber: 22
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 67,
-                        columnNumber: 964
+                        lineNumber: 957,
+                        columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/my-code-game/src/app/page.js",
-                lineNumber: 67,
-                columnNumber: 27
+                lineNumber: 923,
+                columnNumber: 9
             }, this),
             (screen === "win" || screen === "lost") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: `ending ${screen === "lost" ? "lost" : ""}`,
@@ -1926,22 +3027,22 @@ function Home() {
                         children: screen === "win" ? "CAMPAIGN_COMPLETE" : "RUN_ENDED"
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 68,
-                        columnNumber: 114
+                        lineNumber: 1026,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                         children: screen === "win" ? "QUEST\nCLEARED." : "OUT OF\nLIVES."
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 68,
-                        columnNumber: 181
+                        lineNumber: 1027,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: screen === "win" ? `You earned ${xp} XP and finished as ${rank.name}.` : `You reached ${rank.name} with ${xp} XP. Refill your hearts and try again.`
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 68,
-                        columnNumber: 247
+                        lineNumber: 1028,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         className: "primary",
@@ -1949,8 +3050,8 @@ function Home() {
                         children: "PLAY AGAIN"
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 68,
-                        columnNumber: 404
+                        lineNumber: 1033,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         className: "ghost",
@@ -1958,14 +3059,14 @@ function Home() {
                         children: "LOBBY"
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 68,
-                        columnNumber: 479
+                        lineNumber: 1034,
+                        columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/my-code-game/src/app/page.js",
-                lineNumber: 68,
-                columnNumber: 49
+                lineNumber: 1025,
+                columnNumber: 9
             }, this),
             loginOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "login-backdrop",
@@ -1982,39 +3083,39 @@ function Home() {
                             children: "×"
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 142
+                            lineNumber: 1042,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "login-logo",
                             children: "DS"
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 239
+                            lineNumber: 1043,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             children: "PLAYER ACCESS"
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 277
+                            lineNumber: 1044,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             id: "login-title",
                             children: createMode ? "Create your account" : "Sign in to play"
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 297
+                            lineNumber: 1045,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "login-copy",
-                            children: "Save your XP, highest score, and rank with Firebase."
+                            children: "Save your XP, claimed rewards, perks, and learning progress."
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 379
+                            lineNumber: 1046,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             className: "google-login",
@@ -2024,15 +3125,15 @@ function Home() {
                                     children: "G"
                                 }, void 0, false, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 69,
-                                    columnNumber: 522
+                                    lineNumber: 1048,
+                                    columnNumber: 15
                                 }, this),
                                 " CONTINUE WITH GOOGLE"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 467
+                            lineNumber: 1047,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "auth-divider",
@@ -2040,13 +3141,13 @@ function Home() {
                                 children: "OR USE EMAIL"
                             }, void 0, false, {
                                 fileName: "[project]/my-code-game/src/app/page.js",
-                                lineNumber: 69,
-                                columnNumber: 590
+                                lineNumber: 1050,
+                                columnNumber: 43
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 560
+                            lineNumber: 1050,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                             className: "email-login",
@@ -2064,14 +3165,14 @@ function Home() {
                                             required: true
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 69,
-                                            columnNumber: 694
+                                            lineNumber: 1054,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 69,
-                                    columnNumber: 682
+                                    lineNumber: 1052,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                     children: [
@@ -2086,28 +3187,28 @@ function Home() {
                                             required: true
                                         }, void 0, false, {
                                             fileName: "[project]/my-code-game/src/app/page.js",
-                                            lineNumber: 69,
-                                            columnNumber: 867
+                                            lineNumber: 1065,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 69,
-                                    columnNumber: 852
+                                    lineNumber: 1063,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     type: "submit",
                                     children: createMode ? "CREATE ACCOUNT" : "SIGN IN WITH PASSWORD"
                                 }, void 0, false, {
                                     fileName: "[project]/my-code-game/src/app/page.js",
-                                    lineNumber: 69,
-                                    columnNumber: 1093
+                                    lineNumber: 1075,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 621
+                            lineNumber: 1051,
+                            columnNumber: 13
                         }, this),
                         !createMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             className: "forgot-password",
@@ -2115,16 +3216,16 @@ function Home() {
                             children: "FORGOT PASSWORD?"
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 1204
+                            lineNumber: 1080,
+                            columnNumber: 15
                         }, this),
                         authError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                             className: authError.includes("sent") ? "auth-success" : "auth-error",
                             children: authError
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 1310
+                            lineNumber: 1085,
+                            columnNumber: 15
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             className: "auth-switch",
@@ -2135,26 +3236,26 @@ function Home() {
                             children: createMode ? "Already registered? Sign in" : "New player? Create an account"
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 1408
+                            lineNumber: 1089,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
-                            children: "Login is required before entering a campaign."
+                            children: "Login is required before entering a campaign or claiming rewards."
                         }, void 0, false, {
                             fileName: "[project]/my-code-game/src/app/page.js",
-                            lineNumber: 69,
-                            columnNumber: 1593
+                            lineNumber: 1095,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/my-code-game/src/app/page.js",
-                    lineNumber: 69,
-                    columnNumber: 113
+                    lineNumber: 1041,
+                    columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/my-code-game/src/app/page.js",
-                lineNumber: 69,
-                columnNumber: 19
+                lineNumber: 1040,
+                columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
                 children: [
@@ -2162,38 +3263,271 @@ function Home() {
                         children: "© 2026 DSA DUNGEON"
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 70,
-                        columnNumber: 13
+                        lineNumber: 1101,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        children: "LEARN C · MASTER DSA · FIX BUGS"
+                        children: "LEARN C · MASTER DSA · CLAIM REWARDS · FIX BUGS"
                     }, void 0, false, {
                         fileName: "[project]/my-code-game/src/app/page.js",
-                        lineNumber: 70,
-                        columnNumber: 44
+                        lineNumber: 1102,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/my-code-game/src/app/page.js",
-                lineNumber: 70,
-                columnNumber: 5
+                lineNumber: 1100,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/my-code-game/src/app/page.js",
-        lineNumber: 63,
-        columnNumber: 10
+        lineNumber: 421,
+        columnNumber: 5
     }, this);
 }
-_s1(Home, "G1Sdpl9GoqaYwLTVso60YkDxzko=", false, function() {
+_s3(Home, "nmK+kYtmL4tdhVZ/d0qWgc0R3lo=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$code$2d$game$2f$src$2f$app$2f$usePlayer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]
     ];
 });
-_c1 = Home;
-var _c, _c1;
+_c3 = Home;
+var _c, _c1, _c2, _c3;
 __turbopack_context__.k.register(_c, "StackQuestionVisual");
-__turbopack_context__.k.register(_c1, "Home");
+__turbopack_context__.k.register(_c1, "QueueInteractiveVisualizer");
+__turbopack_context__.k.register(_c2, "LinkedListInteractiveVisualizer");
+__turbopack_context__.k.register(_c3, "Home");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/my-code-game/src/app/practiceData.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "subjectivePracticeQuestions",
+    ()=>subjectivePracticeQuestions
+]);
+const subjectivePracticeQuestions = [
+    {
+        id: "prac-1",
+        topic: "Arrays & Memory",
+        title: "Dynamic Array Resizing & Amortized Complexity",
+        difficulty: "Medium",
+        prompt: "Explain how dynamic arrays (e.g. std::vector in C++ or dynamic realloc in C) achieve O(1) amortized insertion time even though copying an array takes O(n). What would happen if we increased the array capacity by a fixed constant (e.g. +10) instead of doubling (*2)?",
+        hint: "Think about how often expensive resizes occur when doubling vs adding a fixed constant.",
+        keyConcepts: [
+            "Doubling capacity geometrically decreases the frequency of resizes.",
+            "Inserting N elements triggers copies: 1 + 2 + 4 + 8 + ... + N ≈ 2N total operations.",
+            "Total work 2N / N elements = O(1) amortized time per push.",
+            "Adding a fixed constant (+K) leads to N/K resizes, totaling O(N²) overall work = O(N) per insertion."
+        ],
+        modelAnswer: `1. Geometric Growth Strategy:
+When the dynamic array is full, its capacity is multiplied by a factor (usually 2x or 1.5x). A new block of memory is allocated and existing elements are copied.
+
+2. Amortized O(1) Proof:
+For N insertions, reallocations occur at sizes 1, 2, 4, 8, ..., N.
+The total number of element copies is 1 + 2 + 4 + 8 + ... + N/2 = N - 1.
+Adding the N direct insertions gives (2N - 1) total operations.
+Divided by N elements, the average cost per insertion is O(1).
+
+3. Pitfall of Constant Increment (+K):
+If capacity grows by +K each time, inserting N elements requires N/K resizes.
+The copy cost becomes K + 2K + 3K + ... + (N/K)*K ≈ K * (N/K)² / 2 = O(N² / K).
+The amortized time per insertion degrades from O(1) to O(N).`
+    },
+    {
+        id: "prac-2",
+        topic: "Linked Lists",
+        title: "Floyd's Cycle Detection Algorithm (Tortoise & Hare)",
+        difficulty: "Medium",
+        prompt: "How does Floyd's Tortoise and Hare algorithm detect a cycle in a singly linked list in O(N) time and O(1) space? Why is the fast pointer guaranteed not to skip over the slow pointer inside the cycle?",
+        hint: "Consider the relative speed between the two pointers once both have entered the cycle.",
+        keyConcepts: [
+            "Slow pointer advances 1 step (s = s->next); Fast pointer advances 2 steps (f = f->next->next).",
+            "Relative speed: with each iteration, the distance between Fast and Slow decreases by exactly 1 node.",
+            "Since distance decreases by 1 step every turn, the distance must become 0 without jumping over.",
+            "Runs in O(N) time and O(1) auxiliary space without modifying node structure or using hash tables."
+        ],
+        modelAnswer: `1. Algorithm Mechanics:
+Initialize two pointers, slow and fast, at head.
+In each step:
+  slow = slow->next;
+  fast = fast->next ? fast->next->next : NULL;
+If fast reaches NULL, there is no cycle. If slow == fast, a cycle exists.
+
+2. Why Fast cannot skip Slow:
+Once both pointers are inside a cycle of length C:
+Let the distance from fast to slow (moving forward along the cycle) be 'd' nodes.
+In the next step, slow moves +1 and fast moves +2.
+The new distance becomes (d - 2 + 1) = d - 1.
+Because the distance reduces by exactly 1 node per iteration, 'd' counts down: d, d-1, d-2, ..., 1, 0.
+It is impossible for fast to leap past slow without first landing on the exact same node (d = 0).
+
+3. Complexity:
+Time: O(N) where N is total node count.
+Space: O(1) as only two pointer variables are used.`
+    },
+    {
+        id: "prac-3",
+        topic: "Stacks & Queues",
+        title: "Implementing Undo/Redo & Monotonic Stack Use Cases",
+        difficulty: "Hard",
+        prompt: "1) How do you design an Undo/Redo mechanism using two stacks?\n2) What is a Monotonic Stack and in what scenarios (e.g. Next Greater Element, Daily Temperatures) does it reduce time complexity from O(n²) to O(n)?",
+        hint: "Think about what happens to the Redo stack when a brand new action is performed.",
+        keyConcepts: [
+            "Undo Stack stores performed actions; Redo Stack stores reverted actions.",
+            "Performing a new action pushes to Undo and clears the Redo stack.",
+            "Monotonic Stack maintains elements in strictly increasing or decreasing order.",
+            "Each element is pushed and popped at most once, guaranteeing O(n) total time."
+        ],
+        modelAnswer: `1. Two-Stack Undo/Redo Architecture:
+- Execute(action): Apply action, push action state to UndoStack, clear RedoStack.
+- Undo(): Pop top from UndoStack, revert state, push state to RedoStack.
+- Redo(): Pop top from RedoStack, re-apply state, push state to UndoStack.
+Clearing the Redo stack upon new execution is necessary because performing a new branch invalidates forward history.
+
+2. Monotonic Stack Mechanics:
+A monotonic stack keeps elements monotonically increasing or decreasing.
+For 'Next Greater Element':
+- Iterate through the array. While current element > stack.top(), pop stack.top() — the current element is its next greater element!
+- Push current element onto stack.
+Even though there is a nested while loop, each index enters and leaves the stack at most once, yielding linear O(N) time complexity instead of brute-force O(N²).`
+    },
+    {
+        id: "prac-4",
+        topic: "Trees & BST",
+        title: "BST Worst-Case Degeneration & Self-Balancing Trees",
+        difficulty: "Medium",
+        prompt: "When does a standard Binary Search Tree degenerate into O(n) search time? How do self-balancing trees (AVL / Red-Black) maintain O(log n) height and search complexity?",
+        hint: "Consider inserting already sorted numbers [1, 2, 3, 4, 5] into an unbalancing BST.",
+        keyConcepts: [
+            "Inserting sorted or reverse-sorted data creates a skewed tree resembling a linked list of height N.",
+            "Search time in a skewed BST degrades from O(log n) to O(n).",
+            "AVL trees maintain strict balance factor (|left_height - right_height| <= 1).",
+            "Tree rotations (Left, Right, Left-Right, Right-Left) restore height in O(1) time per insertion/deletion."
+        ],
+        modelAnswer: `1. Degeneration to Linked List:
+If keys are inserted in strictly ascending or descending order (e.g., 10, 20, 30, 40, 50), every new node is inserted as a right child.
+The tree height becomes H = N.
+Search, insertion, and deletion degrade from ideal O(log N) to worst-case O(N).
+
+2. Self-Balancing Mechanism (AVL & Red-Black Trees):
+- AVL Trees track the balance factor: BF = height(left) - height(right).
+- If |BF| > 1 after an insert or delete, tree rotations (Single Left/Right or Double Left-Right/Right-Left) are performed.
+- Rotations rearrange parent-child pointers in O(1) time without violating BST order (Left < Root < Right).
+- By ensuring H <= 1.44 * log2(N), all lookup, insertion, and deletion operations remain guaranteed O(log N).`
+    },
+    {
+        id: "prac-5",
+        topic: "Hash Tables",
+        title: "Hash Collisions: Chaining vs Open Addressing & Load Factors",
+        difficulty: "Medium",
+        prompt: "Compare Separate Chaining vs Open Addressing (Linear Probing) for hash table collision resolution. What is the 'load factor' (alpha = n/m), and why is rehashing triggered when alpha exceeds 0.7 - 0.75?",
+        hint: "Think about cache locality and primary clustering in linear probing.",
+        keyConcepts: [
+            "Separate Chaining uses linked lists/buckets at each index; degrades gracefully under high load.",
+            "Open Addressing finds alternative slots in the array directly (better cache locality, no pointer overhead).",
+            "Linear Probing suffers from Primary Clustering where contiguous blocks of occupied buckets grow.",
+            "Rehashing (allocating 2x table and re-inserting) keeps search time O(1) on average."
+        ],
+        modelAnswer: `1. Separate Chaining:
+- Each hash table bucket contains a pointer to a linked list (or BST) of entries with matching hash codes.
+- Pros: Simple deletion, handles alpha > 1 without failing.
+- Cons: Extra pointer memory overhead, worse CPU cache locality.
+
+2. Open Addressing (e.g. Linear Probing):
+- All items live directly in the main array. On collision at index i, probe i+1, i+2, ...
+- Pros: Excellent cache locality and zero pointer overhead.
+- Cons: Suffers from Primary Clustering (runs of filled slots merge, causing long probe sequences). Deletions require tombstone markers.
+
+3. Load Factor (alpha = n / m):
+- Ratio of stored elements (n) to total bucket capacity (m).
+- When alpha > 0.75 in open addressing, collisions spike exponentially and probe length increases, degrading lookups towards O(n).
+- Rehashing allocates a new table of size ~2m and re-hashes all keys to restore O(1) average performance.`
+    },
+    {
+        id: "prac-6",
+        topic: "Graphs & Searching",
+        title: "BFS vs DFS: Data Structure Choice & Shortest Path Properties",
+        difficulty: "Hard",
+        prompt: "Why does Breadth-First Search (BFS) guarantee the shortest path in unweighted graphs while Depth-First Search (DFS) does not? Why does BFS require a Queue while DFS uses a Stack/Recursion?",
+        hint: "Think about the order of exploration: level-by-level concentric circles vs branch-by-branch plunge.",
+        keyConcepts: [
+            "BFS visits nodes in order of increasing distance (0, 1, 2, ... hops) from the source.",
+            "Queue enforces FIFO order, ensuring all nodes at depth k are processed before depth k+1.",
+            "DFS plunges as deep as possible along a single branch before backtracking, easily finding long paths first.",
+            "Both algorithms run in O(V + E) time with adjacency lists."
+        ],
+        modelAnswer: `1. Shortest Path Property in Unweighted Graphs:
+- BFS explores nodes in concentric layers: first all nodes at distance 1, then all nodes at distance 2, and so on.
+- The first time BFS encounters target vertex T, it is guaranteed to be reached via the minimum possible number of edges.
+- DFS explores deeply along one path until reaching a dead end. It may reach T after taking 20 edges even if a 1-edge direct shortcut existed.
+
+2. Data Structure Role:
+- BFS (FIFO Queue): Adding neighbors to the back of the queue ensures layer 'k' is completely exhausted before layer 'k+1' starts.
+- DFS (LIFO Stack / Call Stack): Pushing neighbors to the stack causes the most recently discovered vertex to be investigated next, producing the plunge-and-backtrack behavior.
+
+3. Complexity:
+Time: O(V + E) using adjacency list representation.
+Space: O(V) for visited set and queue/stack state.`
+    },
+    {
+        id: "prac-7",
+        topic: "Sorting & Complexity",
+        title: "QuickSort vs MergeSort Trade-offs & Worst Case Pitfalls",
+        difficulty: "Medium",
+        prompt: "Why is MergeSort guaranteed O(n log n) while standard QuickSort can degrade to O(n²)? Why is QuickSort often preferred in practice for internal sorting despite its worst-case risk?",
+        hint: "Consider in-place partitioning, cache locality, and auxiliary memory allocation.",
+        keyConcepts: [
+            "MergeSort always divides array into equal halves (T(n) = 2T(n/2) + O(n) = O(n log n)).",
+            "MergeSort requires O(n) auxiliary memory for merging buffers.",
+            "QuickSort with worst-case pivot (e.g. smallest element each time) produces subproblems of size (n-1) and 0 -> O(n²).",
+            "Randomized pivot / Median-of-three prevents O(n²). QuickSort has superior cache locality and O(1) auxiliary space."
+        ],
+        modelAnswer: `1. Why QuickSort can degrade to O(n²):
+If the chosen pivot is consistently the maximum or minimum element (e.g., picking the last element in an already sorted array), partition sizes are 0 and n-1.
+Recurrence becomes T(n) = T(n-1) + O(n) = O(n²).
+MergeSort always splits exactly in half: T(n) = 2T(n/2) + O(n) = O(n log n) in all cases (best, average, worst).
+
+2. Why QuickSort is preferred in practice:
+- In-place sorting: QuickSort requires O(log n) stack space and 0 extra buffer memory, whereas MergeSort requires O(n) temporary buffer allocation.
+- Cache Locality: QuickSort partitions sequentially in contiguous memory blocks, resulting in fewer CPU cache misses.
+- Mitigations: Using Randomized Pivoting, Median-of-Three, or IntroSort (switching to HeapSort if recursion depth exceeds 2*log n) eliminates the O(n²) risk completely.`
+    },
+    {
+        id: "prac-8",
+        topic: "System & Architecture",
+        title: "Designing an O(1) LRU (Least Recently Used) Cache",
+        difficulty: "Hard",
+        prompt: "How do you design a Least Recently Used (LRU) Cache where both get(key) and put(key, value) operations execute in O(1) time complexity? Explain why neither a Hash Map alone nor a Doubly Linked List alone is sufficient.",
+        hint: "One data structure provides O(1) key lookup, while the other allows O(1) node detachment and insertion.",
+        keyConcepts: [
+            "Hash Map alone cannot maintain order of recency in O(1) during arbitrary middle deletions.",
+            "Doubly Linked List alone requires O(n) linear search to find a key by value.",
+            "Combining Hash Map (Key -> Node pointer) + Doubly Linked List achieves O(1) get and put.",
+            "Recent access moves node to head; eviction removes node from tail in O(1)."
+        ],
+        modelAnswer: `1. Why single structures fail:
+- Array / Vector: O(1) index access, but removing an item and shifting elements takes O(N).
+- Doubly Linked List alone: O(1) insertion/deletion once the pointer is known, but finding the node requires O(N) scan.
+- Hash Map alone: O(1) key lookup, but has no inherent ordering to track which key was accessed least recently.
+
+2. The Combined O(1) Architecture:
+- Doubly Linked List (DLL): Head represents Most Recently Used (MRU); Tail represents Least Recently Used (LRU).
+- Hash Map: Maps key -> Doubly Linked List Node*.
+
+3. Operations:
+- get(key):
+  Look up node in Hash Map (O(1)). If missing, return -1.
+  Detach node from current DLL position and prepend to Head (O(1)). Return node->value.
+- put(key, value):
+  If key exists, update value and move node to Head.
+  If key is new:
+    If capacity is full, remove Tail node from DLL and erase its key from Hash Map (O(1)).
+    Create new node, insert at Head of DLL, and add to Hash Map (O(1)).`
+    }
+];
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -2892,6 +4226,115 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
+"[project]/my-code-game/src/app/rewardsData.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "rewardBadges",
+    ()=>rewardBadges
+]);
+const rewardBadges = [
+    {
+        id: "badge-first-blood",
+        name: "Dungeon Novice",
+        type: "badge",
+        category: "Milestone",
+        icon: "⚔️",
+        color: "#58d68d",
+        reqType: "levels",
+        reqVal: 1,
+        desc: "Clear your very first challenge in any campaign mode.",
+        perk: "Unlocks Rookie Hall entry badge"
+    },
+    {
+        id: "badge-stack-master",
+        name: "LIFO Operator",
+        type: "badge",
+        category: "Mastery",
+        icon: "▤",
+        color: "#a9ff43",
+        reqType: "levels",
+        reqVal: 5,
+        desc: "Demonstrate solid grasp of Stack Push/Pop mechanics.",
+        perk: "Stack Visualizer Turbo Mode"
+    },
+    {
+        id: "perk-extra-heart",
+        name: "Heart Container",
+        type: "perk",
+        category: "Power-up",
+        icon: "💖",
+        color: "#ff5340",
+        reqType: "xp",
+        reqVal: 500,
+        desc: "Equip this perk to grant +1 Bonus Life (4 Hearts Total) on starting quests!",
+        perk: "+1 Maximum Life in all campaigns"
+    },
+    {
+        id: "perk-50-50",
+        name: "Oracle's Sight (50/50)",
+        type: "perk",
+        category: "Power-up",
+        icon: "🔮",
+        color: "#4ec9e8",
+        reqType: "xp",
+        reqVal: 1200,
+        desc: "Reveals direct hints and narrows down choices in difficult boss questions.",
+        perk: "Extended hints on expert tiers"
+    },
+    {
+        id: "badge-tree-sage",
+        name: "Tree Arcanist",
+        type: "badge",
+        category: "Mastery",
+        icon: "⌘",
+        color: "#b377ff",
+        reqType: "levels",
+        reqVal: 20,
+        desc: "Master Tree traversals (Inorder, Preorder, Postorder, BST).",
+        perk: "Arcane Tree crest in player profile"
+    },
+    {
+        id: "perk-cyber-glow",
+        name: "Neon Matrix Theme",
+        type: "theme",
+        category: "Cosmetic",
+        icon: "✨",
+        color: "#00f0ff",
+        reqType: "xp",
+        reqVal: 2500,
+        desc: "Unlock cyberpunk ambient lighting and high-contrast styling across the app.",
+        perk: "Neon UI glow modifier"
+    },
+    {
+        id: "badge-boss-slayer",
+        name: "Boss Slayer",
+        type: "badge",
+        category: "Epic",
+        icon: "👹",
+        color: "#ff7875",
+        reqType: "xp",
+        reqVal: 4500,
+        desc: "Defeat high-tier algorithmic trials and conquer expert DSA puzzles.",
+        perk: "Golden Boss Slayer banner"
+    },
+    {
+        id: "badge-legend",
+        name: "DSA Legend",
+        type: "badge",
+        category: "Grandmaster",
+        icon: "👑",
+        color: "#ffb627",
+        reqType: "xp",
+        reqVal: 5500,
+        desc: "Attain the highest attainable rank and conquer all dungeon trials.",
+        perk: "Legend Crown & Hall of Fame status"
+    }
+];
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
 "[project]/my-code-game/src/app/usePlayer.js [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -3129,4 +4572,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }),
 ]);
 
-//# sourceMappingURL=my-code-game_src_app_0hr1h_s._.js.map
+//# sourceMappingURL=my-code-game_src_app_0jr_klp._.js.map

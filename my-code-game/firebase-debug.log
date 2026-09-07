@@ -475,3 +475,581 @@
 [debug] [2026-08-28T18:35:16.107Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases versionName=projects%2F116431841767%2Fsites%2Fcode-of-game%2Fversions%2F7c51bf58fd9a14c6
 [debug] [2026-08-28T18:35:16.107Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases {}
 [debug] [2026-08-28T18:35:17.196Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases 200
+[debug] [2026-09-02T05:32:18.886Z] ----------------------------------------------------------------------
+[debug] [2026-09-02T05:32:18.889Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ayush\AppData\Local\npm-cache\_npx\ba4f1959e38407b5\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting,firestore --project code-of-game
+[debug] [2026-09-02T05:32:18.890Z] CLI Version:   15.28.2
+[debug] [2026-09-02T05:32:18.890Z] Platform:      win32
+[debug] [2026-09-02T05:32:18.890Z] Node Version:  v26.5.0
+[debug] [2026-09-02T05:32:18.890Z] Detected Agent: codex_cli
+[debug] [2026-09-02T05:32:18.890Z] Time:          Wed Sep 02 2026 11:02:18 GMT+0530 (India Standard Time)
+[debug] [2026-09-02T05:32:18.890Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-02T05:32:18.919Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-09-02T05:32:47.653Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-02T05:32:47.654Z] > authorizing via signed-in user (ayushkumard31@gmail.com)
+[debug] [2026-09-02T05:32:47.654Z] [iam] checking project code-of-game for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-02T05:32:47.657Z] Checked if tokens are valid: false, expires at: 1787945387146
+[debug] [2026-09-02T05:32:47.657Z] Checked if tokens are valid: false, expires at: 1787945387146
+[debug] [2026-09-02T05:32:47.657Z] > refreshing access token with scopes: []
+[debug] [2026-09-02T05:32:47.659Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-02T05:32:47.660Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-02T05:32:18.886Z] ----------------------------------------------------------------------
+[debug] [2026-09-02T05:32:18.889Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ayush\AppData\Local\npm-cache\_npx\ba4f1959e38407b5\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting,firestore --project code-of-game
+[debug] [2026-09-02T05:32:18.889Z] CLI Version:   15.28.2
+[debug] [2026-09-02T05:32:18.889Z] Platform:      win32
+[debug] [2026-09-02T05:32:18.889Z] Node Version:  v26.5.0
+[debug] [2026-09-02T05:32:18.889Z] Detected Agent: codex_cli
+[debug] [2026-09-02T05:32:18.889Z] Time:          Wed Sep 02 2026 11:02:18 GMT+0530 (India Standard Time)
+[debug] [2026-09-02T05:32:18.889Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-02T05:32:18.919Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-09-02T05:32:47.692Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-02T05:32:47.693Z] > authorizing via signed-in user (ayushkumard31@gmail.com)
+[debug] [2026-09-02T05:32:47.693Z] [iam] checking project code-of-game for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-02T05:32:47.695Z] Checked if tokens are valid: false, expires at: 1787945387146
+[debug] [2026-09-02T05:32:47.695Z] Checked if tokens are valid: false, expires at: 1787945387146
+[debug] [2026-09-02T05:32:47.695Z] > refreshing access token with scopes: []
+[debug] [2026-09-02T05:32:47.698Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-02T05:32:47.698Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-02T05:32:34.677Z] ----------------------------------------------------------------------
+[debug] [2026-09-02T05:32:34.680Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ayush\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting,firestore --project code-of-game --non-interactive
+[debug] [2026-09-02T05:32:34.680Z] CLI Version:   15.28.2
+[debug] [2026-09-02T05:32:34.681Z] Platform:      win32
+[debug] [2026-09-02T05:32:34.681Z] Node Version:  v26.5.0
+[debug] [2026-09-02T05:32:34.681Z] Detected Agent: codex_cli
+[debug] [2026-09-02T05:32:34.682Z] Time:          Wed Sep 02 2026 11:02:34 GMT+0530 (India Standard Time)
+[debug] [2026-09-02T05:32:34.682Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-02T05:32:34.694Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-09-02T05:32:48.010Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-02T05:32:48.010Z] > authorizing via signed-in user (ayushkumard31@gmail.com)
+[debug] [2026-09-02T05:32:48.010Z] [iam] checking project code-of-game for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-02T05:32:48.012Z] Checked if tokens are valid: false, expires at: 1787945387146
+[debug] [2026-09-02T05:32:48.013Z] Checked if tokens are valid: false, expires at: 1787945387146
+[debug] [2026-09-02T05:32:48.014Z] > refreshing access token with scopes: []
+[debug] [2026-09-02T05:32:48.015Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-02T05:32:48.015Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-02T05:32:48.151Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-09-02T05:32:48.153Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-09-02T05:32:48.154Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-09-02T05:32:48.166Z] [iam] error while checking permissions, command may fail: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-09-02T05:32:48.167Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:48.167Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:48.167Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/code-of-game [none]
+[debug] [2026-09-02T05:32:48.151Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-02T05:32:48.173Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-of-game:testIamPermissions [none]
+[debug] [2026-09-02T05:32:48.174Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-of-game:testIamPermissions  x-goog-user-project=code-of-game
+[debug] [2026-09-02T05:32:48.175Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-of-game:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-02T05:32:48.458Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-09-02T05:32:48.458Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-02T05:32:48.472Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-of-game:testIamPermissions [none]
+[debug] [2026-09-02T05:32:48.472Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-of-game:testIamPermissions  x-goog-user-project=code-of-game
+[debug] [2026-09-02T05:32:48.472Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-of-game:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-02T05:32:48.492Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-09-02T05:32:48.493Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-09-02T05:32:48.557Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-09-02T05:32:48.557Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-09-02T05:32:48.840Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-09-02T05:32:48.840Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-09-02T05:32:48.898Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/code-of-game 200
+[debug] [2026-09-02T05:32:48.898Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/code-of-game {"projectId":"code-of-game","projectNumber":"116431841767","displayName":"code-of-game","name":"projects/code-of-game","resources":{"hostingSite":"code-of-game"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_f58cc8d1-cc96-4dd3-b94b-600fd2b637b3"}
+[info] 
+[info] === Deploying to 'code-of-game'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-09-02T05:32:48.907Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:48.907Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:48.907Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/code-of-game/databases/(default) [none]
+[debug] [2026-09-02T05:32:49.699Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/code-of-game/databases/(default) 200
+[debug] [2026-09-02T05:32:49.699Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/code-of-game/databases/(default) {"name":"projects/code-of-game/databases/(default)","uid":"dc4577ad-a3aa-475b-9f01-b4559b596f1c","createTime":"2026-08-28T18:14:29.493818Z","updateTime":"2026-08-28T18:14:29.493818Z","locationId":"asia-south1","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-09-02T04:32:49.745644Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"j","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","enhancedTextSearchQueryMode":"ENHANCED_QUERY_MODE_ENABLED","etag":"IMzBx+2Vz5YDMPuy6+X2w5YD"}
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-09-02T05:32:49.701Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:49.702Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:49.702Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test [none]
+[debug] [2026-09-02T05:32:49.702Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test [omitted]
+[debug] [2026-09-02T05:32:49.862Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-of-game:testIamPermissions 200
+[debug] [2026-09-02T05:32:49.862Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-of-game:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-02T05:32:49.863Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:49.863Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:49.865Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/code-of-game [none]
+[debug] [2026-09-02T05:32:50.012Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-of-game:testIamPermissions 200
+[debug] [2026-09-02T05:32:50.012Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-of-game:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-02T05:32:50.013Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:50.013Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:50.013Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/code-of-game [none]
+[debug] [2026-09-02T05:32:50.869Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/code-of-game 200
+[debug] [2026-09-02T05:32:50.870Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/code-of-game 200
+[debug] [2026-09-02T05:32:50.871Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/code-of-game {"projectId":"code-of-game","projectNumber":"116431841767","displayName":"code-of-game","name":"projects/code-of-game","resources":{"hostingSite":"code-of-game"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_f58cc8d1-cc96-4dd3-b94b-600fd2b637b3"}
+[info] 
+[info] === Deploying to 'code-of-game'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-09-02T05:32:50.880Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:50.881Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:50.881Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/code-of-game/databases/(default) [none]
+[debug] [2026-09-02T05:32:50.870Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/code-of-game {"projectId":"code-of-game","projectNumber":"116431841767","displayName":"code-of-game","name":"projects/code-of-game","resources":{"hostingSite":"code-of-game"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_f58cc8d1-cc96-4dd3-b94b-600fd2b637b3"}
+[info] 
+[info] === Deploying to 'code-of-game'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-09-02T05:32:50.889Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:50.890Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:50.891Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/code-of-game/databases/(default) [none]
+[debug] [2026-09-02T05:32:51.480Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test 200
+[debug] [2026-09-02T05:32:51.480Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-09-02T05:32:51.481Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:51.481Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:51.481Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-of-game/sites/code-of-game [none]
+[debug] [2026-09-02T05:32:52.401Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/code-of-game/databases/(default) 200
+[debug] [2026-09-02T05:32:52.401Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/code-of-game/databases/(default) {"name":"projects/code-of-game/databases/(default)","uid":"dc4577ad-a3aa-475b-9f01-b4559b596f1c","createTime":"2026-08-28T18:14:29.493818Z","updateTime":"2026-08-28T18:14:29.493818Z","locationId":"asia-south1","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-09-02T04:32:52.527691Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"j","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","enhancedTextSearchQueryMode":"ENHANCED_QUERY_MODE_ENABLED","etag":"INuq8e6Vz5YDMPuy6+X2w5YD"}
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-09-02T05:32:52.402Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:52.402Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:52.402Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test [none]
+[debug] [2026-09-02T05:32:52.402Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test [omitted]
+[debug] [2026-09-02T05:32:52.424Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/code-of-game/databases/(default) 200
+[debug] [2026-09-02T05:32:52.424Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/code-of-game/databases/(default) {"name":"projects/code-of-game/databases/(default)","uid":"dc4577ad-a3aa-475b-9f01-b4559b596f1c","createTime":"2026-08-28T18:14:29.493818Z","updateTime":"2026-08-28T18:14:29.493818Z","locationId":"asia-south1","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-09-02T04:32:52.563602Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"j","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","enhancedTextSearchQueryMode":"ENHANCED_QUERY_MODE_ENABLED","etag":"IL/B8+6Vz5YDMPuy6+X2w5YD"}
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-09-02T05:32:52.425Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:52.426Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:52.426Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test [none]
+[debug] [2026-09-02T05:32:52.426Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test [omitted]
+[debug] [2026-09-02T05:32:54.375Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test 200
+[debug] [2026-09-02T05:32:54.375Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-09-02T05:32:54.376Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:54.377Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:54.377Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-of-game/sites/code-of-game [none]
+[debug] [2026-09-02T05:32:54.481Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-of-game/sites/code-of-game 200
+[debug] [2026-09-02T05:32:54.483Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-of-game/sites/code-of-game {"name":"projects/code-of-game/sites/code-of-game","defaultUrl":"https://code-of-game.web.app","appId":"1:116431841767:web:bdfc1c1ee21c311c75b542","type":"DEFAULT_SITE"}
+[debug] [2026-09-02T05:32:54.485Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:54.486Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:54.486Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions [none]
+[debug] [2026-09-02T05:32:54.486Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-09-02T05:32:55.186Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test 200
+[debug] [2026-09-02T05:32:55.187Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/code-of-game:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-09-02T05:32:55.188Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:55.188Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:55.188Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-of-game/sites/code-of-game [none]
+[debug] [2026-09-02T05:32:55.620Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions 200
+[debug] [2026-09-02T05:32:55.620Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions {"name":"projects/116431841767/sites/code-of-game/versions/01ef5ef966c06d68","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-09-02T05:32:55.621Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:55.621Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:55.622Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/releases pageSize=10&pageToken=
+[debug] [2026-09-02T05:32:55.706Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-of-game/sites/code-of-game 200
+[debug] [2026-09-02T05:32:55.706Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-of-game/sites/code-of-game {"name":"projects/code-of-game/sites/code-of-game","defaultUrl":"https://code-of-game.web.app","appId":"1:116431841767:web:bdfc1c1ee21c311c75b542","type":"DEFAULT_SITE"}
+[debug] [2026-09-02T05:32:55.708Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:55.708Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:55.708Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions [none]
+[debug] [2026-09-02T05:32:55.708Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-09-02T05:32:56.150Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-of-game/sites/code-of-game 200
+[debug] [2026-09-02T05:32:56.150Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-of-game/sites/code-of-game {"name":"projects/code-of-game/sites/code-of-game","defaultUrl":"https://code-of-game.web.app","appId":"1:116431841767:web:bdfc1c1ee21c311c75b542","type":"DEFAULT_SITE"}
+[debug] [2026-09-02T05:32:56.152Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:56.152Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:56.152Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions [none]
+[debug] [2026-09-02T05:32:56.152Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-09-02T05:32:56.401Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/releases 200
+[debug] [2026-09-02T05:32:56.401Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/releases {"releases":[{"name":"projects/code-of-game/releases/cloud.firestore","rulesetName":"projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33","createTime":"2026-08-28T18:14:35.064811Z","updateTime":"2026-08-28T18:30:06.983916Z"}]}
+[debug] [2026-09-02T05:32:56.401Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:56.401Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:56.401Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33 [none]
+[debug] [2026-09-02T05:32:56.913Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions 200
+[debug] [2026-09-02T05:32:56.913Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions {"name":"projects/116431841767/sites/code-of-game/versions/04693e00b0c37848","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-09-02T05:32:56.914Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:56.914Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:56.914Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/releases pageSize=10&pageToken=
+[debug] [2026-09-02T05:32:57.309Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions 200
+[debug] [2026-09-02T05:32:57.310Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions {"name":"projects/116431841767/sites/code-of-game/versions/42edd0309237519e","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-09-02T05:32:57.310Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:57.310Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:57.310Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/releases pageSize=10&pageToken=
+[debug] [2026-09-02T05:32:57.772Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33 200
+[debug] [2026-09-02T05:32:57.772Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33 [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[info] i  firestore: deploying indexes... 
+[info] i  hosting[code-of-game]: beginning deploy... 
+[info] i  hosting[code-of-game]: found 32 files in out 
+[debug] [2026-09-02T05:32:57.787Z] [hosting] uploading with 200 concurrency
+[debug] [2026-09-02T05:32:58.158Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:58.158Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:58.160Z] [hosting] hash cache [b3V0] stored for 32 files
+[debug] [2026-09-02T05:32:58.161Z] [hosting][hash queue][FINAL] {"max":363,"min":2,"avg":117.125,"active":0,"complete":32,"success":32,"errored":0,"retried":0,"total":32,"elapsed":371}
+[debug] [2026-09-02T05:32:58.161Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/01ef5ef966c06d68:populateFiles [none]
+[debug] [2026-09-02T05:32:58.161Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/01ef5ef966c06d68:populateFiles {"files":{"/window.svg":"6bd2003bd35bb32c1c0d99ab3aeac0cc1edaefd79f27df1d954bc87184048d74","/vercel.svg":"529a1a21b4a82475a82db26173c28d7b27e2dc9d4b900eaf1c5329d96eea4ddd","/next.svg":"0665b9ab4493aa9d7e988b57024e28772ae543e804b8cf6b0a3633854b7c3c7f","/globe.svg":"6502a3e6120bf2d6e8417e7c40bb57fb8a6954de9c86d3f43076a75b60cd23a2","/file.svg":"5a09df6187e21aa9a7d05094389385876ac93c818e1dcbb77a26a8fe408bf79c","/__next.__PAGE__.txt":"4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065","/__next._tree.txt":"4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872","/__next._full.txt":"9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a","/_not-found.txt":"7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462","/index.txt":"9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a","/_not-found.html":"a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689","/index.html":"687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324","/icon.svg":"9cf3a7ef40bb2ac10850b07f3b6a4efefbf1ee6c9998d516552aa7f3687aff7a","/_not-found/__next._tree.txt":"940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4","/_not-found/__next._full.txt":"7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462","/_not-found/__next._not-found/__PAGE__.txt":"3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0","/404.html":"a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689","/_next/static/media/icon.2rskpwi1xmf4z.svg":"9cf3a7ef40bb2ac10850b07f3b6a4efefbf1ee6c9998d516552aa7f3687aff7a","/_next/static/w1h2q7UFMAVr8tl5yWyFv/_clientMiddlewareManifest.js":"5e57f6166b702492ab9551af57e4546546c184673a4c0432f73b96f62820f7eb","/_next/static/w1h2q7UFMAVr8tl5yWyFv/_buildManifest.js":"dcbe1c9b9159ca21caea98e1bad364012ae284e9551375ca62b83d2811efac91","/_next/static/w1h2q7UFMAVr8tl5yWyFv/_ssgManifest.js":"dc28a4dc92fe352ed5d2201bd3972ce47691bc8e89e0400a68d1541d0567c6d5","/_next/static/chunks/turbopack-15lu5ax1l3xi4.js":"47d765c84cc7091d3f8195e46adefa95d863a7772ff80ef24fafd6c6a0d5fb46","/_next/static/chunks/3rf6ejh2eqszk.js":"524a7ba517d554c0dc939f5aecb5e1acb11433ab65cdf0060d35d9e45e7e3d57","/_next/static/chunks/280skj9cc8aln.js":"349af888edc3e26a4cec60556ef4cc8d91d0c3b028e37ff4bbaeaf94e623f63a","/_next/static/chunks/2tqlufjiinrds.js":"7259240d9409da7ab8b29a44132a46a2699e91e367892ecd3e93e540605acef6","/_next/static/chunks/1se_j5blf644-.css":"298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057","/_next/static/chunks/1o15_pi0zfr4y.js":"42258829a052b5e01b53c144c4c853c9f6ad709a2bc19b962689e37cffa90781","/_next/static/chunks/1emn5q7tx106i.js":"8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed","/_next/static/chunks/3yms5f6o3p6di.js":"59d72d752d190e7d762d9df51c25a006222b26ac17dd82d5acc826c826178ea1","/_next/static/chunks/313joh5-jmc2n.js":"383c634ca0bff4c1cd6871b34329b3cfd2bbd0768565737fe0091b72281999fc","/_next/static/chunks/0qpy1emvpgx0m.js":"671a7298e003ddeec14f59583b95d1baf90ee1d6f713ec30ce3797ddb4c4199e","/_next/static/chunks/0cz1d0mv5g_q7.js":"18e28d3214eda45048d80d3925ea7627b809e69ad2e95f7f98459e9146a61c3d"}}
+[debug] [2026-09-02T05:32:58.309Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/releases 200
+[debug] [2026-09-02T05:32:58.309Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/releases {"releases":[{"name":"projects/code-of-game/releases/cloud.firestore","rulesetName":"projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33","createTime":"2026-08-28T18:14:35.064811Z","updateTime":"2026-08-28T18:30:06.983916Z"}]}
+[debug] [2026-09-02T05:32:58.309Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:58.309Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:58.310Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33 [none]
+[debug] [2026-09-02T05:32:58.710Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/releases 200
+[debug] [2026-09-02T05:32:58.710Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/releases {"releases":[{"name":"projects/code-of-game/releases/cloud.firestore","rulesetName":"projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33","createTime":"2026-08-28T18:14:35.064811Z","updateTime":"2026-08-28T18:30:06.983916Z"}]}
+[debug] [2026-09-02T05:32:58.710Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:58.710Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:32:58.711Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33 [none]
+[debug] [2026-09-02T05:32:59.107Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/01ef5ef966c06d68:populateFiles 200
+[debug] [2026-09-02T05:32:59.107Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/01ef5ef966c06d68:populateFiles {"uploadRequiredHashes":["4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872","298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057","7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462","4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065","940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4","9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a","a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689","3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0","687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324","8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files"}
+[debug] [2026-09-02T05:32:59.108Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.108Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.108Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.109Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.109Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.109Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.109Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.109Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.110Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.110Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.110Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.110Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.112Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.113Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.114Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.114Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.115Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.115Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.115Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.115Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:32:59.116Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 [none]
+[debug] [2026-09-02T05:32:59.116Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 [stream]
+[debug] [2026-09-02T05:32:59.117Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 [none]
+[debug] [2026-09-02T05:32:59.118Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 [stream]
+[debug] [2026-09-02T05:32:59.118Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 [none]
+[debug] [2026-09-02T05:32:59.119Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 [stream]
+[debug] [2026-09-02T05:32:59.119Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 [none]
+[debug] [2026-09-02T05:32:59.119Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 [stream]
+[debug] [2026-09-02T05:32:59.120Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 [none]
+[debug] [2026-09-02T05:32:59.121Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 [stream]
+[debug] [2026-09-02T05:32:59.121Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a [none]
+[debug] [2026-09-02T05:32:59.121Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a [stream]
+[debug] [2026-09-02T05:32:59.122Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 [none]
+[debug] [2026-09-02T05:32:59.122Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 [stream]
+[debug] [2026-09-02T05:32:59.123Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 [none]
+[debug] [2026-09-02T05:32:59.123Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 [stream]
+[debug] [2026-09-02T05:32:59.123Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 [none]
+[debug] [2026-09-02T05:32:59.124Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 [stream]
+[debug] [2026-09-02T05:32:59.124Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed [none]
+[debug] [2026-09-02T05:32:59.125Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed [stream]
+[debug] [2026-09-02T05:32:59.138Z] [hosting][populate queue][FINAL] {"max":958,"min":958,"avg":958,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":981}
+[debug] [2026-09-02T05:32:59.138Z] [hosting] uploads queued: 10
+[debug] [2026-09-02T05:32:59.759Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33 200
+[debug] [2026-09-02T05:32:59.759Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33 [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[info] i  firestore: deploying indexes... 
+[info] i  hosting[code-of-game]: beginning deploy... 
+[info] i  hosting[code-of-game]: found 32 files in out 
+[debug] [2026-09-02T05:32:59.774Z] [hosting] uploading with 200 concurrency
+[debug] [2026-09-02T05:32:59.779Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:59.779Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:32:59.780Z] [hosting] hash cache [b3V0] stored for 32 files
+[debug] [2026-09-02T05:32:59.781Z] [hosting][hash queue][FINAL] {"max":2,"min":0,"avg":0,"active":0,"complete":32,"success":32,"errored":0,"retried":0,"total":32,"elapsed":4}
+[debug] [2026-09-02T05:32:59.781Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/04693e00b0c37848:populateFiles [none]
+[debug] [2026-09-02T05:32:59.781Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/04693e00b0c37848:populateFiles {"files":{"/__next.__PAGE__.txt":"4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065","/__next._tree.txt":"4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872","/__next._full.txt":"9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a","/_not-found.txt":"7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462","/_not-found.html":"a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689","/window.svg":"6bd2003bd35bb32c1c0d99ab3aeac0cc1edaefd79f27df1d954bc87184048d74","/vercel.svg":"529a1a21b4a82475a82db26173c28d7b27e2dc9d4b900eaf1c5329d96eea4ddd","/next.svg":"0665b9ab4493aa9d7e988b57024e28772ae543e804b8cf6b0a3633854b7c3c7f","/index.txt":"9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a","/index.html":"687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324","/icon.svg":"9cf3a7ef40bb2ac10850b07f3b6a4efefbf1ee6c9998d516552aa7f3687aff7a","/globe.svg":"6502a3e6120bf2d6e8417e7c40bb57fb8a6954de9c86d3f43076a75b60cd23a2","/file.svg":"5a09df6187e21aa9a7d05094389385876ac93c818e1dcbb77a26a8fe408bf79c","/404.html":"a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689","/_not-found/__next._tree.txt":"940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4","/_not-found/__next._full.txt":"7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462","/_not-found/__next._not-found/__PAGE__.txt":"3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0","/_next/static/w1h2q7UFMAVr8tl5yWyFv/_ssgManifest.js":"dc28a4dc92fe352ed5d2201bd3972ce47691bc8e89e0400a68d1541d0567c6d5","/_next/static/w1h2q7UFMAVr8tl5yWyFv/_clientMiddlewareManifest.js":"5e57f6166b702492ab9551af57e4546546c184673a4c0432f73b96f62820f7eb","/_next/static/w1h2q7UFMAVr8tl5yWyFv/_buildManifest.js":"dcbe1c9b9159ca21caea98e1bad364012ae284e9551375ca62b83d2811efac91","/_next/static/media/icon.2rskpwi1xmf4z.svg":"9cf3a7ef40bb2ac10850b07f3b6a4efefbf1ee6c9998d516552aa7f3687aff7a","/_next/static/chunks/turbopack-15lu5ax1l3xi4.js":"47d765c84cc7091d3f8195e46adefa95d863a7772ff80ef24fafd6c6a0d5fb46","/_next/static/chunks/3yms5f6o3p6di.js":"59d72d752d190e7d762d9df51c25a006222b26ac17dd82d5acc826c826178ea1","/_next/static/chunks/3rf6ejh2eqszk.js":"524a7ba517d554c0dc939f5aecb5e1acb11433ab65cdf0060d35d9e45e7e3d57","/_next/static/chunks/313joh5-jmc2n.js":"383c634ca0bff4c1cd6871b34329b3cfd2bbd0768565737fe0091b72281999fc","/_next/static/chunks/2tqlufjiinrds.js":"7259240d9409da7ab8b29a44132a46a2699e91e367892ecd3e93e540605acef6","/_next/static/chunks/280skj9cc8aln.js":"349af888edc3e26a4cec60556ef4cc8d91d0c3b028e37ff4bbaeaf94e623f63a","/_next/static/chunks/1se_j5blf644-.css":"298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057","/_next/static/chunks/1o15_pi0zfr4y.js":"42258829a052b5e01b53c144c4c853c9f6ad709a2bc19b962689e37cffa90781","/_next/static/chunks/1emn5q7tx106i.js":"8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed","/_next/static/chunks/0qpy1emvpgx0m.js":"671a7298e003ddeec14f59583b95d1baf90ee1d6f713ec30ce3797ddb4c4199e","/_next/static/chunks/0cz1d0mv5g_q7.js":"18e28d3214eda45048d80d3925ea7627b809e69ad2e95f7f98459e9146a61c3d"}}
+[info] i  hosting: uploading new files [0/10] (0%) 
+[debug] [2026-09-02T05:33:00.129Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33 200
+[debug] [2026-09-02T05:33:00.129Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33 [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[info] i  firestore: deploying indexes... 
+[info] i  hosting[code-of-game]: beginning deploy... 
+[info] i  hosting[code-of-game]: found 32 files in out 
+[debug] [2026-09-02T05:33:00.142Z] [hosting] uploading with 200 concurrency
+[debug] [2026-09-02T05:33:00.147Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:00.148Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:00.148Z] [hosting] hash cache [b3V0] stored for 32 files
+[debug] [2026-09-02T05:33:00.149Z] [hosting][hash queue][FINAL] {"max":2,"min":0,"avg":0,"active":0,"complete":32,"success":32,"errored":0,"retried":0,"total":32,"elapsed":4}
+[debug] [2026-09-02T05:33:00.149Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/42edd0309237519e:populateFiles [none]
+[debug] [2026-09-02T05:33:00.149Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/42edd0309237519e:populateFiles {"files":{"/__next.__PAGE__.txt":"4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065","/__next._tree.txt":"4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872","/__next._full.txt":"9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a","/_not-found.txt":"7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462","/_not-found.html":"a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689","/window.svg":"6bd2003bd35bb32c1c0d99ab3aeac0cc1edaefd79f27df1d954bc87184048d74","/vercel.svg":"529a1a21b4a82475a82db26173c28d7b27e2dc9d4b900eaf1c5329d96eea4ddd","/next.svg":"0665b9ab4493aa9d7e988b57024e28772ae543e804b8cf6b0a3633854b7c3c7f","/index.txt":"9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a","/index.html":"687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324","/icon.svg":"9cf3a7ef40bb2ac10850b07f3b6a4efefbf1ee6c9998d516552aa7f3687aff7a","/globe.svg":"6502a3e6120bf2d6e8417e7c40bb57fb8a6954de9c86d3f43076a75b60cd23a2","/file.svg":"5a09df6187e21aa9a7d05094389385876ac93c818e1dcbb77a26a8fe408bf79c","/404.html":"a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689","/_not-found/__next._tree.txt":"940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4","/_not-found/__next._full.txt":"7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462","/_not-found/__next._not-found/__PAGE__.txt":"3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0","/_next/static/w1h2q7UFMAVr8tl5yWyFv/_ssgManifest.js":"dc28a4dc92fe352ed5d2201bd3972ce47691bc8e89e0400a68d1541d0567c6d5","/_next/static/w1h2q7UFMAVr8tl5yWyFv/_clientMiddlewareManifest.js":"5e57f6166b702492ab9551af57e4546546c184673a4c0432f73b96f62820f7eb","/_next/static/w1h2q7UFMAVr8tl5yWyFv/_buildManifest.js":"dcbe1c9b9159ca21caea98e1bad364012ae284e9551375ca62b83d2811efac91","/_next/static/media/icon.2rskpwi1xmf4z.svg":"9cf3a7ef40bb2ac10850b07f3b6a4efefbf1ee6c9998d516552aa7f3687aff7a","/_next/static/chunks/turbopack-15lu5ax1l3xi4.js":"47d765c84cc7091d3f8195e46adefa95d863a7772ff80ef24fafd6c6a0d5fb46","/_next/static/chunks/3yms5f6o3p6di.js":"59d72d752d190e7d762d9df51c25a006222b26ac17dd82d5acc826c826178ea1","/_next/static/chunks/3rf6ejh2eqszk.js":"524a7ba517d554c0dc939f5aecb5e1acb11433ab65cdf0060d35d9e45e7e3d57","/_next/static/chunks/313joh5-jmc2n.js":"383c634ca0bff4c1cd6871b34329b3cfd2bbd0768565737fe0091b72281999fc","/_next/static/chunks/2tqlufjiinrds.js":"7259240d9409da7ab8b29a44132a46a2699e91e367892ecd3e93e540605acef6","/_next/static/chunks/280skj9cc8aln.js":"349af888edc3e26a4cec60556ef4cc8d91d0c3b028e37ff4bbaeaf94e623f63a","/_next/static/chunks/1se_j5blf644-.css":"298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057","/_next/static/chunks/1o15_pi0zfr4y.js":"42258829a052b5e01b53c144c4c853c9f6ad709a2bc19b962689e37cffa90781","/_next/static/chunks/1emn5q7tx106i.js":"8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed","/_next/static/chunks/0qpy1emvpgx0m.js":"671a7298e003ddeec14f59583b95d1baf90ee1d6f713ec30ce3797ddb4c4199e","/_next/static/chunks/0cz1d0mv5g_q7.js":"18e28d3214eda45048d80d3925ea7627b809e69ad2e95f7f98459e9146a61c3d"}}
+[debug] [2026-09-02T05:33:01.116Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/04693e00b0c37848:populateFiles 200
+[debug] [2026-09-02T05:33:01.116Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/04693e00b0c37848:populateFiles {"uploadRequiredHashes":["687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324","7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462","4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065","3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0","9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a","4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872","940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4","298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057","a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689","8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files"}
+[debug] [2026-09-02T05:33:01.117Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.117Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.118Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.118Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.119Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.119Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.119Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.119Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.120Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.120Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.121Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.121Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.122Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.122Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.123Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.123Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.124Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.124Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.124Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.125Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:01.126Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 [none]
+[debug] [2026-09-02T05:33:01.126Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 [stream]
+[debug] [2026-09-02T05:33:01.128Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 [none]
+[debug] [2026-09-02T05:33:01.129Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 [stream]
+[debug] [2026-09-02T05:33:01.129Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 [none]
+[debug] [2026-09-02T05:33:01.129Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 [stream]
+[debug] [2026-09-02T05:33:01.130Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 [none]
+[debug] [2026-09-02T05:33:01.131Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 [stream]
+[debug] [2026-09-02T05:33:01.133Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a [none]
+[debug] [2026-09-02T05:33:01.133Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a [stream]
+[debug] [2026-09-02T05:33:01.134Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 [none]
+[debug] [2026-09-02T05:33:01.134Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 [stream]
+[debug] [2026-09-02T05:33:01.137Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 [none]
+[debug] [2026-09-02T05:33:01.137Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 [stream]
+[debug] [2026-09-02T05:33:01.138Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 [none]
+[debug] [2026-09-02T05:33:01.138Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 [stream]
+[debug] [2026-09-02T05:33:01.138Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 [none]
+[debug] [2026-09-02T05:33:01.139Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 [stream]
+[debug] [2026-09-02T05:33:01.143Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed [none]
+[debug] [2026-09-02T05:33:01.143Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed [stream]
+[debug] [2026-09-02T05:33:01.151Z] [hosting][populate queue][FINAL] {"max":1346,"min":1346,"avg":1346,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1372}
+[debug] [2026-09-02T05:33:01.151Z] [hosting] uploads queued: 10
+[debug] [2026-09-02T05:33:01.325Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 200
+[debug] [2026-09-02T05:33:01.326Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 [stream]
+[debug] [2026-09-02T05:33:01.337Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/42edd0309237519e:populateFiles 200
+[debug] [2026-09-02T05:33:01.344Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 200
+[debug] [2026-09-02T05:33:01.344Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 [stream]
+[debug] [2026-09-02T05:33:01.337Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/116431841767/sites/code-of-game/versions/42edd0309237519e:populateFiles {"uploadRequiredHashes":["940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4","7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462","a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689","298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057","3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0","4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872","687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324","9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a","4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065","8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files"}
+[debug] [2026-09-02T05:33:01.338Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.338Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.338Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.338Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.338Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.339Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.339Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.339Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.340Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.340Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.340Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.341Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.342Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.342Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.342Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.342Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.343Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.343Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.344Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.345Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:01.346Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 [none]
+[debug] [2026-09-02T05:33:01.346Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 [stream]
+[debug] [2026-09-02T05:33:01.347Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 [none]
+[debug] [2026-09-02T05:33:01.348Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 [stream]
+[debug] [2026-09-02T05:33:01.348Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 [none]
+[debug] [2026-09-02T05:33:01.349Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 [stream]
+[debug] [2026-09-02T05:33:01.349Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 [none]
+[debug] [2026-09-02T05:33:01.349Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 [stream]
+[debug] [2026-09-02T05:33:01.350Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 [none]
+[debug] [2026-09-02T05:33:01.350Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 [stream]
+[debug] [2026-09-02T05:33:01.351Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 [none]
+[debug] [2026-09-02T05:33:01.351Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 [stream]
+[debug] [2026-09-02T05:33:01.352Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 [none]
+[debug] [2026-09-02T05:33:01.352Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 [stream]
+[debug] [2026-09-02T05:33:01.352Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a [none]
+[debug] [2026-09-02T05:33:01.352Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a [stream]
+[debug] [2026-09-02T05:33:01.352Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 [none]
+[debug] [2026-09-02T05:33:01.353Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 [stream]
+[debug] [2026-09-02T05:33:01.353Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed [none]
+[debug] [2026-09-02T05:33:01.354Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed [stream]
+[debug] [2026-09-02T05:33:01.365Z] [hosting][populate queue][FINAL] {"max":1199,"min":1199,"avg":1199,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1218}
+[debug] [2026-09-02T05:33:01.366Z] [hosting] uploads queued: 10
+[debug] [2026-09-02T05:33:01.404Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 200
+[debug] [2026-09-02T05:33:01.405Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 [stream]
+[debug] [2026-09-02T05:33:01.450Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 200
+[debug] [2026-09-02T05:33:01.450Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 [stream]
+[debug] [2026-09-02T05:33:01.465Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 200
+[debug] [2026-09-02T05:33:01.465Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 [stream]
+[debug] [2026-09-02T05:33:01.480Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 200
+[debug] [2026-09-02T05:33:01.480Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 [stream]
+[debug] [2026-09-02T05:33:01.505Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 200
+[debug] [2026-09-02T05:33:01.506Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 [stream]
+[debug] [2026-09-02T05:33:01.517Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 200
+[debug] [2026-09-02T05:33:01.517Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 [stream]
+[info] i  hosting: uploading new files [0/10] (0%) 
+[info] i  hosting: uploading new files [8/10] (80%) 
+[debug] [2026-09-02T05:33:01.835Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a 200
+[debug] [2026-09-02T05:33:01.835Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a [stream]
+[info] i  hosting: uploading new files [0/10] (0%) 
+[debug] [2026-09-02T05:33:02.236Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed 200
+[debug] [2026-09-02T05:33:02.236Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/01ef5ef966c06d68/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed [stream]
+[debug] [2026-09-02T05:33:02.236Z] [hosting][upload queue][FINAL] {"max":3121,"min":2213,"avg":2446,"active":0,"complete":10,"success":10,"errored":0,"retried":0,"total":10,"elapsed":3128}
+[info] i  hosting: upload complete 
+[info] +  hosting[code-of-game]: file upload complete 
+[debug] [2026-09-02T05:33:02.236Z] [hosting] deploy completed after 4461ms
+[debug] [2026-09-02T05:33:02.237Z] [rules] releasing cloud.firestore with ruleset projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33
+[debug] [2026-09-02T05:33:02.237Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:33:02.237Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:33:02.237Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore [none]
+[debug] [2026-09-02T05:33:02.237Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore {"release":{"name":"projects/code-of-game/releases/cloud.firestore","rulesetName":"projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33"}}
+[debug] [2026-09-02T05:33:02.916Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 200
+[debug] [2026-09-02T05:33:02.916Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 [stream]
+[debug] [2026-09-02T05:33:03.249Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 200
+[debug] [2026-09-02T05:33:03.250Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 [stream]
+[debug] [2026-09-02T05:33:03.505Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 200
+[debug] [2026-09-02T05:33:03.506Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 [stream]
+[debug] [2026-09-02T05:33:03.506Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 200
+[debug] [2026-09-02T05:33:03.506Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 [stream]
+[debug] [2026-09-02T05:33:03.557Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 200
+[debug] [2026-09-02T05:33:03.557Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 [stream]
+[debug] [2026-09-02T05:33:03.640Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a 200
+[debug] [2026-09-02T05:33:03.640Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a [stream]
+[info] i  hosting: uploading new files [6/10] (60%) 
+[debug] [2026-09-02T05:33:03.873Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 200
+[debug] [2026-09-02T05:33:03.873Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 [stream]
+[debug] [2026-09-02T05:33:03.874Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 200
+[debug] [2026-09-02T05:33:03.875Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 [stream]
+[debug] [2026-09-02T05:33:03.895Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 200
+[debug] [2026-09-02T05:33:03.895Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 [stream]
+[info] i  hosting: uploading new files [0/10] (0%) 
+[debug] [2026-09-02T05:33:04.272Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 200
+[debug] [2026-09-02T05:33:04.273Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/7cc378685d4197558bb0c32cde0b71c0282cc5af9fbee59eba293ce958531462 [stream]
+[debug] [2026-09-02T05:33:04.297Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 200
+[debug] [2026-09-02T05:33:04.297Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/3dfd29cc5aba841f486f7f4d1c4183a93866cfc5e3e6a5bb10b224ba2df46ca0 [stream]
+[debug] [2026-09-02T05:33:04.322Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a 200
+[debug] [2026-09-02T05:33:04.322Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/9d641ec048d2fa494fd8d51ee5bcc93ba6173ebadb31a6b3e8ae8e260224254a [stream]
+[debug] [2026-09-02T05:33:04.384Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 200
+[debug] [2026-09-02T05:33:04.384Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/940f4499dbc4428680f74189d957838a70c0dbd21a0b62fdaf00d39f2cc8fcd4 [stream]
+[debug] [2026-09-02T05:33:04.398Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 200
+[debug] [2026-09-02T05:33:04.399Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/4a32a4005c2844470b1d9cce6040ecc15fd36bc492e31f4f2794d10ae4e5a872 [stream]
+[debug] [2026-09-02T05:33:04.545Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 200
+[debug] [2026-09-02T05:33:04.546Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/4455e4aa20248ce5bac489c38e25e1069c782d5700674270b968a923a2d91065 [stream]
+[debug] [2026-09-02T05:33:05.088Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 200
+[debug] [2026-09-02T05:33:05.088Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/a0bb1c67b411e6ed5eda3ebead64a09c8a68d2786de87391423a02da75f72689 [stream]
+[debug] [2026-09-02T05:33:05.169Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 200
+[debug] [2026-09-02T05:33:05.169Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/687c7341bb2b95e993f72d331611255a19d3f3e2ffa2a2c5af19b30af3975324 [stream]
+[debug] [2026-09-02T05:33:05.359Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 200
+[debug] [2026-09-02T05:33:05.359Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/298a5fb04a569555d9f0511b0d888f91bae264fe4fc92c599800997f77236057 [stream]
+[debug] [2026-09-02T05:33:05.396Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore 200
+[debug] [2026-09-02T05:33:05.396Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore {"name":"projects/code-of-game/releases/cloud.firestore","rulesetName":"projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33","createTime":"2026-08-28T18:14:35.064811Z","updateTime":"2026-09-02T05:33:05.398616Z"}
+[debug] [2026-09-02T05:33:05.396Z] [rules] updated release projects/code-of-game/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[debug] [2026-09-02T05:33:05.396Z] [
+  {
+    "config": {
+      "public": "out",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "cleanUrls": true,
+      "site": "code-of-game"
+    },
+    "version": "projects/116431841767/sites/code-of-game/versions/01ef5ef966c06d68"
+  }
+]
+[info] i  hosting[code-of-game]: finalizing version... 
+[debug] [2026-09-02T05:33:05.397Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:33:05.397Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:33:05.397Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/01ef5ef966c06d68 updateMask=status%2Cconfig
+[debug] [2026-09-02T05:33:05.397Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/01ef5ef966c06d68 {"status":"FINALIZED","config":{"cleanUrls":true}}
+[debug] [2026-09-02T05:33:05.576Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed 200
+[debug] [2026-09-02T05:33:05.576Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/42edd0309237519e/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed [stream]
+[debug] [2026-09-02T05:33:05.576Z] [hosting][upload queue][FINAL] {"max":4233,"min":2935,"avg":3401.5,"active":0,"complete":10,"success":10,"errored":0,"retried":0,"total":10,"elapsed":4239}
+[info] i  hosting: upload complete 
+[info] +  hosting[code-of-game]: file upload complete 
+[debug] [2026-09-02T05:33:05.577Z] [hosting] deploy completed after 5445ms
+[debug] [2026-09-02T05:33:05.577Z] [rules] releasing cloud.firestore with ruleset projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33
+[debug] [2026-09-02T05:33:05.577Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:05.577Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:05.577Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore [none]
+[debug] [2026-09-02T05:33:05.577Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore {"release":{"name":"projects/code-of-game/releases/cloud.firestore","rulesetName":"projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33"}}
+[info] i  hosting: uploading new files [9/10] (90%) 
+[debug] [2026-09-02T05:33:06.907Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed 200
+[debug] [2026-09-02T05:33:06.908Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/01ef5ef966c06d68 200
+[debug] [2026-09-02T05:33:06.908Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/01ef5ef966c06d68 {"name":"projects/116431841767/sites/code-of-game/versions/01ef5ef966c06d68","status":"FINALIZED","config":{"cleanUrls":true},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-09-02T05:32:55.069721Z","createUser":{"email":"ayushkumard31@gmail.com"},"finalizeTime":"2026-09-02T05:33:06.798120Z","finalizeUser":{"email":"ayushkumard31@gmail.com"}}
+[debug] [2026-09-02T05:33:06.908Z] [hosting] finalized version for code-of-game:[object Object]
+[info] +  hosting[code-of-game]: version finalized 
+[info] i  hosting[code-of-game]: releasing new version... 
+[debug] [2026-09-02T05:33:06.908Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:33:06.909Z] Checked if tokens are valid: true, expires at: 1788330767155
+[debug] [2026-09-02T05:33:06.909Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases versionName=projects%2F116431841767%2Fsites%2Fcode-of-game%2Fversions%2F01ef5ef966c06d68
+[debug] [2026-09-02T05:33:06.909Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases {}
+[debug] [2026-09-02T05:33:06.907Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/code-of-game/versions/04693e00b0c37848/files/8e2e6cef2cb908d5f74768613af641376cea8a264b85296aa44a79e9dcb04aed [stream]
+[debug] [2026-09-02T05:33:06.907Z] [hosting][upload queue][FINAL] {"max":5783,"min":1798,"avg":2772.3,"active":0,"complete":10,"success":10,"errored":0,"retried":0,"total":10,"elapsed":5791}
+[info] i  hosting: upload complete 
+[info] +  hosting[code-of-game]: file upload complete 
+[debug] [2026-09-02T05:33:06.908Z] [hosting] deploy completed after 7145ms
+[debug] [2026-09-02T05:33:06.908Z] [rules] releasing cloud.firestore with ruleset projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33
+[debug] [2026-09-02T05:33:06.908Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:06.908Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:06.908Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore [none]
+[debug] [2026-09-02T05:33:06.908Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore {"release":{"name":"projects/code-of-game/releases/cloud.firestore","rulesetName":"projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33"}}
+[debug] [2026-09-02T05:33:07.160Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore 200
+[debug] [2026-09-02T05:33:07.160Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore {"name":"projects/code-of-game/releases/cloud.firestore","rulesetName":"projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33","createTime":"2026-08-28T18:14:35.064811Z","updateTime":"2026-09-02T05:33:07.192497Z"}
+[debug] [2026-09-02T05:33:07.160Z] [rules] updated release projects/code-of-game/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[debug] [2026-09-02T05:33:07.161Z] [
+  {
+    "config": {
+      "public": "out",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "cleanUrls": true,
+      "site": "code-of-game"
+    },
+    "version": "projects/116431841767/sites/code-of-game/versions/42edd0309237519e"
+  }
+]
+[info] i  hosting[code-of-game]: finalizing version... 
+[debug] [2026-09-02T05:33:07.162Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:07.162Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:07.162Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/42edd0309237519e updateMask=status%2Cconfig
+[debug] [2026-09-02T05:33:07.162Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/42edd0309237519e {"status":"FINALIZED","config":{"cleanUrls":true}}
+[debug] [2026-09-02T05:33:07.598Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore 200
+[debug] [2026-09-02T05:33:07.598Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/code-of-game/releases/cloud.firestore {"name":"projects/code-of-game/releases/cloud.firestore","rulesetName":"projects/code-of-game/rulesets/919b2350-8241-4c6d-978c-b559bc29cc33","createTime":"2026-08-28T18:14:35.064811Z","updateTime":"2026-09-02T05:33:07.590161Z"}
+[debug] [2026-09-02T05:33:07.598Z] [rules] updated release projects/code-of-game/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[debug] [2026-09-02T05:33:07.598Z] [
+  {
+    "config": {
+      "public": "out",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "cleanUrls": true,
+      "site": "code-of-game"
+    },
+    "version": "projects/116431841767/sites/code-of-game/versions/04693e00b0c37848"
+  }
+]
+[info] i  hosting[code-of-game]: finalizing version... 
+[debug] [2026-09-02T05:33:07.600Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:07.600Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:07.600Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/04693e00b0c37848 updateMask=status%2Cconfig
+[debug] [2026-09-02T05:33:07.600Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/04693e00b0c37848 {"status":"FINALIZED","config":{"cleanUrls":true}}
+[debug] [2026-09-02T05:33:07.827Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases 200
+[debug] [2026-09-02T05:33:08.581Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/42edd0309237519e 200
+[debug] [2026-09-02T05:33:08.581Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/42edd0309237519e {"name":"projects/116431841767/sites/code-of-game/versions/42edd0309237519e","status":"FINALIZED","config":{"cleanUrls":true},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-09-02T05:32:56.795145Z","createUser":{"email":"ayushkumard31@gmail.com"},"finalizeTime":"2026-09-02T05:33:08.564723Z","finalizeUser":{"email":"ayushkumard31@gmail.com"}}
+[debug] [2026-09-02T05:33:08.581Z] [hosting] finalized version for code-of-game:[object Object]
+[info] +  hosting[code-of-game]: version finalized 
+[info] i  hosting[code-of-game]: releasing new version... 
+[debug] [2026-09-02T05:33:08.581Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:08.581Z] Checked if tokens are valid: true, expires at: 1788330767458
+[debug] [2026-09-02T05:33:08.582Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases versionName=projects%2F116431841767%2Fsites%2Fcode-of-game%2Fversions%2F42edd0309237519e
+[debug] [2026-09-02T05:33:08.582Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases {}
+[debug] [2026-09-02T05:33:09.053Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/04693e00b0c37848 200
+[debug] [2026-09-02T05:33:09.053Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/versions/04693e00b0c37848 {"name":"projects/116431841767/sites/code-of-game/versions/04693e00b0c37848","status":"FINALIZED","config":{"cleanUrls":true},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-09-02T05:32:56.293669Z","createUser":{"email":"ayushkumard31@gmail.com"},"finalizeTime":"2026-09-02T05:33:08.955890Z","finalizeUser":{"email":"ayushkumard31@gmail.com"}}
+[debug] [2026-09-02T05:33:09.053Z] [hosting] finalized version for code-of-game:[object Object]
+[info] +  hosting[code-of-game]: version finalized 
+[info] i  hosting[code-of-game]: releasing new version... 
+[debug] [2026-09-02T05:33:09.054Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:09.054Z] Checked if tokens are valid: true, expires at: 1788330767151
+[debug] [2026-09-02T05:33:09.054Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases versionName=projects%2F116431841767%2Fsites%2Fcode-of-game%2Fversions%2F04693e00b0c37848
+[debug] [2026-09-02T05:33:09.054Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases {}
+[debug] [2026-09-02T05:33:09.396Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases 200
+[debug] [2026-09-02T05:33:09.935Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/code-of-game/channels/live/releases 200
