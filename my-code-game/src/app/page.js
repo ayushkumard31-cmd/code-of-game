@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { useEffect, useRef, useState, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import { buildCampaign, getRank, tierConfig, getActiveTierConfig } from "./questionBank";
@@ -45,6 +45,7 @@ function StackQuestionVisual({ prompt }) {
 
 function GameContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [screen, setScreen] = useState("home");
   const [mode, setMode] = useState("dsa");
   const [level, setLevel] = useState(0);
@@ -62,10 +63,15 @@ function GameContent() {
     user,
     stats,
     loading,
+    login,
     saveRun,
     completeLevel,
     finishRun,
   } = usePlayer();
+
+  const isGoogleSignedIn = Boolean(
+    user && (user.providerData?.length ? user.providerData.some((p) => p.providerId === "google.com") : true)
+  );
 
   const campaign = buildCampaign(mode);
   const current = campaign[level] || campaign[0];
@@ -144,11 +150,43 @@ function GameContent() {
     saveRun(campaignMode, run);
   }
 
+  async function handleCardClick(modeName, targetHref) {
+    if (!isGoogleSignedIn) {
+      try {
+        const signedUser = await login();
+        if (signedUser) {
+          if (targetHref) {
+            router.push(targetHref);
+          } else if (modeName === "dsa") {
+            router.push("/map");
+          } else if (modeName) {
+            enterCampaign(modeName, 0);
+          }
+        }
+      } catch (error) {
+        if (error?.code !== "auth/popup-closed-by-user") {
+          setLoginOpen(true);
+        }
+      }
+      return;
+    }
+
+    if (targetHref) {
+      router.push(targetHref);
+    } else if (modeName === "dsa") {
+      router.push("/map");
+    } else if (modeName) {
+      enterCampaign(modeName, 0);
+    }
+  }
+
   function start(nextMode = "dsa") {
-    if (!user) {
-      setPendingMode(nextMode);
-      setPendingLevel(0);
-      setLoginOpen(true);
+    if (!isGoogleSignedIn) {
+      handleCardClick(nextMode, nextMode === "dsa" ? "/map" : null);
+      return;
+    }
+    if (nextMode === "dsa") {
+      router.push("/map");
       return;
     }
     enterCampaign(nextMode, 0);
@@ -199,7 +237,13 @@ function GameContent() {
   return (
     <main className={`shell ${screen === "home" ? "storefront" : ""} ${hasNeonTheme ? "neon-glow" : ""}`}>
       <div className="grid-bg" />
-      {screen === "home" && <Navbar onOpenLogin={() => setLoginOpen(true)} />}
+      {screen === "home" && (
+        <Navbar
+          isOpen={loginOpen}
+          onClose={() => setLoginOpen(false)}
+          onOpenLogin={() => setLoginOpen(true)}
+        />
+      )}
 
       {/* Quests Campaign Home View */}
       {screen === "home" && (
@@ -211,9 +255,71 @@ function GameContent() {
               <p>Four challenge modes for mastering DSA in C from novice trials to the Final DSA Boss Test.</p>
             </div>
 
+            {/* Compulsory Google Sign-In Banner if not signed in */}
+            {!loading && !isGoogleSignedIn && (
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  flexWrap: "wrap",
+                  gap: 14,
+                  padding: "16px 20px",
+                  marginBottom: 28,
+                  border: "1px solid #4285f466",
+                  background: "linear-gradient(90deg, rgba(66, 133, 244, 0.12), rgba(66, 133, 244, 0.04))",
+                  borderRadius: 2,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                  <span
+                    style={{
+                      display: "grid",
+                      placeItems: "center",
+                      width: 32,
+                      height: 32,
+                      borderRadius: "50%",
+                      background: "#fff",
+                      color: "#4285f4",
+                      font: "900 15px Arial",
+                      flexShrink: 0,
+                    }}
+                  >
+                    G
+                  </span>
+                  <div>
+                    <b style={{ display: "block", color: "#fff", font: "700 14px var(--font-display)", letterSpacing: "-0.3px" }}>
+                      Google Sign-In Required
+                    </b>
+                    <span style={{ color: "#a5b4fc", font: "11px var(--font-mono)" }}>
+                      Sign in with your Google account to unlock and select game cards, tracks, and lab quests.
+                    </span>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleCardClick(null, null)}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                    padding: "10px 18px",
+                    border: "1px solid #4285f4",
+                    background: "#4285f4",
+                    color: "#fff",
+                    font: "800 11px var(--font-mono)",
+                    letterSpacing: "0.5px",
+                    cursor: "pointer",
+                  }}
+                >
+                  SIGN IN WITH GOOGLE →
+                </button>
+              </div>
+            )}
+
             <div className="mode-cards" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
               {[
-                { mode: "dsa", icon: "?", label: "DSA Trial", sub: "Concept quizzes across all core DSA topics", color: "#a9ff43" },
+                { mode: "dsa", icon: "?", label: "DSA Trial", sub: "Concept quizzes across all core DSA topics", color: "#a9ff43", href: "/map" },
                 { mode: "code", icon: "</>", label: "Code Forge", sub: "Complete fragments of real C code", color: "#46d8e7" },
                 { mode: "bugs", icon: "!", label: "Bug Hunt", sub: "Spot and fix common memory & pointer bugs", color: "#ff7875" },
                 { mode: "boss", icon: "👹", label: "Final DSA Test", sub: "10-Stage Boss Raid: Time attacks & complexity battles", color: "#ff5340", isBoss: true }
@@ -223,7 +329,7 @@ function GameContent() {
                   type="button"
                   className={`mode-card ${m.isBoss ? "boss-mode-card" : ""}`}
                   style={{ "--mc": m.color }}
-                  onClick={() => start(m.mode)}
+                  onClick={() => handleCardClick(m.mode, m.href)}
                 >
                   <i>{m.icon}</i>
                   <b>{m.label}</b>
@@ -244,19 +350,49 @@ function GameContent() {
 
             {/* Quick Link Cards */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 14, marginTop: 40 }}>
-              <Link href="/practice" className="mode-card" style={{ "--mc": "#a9ff43" }}>
+              <Link
+                href="/practice"
+                className="mode-card"
+                style={{ "--mc": "#a9ff43" }}
+                onClick={(e) => {
+                  if (!isGoogleSignedIn) {
+                    e.preventDefault();
+                    handleCardClick(null, "/practice");
+                  }
+                }}
+              >
                 <i>◉</i>
                 <b>Practice Hub (0 XP)</b>
                 <span>Subjective deep-dive & self-evaluation</span>
                 <em>EXPLORE PRACTICE →</em>
               </Link>
-              <Link href="/rewards" className="mode-card" style={{ "--mc": "#ffb627" }}>
+              <Link
+                href="/rewards"
+                className="mode-card"
+                style={{ "--mc": "#ffb627" }}
+                onClick={(e) => {
+                  if (!isGoogleSignedIn) {
+                    e.preventDefault();
+                    handleCardClick(null, "/rewards");
+                  }
+                }}
+              >
                 <i>♜</i>
                 <b>Rewards & Perks</b>
                 <span>Claim badges & equip Heart Containers</span>
                 <em>VIEW REWARDS →</em>
               </Link>
-              <Link href="/map" className="mode-card" style={{ "--mc": "#4ec9e8" }}>
+              <Link
+                href="/map"
+                className="mode-card"
+                style={{ "--mc": "#4ec9e8" }}
+                onClick={(e) => {
+                  if (!isGoogleSignedIn) {
+                    e.preventDefault();
+                    handleCardClick(null, "/map");
+                  }
+                }}
+              >
                 <i>◇</i>
                 <b>Dungeon Map</b>
                 <span>Interactive Stack, Queue & List labs</span>

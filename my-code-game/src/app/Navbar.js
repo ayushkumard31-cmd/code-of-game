@@ -14,7 +14,7 @@ export function isAdminUser(user) {
   return false;
 }
 
-export default function Navbar({ onOpenLogin, onLaunchMode }) {
+export default function Navbar({ onOpenLogin, onLaunchMode, isOpen, onClose }) {
   const pathname = usePathname();
   const router = useRouter();
   const {
@@ -28,7 +28,8 @@ export default function Navbar({ onOpenLogin, onLaunchMode }) {
     logout,
   } = usePlayer();
 
-  const [loginOpen, setLoginOpen] = useState(false);
+  const [internalLoginOpen, setInternalLoginOpen] = useState(false);
+  const loginOpen = isOpen !== undefined ? isOpen : internalLoginOpen;
   const [createMode, setCreateMode] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -39,11 +40,17 @@ export default function Navbar({ onOpenLogin, onLaunchMode }) {
     0
   );
 
+  function closeLogin() {
+    setInternalLoginOpen(false);
+    setAuthError("");
+    if (onClose) onClose();
+  }
+
   async function handleGoogleLogin() {
     setAuthError("");
     try {
       await login();
-      setLoginOpen(false);
+      closeLogin();
     } catch (error) {
       if (error?.code !== "auth/popup-closed-by-user") {
         setAuthError("Google sign-in failed. Please try again.");
@@ -57,7 +64,7 @@ export default function Navbar({ onOpenLogin, onLaunchMode }) {
     try {
       if (createMode) await createAccount(email.trim(), password);
       else await loginWithPassword(email.trim(), password);
-      setLoginOpen(false);
+      closeLogin();
     } catch (error) {
       const messages = {
         "auth/invalid-credential": "Wrong password or invalid credentials.",
@@ -174,7 +181,7 @@ export default function Navbar({ onOpenLogin, onLaunchMode }) {
       {loginOpen && (
         <div className="login-backdrop" role="dialog" aria-modal="true" aria-labelledby="login-title">
           <div className="login-modal">
-            <button className="modal-close" onClick={() => setLoginOpen(false)} aria-label="Close">×</button>
+            <button className="modal-close" onClick={closeLogin} aria-label="Close">×</button>
             <span className="login-logo">DS</span>
             <p>PLAYER ACCESS</p>
             <h2 id="login-title">{createMode ? "Create your account" : "Sign in to play"}</h2>
