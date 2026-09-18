@@ -1,0 +1,1123 @@
+/* ==========================================================================
+   Mobile Gamified Duolingo-style Design System (Dark Mode)
+   Strictly scoped to .mobile-gamified-root (No changes to Desktop PC site)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+
+/* Hide mobile webapp on desktop screens */
+@media (min-width: 769px) {
+  .mobile-gamified-wrapper {
+    display: none !important;
+  }
+}
+
+/* Hide desktop website on phone screens */
+@media (max-width: 768px) {
+  .desktop-website-wrapper {
+    display: none !important;
+  }
+}
+
+.mobile-gamified-root {
+  /* Vibrant Dark Mode Palette */
+  --duo-bg: #0c111d;
+  --duo-surface: #151d2d;
+  --duo-surface-elevated: #1b263b;
+  --duo-border: #243249;
+  --duo-border-light: #324360;
+  --duo-text: #f8fafc;
+  --duo-text-muted: #94a3b8;
+
+  --duo-green: #58cc02;
+  --duo-green-shadow: #347c01;
+  --duo-green-light: #163810;
+
+  --duo-blue: #1cb0f6;
+  --duo-blue-shadow: #0d79ab;
+  --duo-blue-light: #103247;
+
+  --duo-yellow: #ffc800;
+  --duo-yellow-shadow: #b38b00;
+  --duo-yellow-light: #3b3310;
+
+  --duo-red: #ff4b4b;
+  --duo-red-shadow: #b32a2a;
+  --duo-red-light: #3d1414;
+
+  --duo-purple: #ce82ff;
+  --duo-purple-shadow: #8d48bb;
+
+  --duo-gray: #243044;
+  --duo-gray-shadow: #192230;
+
+  --font-gamified: 'Fredoka', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  background: var(--duo-bg);
+  color: var(--duo-text);
+  font-family: var(--font-gamified);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.mobile-gamified-root * {
+  box-sizing: border-box;
+}
+
+.mobile-gamified-root .gamified-mobile-app {
+  background: var(--duo-bg);
+  min-height: 100vh;
+  font-family: var(--font-gamified);
+  color: var(--duo-text);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 84px;
+}
+
+/* Minimal Top Status Bar (Duolingo Header) */
+.mobile-gamified-root .gamified-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: rgba(12, 17, 29, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--duo-border);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-gamified-root .gamified-flag-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 2px solid var(--duo-green);
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--duo-surface);
+  color: var(--duo-text);
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--duo-green-shadow);
+  transition: transform 0.1s ease;
+}
+
+.mobile-gamified-root .gamified-flag-pill:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--duo-green-shadow);
+}
+
+.mobile-gamified-root .gamified-stats-cluster {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-gamified-root .gamified-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background: var(--duo-surface);
+  border: 1px solid var(--duo-border);
+  transition: transform 0.15s;
+}
+
+.mobile-gamified-root .gamified-stat-item:hover {
+  transform: scale(1.05);
+}
+
+.mobile-gamified-root .gamified-stat-item.streak {
+  color: #ff9600;
+  border-color: #5c3804;
+}
+
+.mobile-gamified-root .gamified-stat-item.coins {
+  color: #ffc800;
+  border-color: #5c4c04;
+}
+
+.mobile-gamified-root .gamified-stat-item.hearts {
+  color: var(--duo-red);
+  border-color: #5c1818;
+}
+
+.mobile-gamified-root .gamified-stat-item.xp {
+  color: var(--duo-blue);
+  border-color: #0b4566;
+}
+
+.mobile-gamified-root .flame-wiggle {
+  display: inline-block;
+  animation: flame-pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes flame-pulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.18) rotate(6deg); }
+}
+
+/* Unit Banner & Mascot Tip */
+.mobile-gamified-root .gamified-unit-banner {
+  background: linear-gradient(135deg, #46a302, #398201);
+  color: #ffffff;
+  margin: 16px 16px 24px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 0 #285d01;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.mobile-gamified-root .gamified-unit-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.mobile-gamified-root .gamified-unit-subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.9;
+}
+
+.mobile-gamified-root .gamified-unit-guidebook-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.mobile-gamified-root .gamified-unit-guidebook-btn:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.mobile-gamified-root .gamified-unit-title {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mobile-gamified-root .gamified-mascot-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-gamified-root .gamified-mascot-avatar {
+  font-size: 26px;
+  animation: mascot-bounce 2.2s infinite ease-in-out;
+}
+
+@keyframes mascot-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Heart Regeneration Countdown Banner */
+.mobile-gamified-root .heart-refill-banner {
+  margin: 0 16px 16px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: var(--duo-surface);
+  border: 1.5px solid var(--duo-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mobile-gamified-root .heart-refill-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-gamified-root .heart-refill-info b {
+  display: block;
+  font-size: 13px;
+  color: var(--duo-text);
+}
+
+.mobile-gamified-root .heart-refill-info small {
+  display: block;
+  font-size: 11px;
+  color: var(--duo-text-muted);
+}
+
+.mobile-gamified-root .heart-beat {
+  font-size: 22px;
+  animation: heart-pulse 1.4s infinite ease-in-out;
+}
+
+@keyframes heart-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+.mobile-gamified-root .free-refill-btn {
+  background: var(--duo-red);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--duo-red-shadow);
+  transition: transform 0.1s;
+}
+
+.mobile-gamified-root .free-refill-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--duo-red-shadow);
+}
+
+.mobile-gamified-root .gamified-mascot-speech {
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* Duolingo Linear Learning Path */
+.mobile-gamified-root .gamified-path-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 16px 40px;
+  position: relative;
+}
+
+.mobile-gamified-root .gamified-node-wrapper {
+  position: relative;
+  margin: 22px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Circular 3D Lesson Node Buttons */
+.mobile-gamified-root .gamified-circle-node {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 3D Tactile State: Completed */
+.mobile-gamified-root .gamified-circle-node.completed {
+  background: var(--duo-yellow);
+  box-shadow: 0 7px 0 var(--duo-yellow-shadow);
+  color: #1a1705;
+}
+
+.mobile-gamified-root .gamified-circle-node.completed:active {
+  transform: translateY(5px);
+  box-shadow: 0 2px 0 var(--duo-yellow-shadow);
+}
+
+/* 3D Tactile State: Active */
+.mobile-gamified-root .gamified-circle-node.active {
+  background: var(--duo-green);
+  box-shadow: 0 8px 0 var(--duo-green-shadow);
+  color: #ffffff;
+  animation: active-pulse 2s infinite ease-in-out;
+}
+
+.mobile-gamified-root .gamified-circle-node.active:active {
+  transform: translateY(6px);
+  box-shadow: 0 2px 0 var(--duo-green-shadow);
+}
+
+@keyframes active-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(88, 204, 2, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(88, 204, 2, 0.7));
+  }
+}
+
+/* 3D Tactile State: Locked */
+.mobile-gamified-root .gamified-circle-node.locked {
+  background: var(--duo-gray);
+  box-shadow: 0 7px 0 var(--duo-gray-shadow);
+  color: #64748b;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 3D Tactile State: Chest Node */
+.mobile-gamified-root .gamified-circle-node.chest {
+  background: #ff9600;
+  box-shadow: 0 7px 0 #b36900;
+  color: #ffffff;
+  border-radius: 24px;
+  width: 84px;
+  height: 72px;
+}
+
+.mobile-gamified-root .gamified-circle-node.chest:active {
+  transform: translateY(5px);
+  box-shadow: 0 2px 0 #b36900;
+}
+
+/* 3D Tactile State: Boss / Trophy Node */
+.mobile-gamified-root .gamified-circle-node.boss {
+  background: linear-gradient(135deg, #a855f7, #7e22ce);
+  box-shadow: 0 8px 0 #581c87;
+  color: #ffffff;
+  width: 88px;
+  height: 88px;
+}
+
+/* Node Floating Tooltip */
+.mobile-gamified-root .gamified-start-tooltip {
+  position: absolute;
+  top: -42px;
+  background: var(--duo-surface-elevated);
+  border: 2px solid var(--duo-green);
+  border-radius: 12px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--duo-green);
+  box-shadow: 0 3px 0 var(--duo-green-shadow);
+  white-space: nowrap;
+  animation: float-bob 1.5s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.mobile-gamified-root .gamified-start-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--duo-green);
+}
+
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Floating Stars Above Completed Nodes */
+.mobile-gamified-root .gamified-crown-stars {
+  position: absolute;
+  top: -18px;
+  display: flex;
+  gap: 3px;
+  font-size: 13px;
+  color: #ffc800;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.mobile-gamified-root .gamified-node-icon {
+  font-size: 32px;
+}
+
+.mobile-gamified-root .gamified-node-label {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #cbd5e1;
+  text-align: center;
+  max-width: 140px;
+}
+
+/* Sticky Bottom Navigation Bar (Duolingo Style Dark) */
+.mobile-gamified-root .gamified-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: rgba(12, 17, 29, 0.96);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid var(--duo-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10px;
+  z-index: 100;
+}
+
+.mobile-gamified-root .gamified-nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  color: #8e9eb5;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-gamified-root .gamified-nav-btn:hover {
+  background: var(--duo-surface);
+  color: #f1f5f9;
+}
+
+.mobile-gamified-root .gamified-nav-btn.active {
+  color: var(--duo-blue);
+  background: var(--duo-blue-light);
+  border: 2px solid #14496b;
+}
+
+.mobile-gamified-root .gamified-nav-icon {
+  font-size: 22px;
+}
+
+/* Duolingo Tactile 3D Buttons */
+.mobile-gamified-root .duo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 16px;
+  font-family: var(--font-gamified);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  user-select: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-gamified-root .duo-btn.green {
+  background: var(--duo-green);
+  color: #ffffff;
+  box-shadow: 0 5px 0 var(--duo-green-shadow);
+}
+
+.mobile-gamified-root .duo-btn.green:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 var(--duo-green-shadow);
+}
+
+.mobile-gamified-root .duo-btn.blue {
+  background: var(--duo-blue);
+  color: #ffffff;
+  box-shadow: 0 5px 0 var(--duo-blue-shadow);
+}
+
+.mobile-gamified-root .duo-btn.blue:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 var(--duo-blue-shadow);
+}
+
+.mobile-gamified-root .duo-btn.yellow {
+  background: var(--duo-yellow);
+  color: #1a1705;
+  box-shadow: 0 5px 0 var(--duo-yellow-shadow);
+}
+
+.mobile-gamified-root .duo-btn.yellow:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 var(--duo-yellow-shadow);
+}
+
+.mobile-gamified-root .duo-btn.gray {
+  background: var(--duo-surface);
+  color: #94a3b8;
+  border: 2px solid var(--duo-border);
+  box-shadow: 0 4px 0 var(--duo-gray-shadow);
+}
+
+.mobile-gamified-root .duo-btn.gray:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--duo-gray-shadow);
+}
+
+/* Duolingo Slide-Up Lesson Modal / Card (Dark Mode) */
+.mobile-gamified-root .duo-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.mobile-gamified-root .duo-modal-card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--duo-surface);
+  color: var(--duo-text);
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  border-top: 2px solid var(--duo-border);
+  padding: 24px 20px 36px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6);
+  animation: slide-up 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.mobile-gamified-root .duo-modal-pill {
+  width: 44px;
+  height: 5px;
+  background: #334155;
+  border-radius: 99px;
+  margin: 0 auto 16px;
+}
+
+.mobile-gamified-root .duo-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.mobile-gamified-root .duo-modal-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.mobile-gamified-root .duo-modal-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mobile-gamified-root .duo-reward-pills {
+  display: flex;
+  gap: 10px;
+  margin: 14px 0 20px;
+}
+
+.mobile-gamified-root .duo-reward-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-gamified-root .duo-reward-pill.xp {
+  background: var(--duo-blue-light);
+  color: #38bdf8;
+  border-color: #154c70;
+}
+
+.mobile-gamified-root .duo-reward-pill.coins {
+  background: var(--duo-yellow-light);
+  color: #facc15;
+  border-color: #634d0b;
+}
+
+/* Interactive Challenge Screen */
+.mobile-gamified-root .duo-challenge-screen {
+  padding: 10px 0;
+}
+
+.mobile-gamified-root .duo-challenge-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.mobile-gamified-root .duo-challenge-track {
+  flex: 1;
+  height: 14px;
+  background: #243044;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+
+.mobile-gamified-root .duo-challenge-fill {
+  height: 100%;
+  background: var(--duo-green);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(88, 204, 2, 0.6);
+}
+
+.mobile-gamified-root .duo-hearts-count {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--duo-red);
+}
+
+.mobile-gamified-root .duo-question-prompt {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 14px;
+}
+
+.mobile-gamified-root .duo-code-snippet {
+  background: #090d16;
+  color: #e2e8f0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #243249;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.mobile-gamified-root .duo-cards-grid {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.mobile-gamified-root .duo-card-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 2px solid var(--duo-border);
+  box-shadow: 0 4px 0 var(--duo-gray-shadow);
+  background: var(--duo-surface-elevated);
+  font-size: 14px;
+  font-weight: 700;
+  color: #f1f5f9;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-gamified-root .duo-card-option:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--duo-gray-shadow);
+}
+
+.mobile-gamified-root .duo-card-option.selected {
+  border-color: var(--duo-blue);
+  background: #10344d;
+  color: #7dd3fc;
+  box-shadow: 0 4px 0 var(--duo-blue-shadow);
+}
+
+.mobile-gamified-root .duo-card-option.correct {
+  border-color: var(--duo-green);
+  background: #143d18;
+  color: #86efac;
+  box-shadow: 0 4px 0 var(--duo-green-shadow);
+}
+
+.mobile-gamified-root .duo-card-option.wrong {
+  border-color: var(--duo-red);
+  background: #451515;
+  color: #fca5a5;
+  box-shadow: 0 4px 0 var(--duo-red-shadow);
+}
+
+.mobile-gamified-root .duo-result-banner {
+  padding: 14px 16px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.mobile-gamified-root .duo-result-banner.success {
+  background: #133a17;
+  color: #86efac;
+  border: 2px solid #22c55e;
+}
+
+.mobile-gamified-root .duo-result-banner.fail {
+  background: #3e1212;
+  color: #fca5a5;
+  border: 2px solid #ef4444;
+}
+
+/* Leaderboard Mobile Screen (Dark Mode) */
+.mobile-gamified-root .gamified-screen-container {
+  padding: 20px 16px;
+}
+
+.mobile-gamified-root .gamified-screen-title {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.mobile-gamified-root .gamified-screen-desc {
+  margin: 0 0 20px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.mobile-gamified-root .leaderboard-podium {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 16px 0;
+}
+
+.mobile-gamified-root .podium-seat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;
+}
+
+.mobile-gamified-root .podium-avatar {
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.mobile-gamified-root .podium-pillar {
+  width: 100%;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 10px 4px;
+}
+
+.mobile-gamified-root .podium-seat.first .podium-pillar {
+  height: 110px;
+  background: linear-gradient(180deg, #eab308, #ca8a04);
+  box-shadow: 0 5px 0 #854d0e;
+}
+
+.mobile-gamified-root .podium-seat.second .podium-pillar {
+  height: 90px;
+  background: linear-gradient(180deg, #64748b, #475569);
+  box-shadow: 0 5px 0 #334155;
+}
+
+.mobile-gamified-root .podium-seat.third .podium-pillar {
+  height: 75px;
+  background: linear-gradient(180deg, #d97706, #b45309);
+  box-shadow: 0 5px 0 #78350f;
+}
+
+.mobile-gamified-root .leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-gamified-root .leaderboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 16px;
+  border: 2px solid var(--duo-border);
+  background: var(--duo-surface);
+}
+
+.mobile-gamified-root .leaderboard-row.current-user {
+  border-color: var(--duo-blue);
+  background: #112d42;
+  box-shadow: 0 0 12px rgba(28, 176, 246, 0.25);
+}
+
+.mobile-gamified-root .leaderboard-rank {
+  font-size: 16px;
+  font-weight: 700;
+  width: 28px;
+  color: #64748b;
+}
+
+.mobile-gamified-root .leaderboard-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.mobile-gamified-root .leaderboard-avatar {
+  font-size: 24px;
+}
+
+.mobile-gamified-root .leaderboard-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.mobile-gamified-root .leaderboard-xp {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--duo-blue);
+}
+
+/* Shop Mobile Screen (Dark Mode) */
+.mobile-gamified-root .shop-cards-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.mobile-gamified-root .shop-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 18px;
+  border: 2px solid var(--duo-border);
+  background: var(--duo-surface);
+  box-shadow: 0 4px 0 var(--duo-gray-shadow);
+}
+
+.mobile-gamified-root .shop-card-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 220px;
+}
+
+.mobile-gamified-root .shop-card-icon {
+  font-size: 32px;
+}
+
+.mobile-gamified-root .shop-card-title {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.mobile-gamified-root .shop-card-desc {
+  margin: 0;
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.35;
+}
+
+.mobile-gamified-root .shop-card-action {
+  width: 90px;
+}
+
+/* Profile Mobile Screen (Dark Mode) */
+.mobile-gamified-root .profile-hero {
+  text-align: center;
+  padding: 16px 0 24px;
+  border-bottom: 2px solid var(--duo-border);
+  margin-bottom: 20px;
+}
+
+.mobile-gamified-root .profile-avatar-big {
+  font-size: 56px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.mobile-gamified-root .profile-name {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.mobile-gamified-root .profile-joined {
+  margin: 0;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.mobile-gamified-root .profile-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.mobile-gamified-root .profile-stat-box {
+  padding: 14px;
+  border-radius: 16px;
+  border: 2px solid var(--duo-border);
+  background: var(--duo-surface);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-gamified-root .profile-stat-box b {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.mobile-gamified-root .profile-stat-box span {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mobile-gamified-root .achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-gamified-root .achievement-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  border: 2px solid var(--duo-border);
+  background: var(--duo-surface);
+}
+
+.mobile-gamified-root .achievement-icon {
+  font-size: 32px;
+}
+
+.mobile-gamified-root .achievement-title {
+  margin: 0 0 3px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.mobile-gamified-root .achievement-desc {
+  margin: 0;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.mobile-gamified-root .achievement-badge {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: var(--duo-green-light);
+  color: #86efac;
+  border: 1px solid #22c55e;
+}
+
+/* ==========================================================================
+   Heart Regeneration & 15-Minute Countdown System Styles
+   ========================================================================== */
+.mobile-gamified-root .heart-mini-timer {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fca5a5;
+  background: #3d1414;
+  padding: 2px 5px;
+  border-radius: 6px;
+  border: 1px solid #7f1d1d;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.mobile-gamified-root .heart-wiggle {
+  display: inline-block;
+  animation: duo-heartbeat 1.5s infinite ease-in-out;
+}
+
+@keyframes duo-heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.22); }
+}
+
+.mobile-gamified-root .heart-refill-banner {
+  margin: 0 16px 16px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #2a1215, #161e2e);
+  border: 2px solid #5c1818;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 4px 14px rgba(255, 75, 75, 0.12);
+  transition: transform 0.15s ease;
+}
+
+.mobile-gamified-root .heart-refill-banner:active {
+  transform: scale(0.99);
+}
+
+.mobile-gamified-root .duo-btn.red {
+  background: var(--duo-red);
+  color: #ffffff;
+  box-shadow: 0 5px 0 var(--duo-red-shadow);
+}
+
+.mobile-gamified-root .duo-btn.red:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 var(--duo-red-shadow);
+}

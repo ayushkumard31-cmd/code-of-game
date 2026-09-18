@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./responsive-platform.css";
 import FirebaseAnalytics from "./FirebaseAnalytics";
 
 export const metadata = {
