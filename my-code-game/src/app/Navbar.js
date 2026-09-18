@@ -89,48 +89,37 @@ export default function Navbar({ onOpenLogin, onLaunchMode }) {
   }
 
   const navItems = [
-    { href: "/", label: "Quests", icon: "⌂" },
-    { href: "/practice", label: "Practice (0 XP)", icon: "◉" },
-    { href: "/rewards", label: "Rewards & Shop", icon: "♜" },
-    { href: "/map", label: "Dungeon Map", icon: "◇" },
-    { href: "/about", label: "How it works", icon: "ℹ" },
+    { href: "/", label: "Home", icon: "🏠" },
+    { href: "/path", label: "Learning Path", icon: "🗺️" },
+    { href: "/lectures", label: "Lectures", icon: "🎥" },
+    { href: "/notes", label: "Notes", icon: "📖" },
+    { href: "/practice", label: "Practice", icon: "💻" },
+    { href: "/projects", label: "Projects", icon: "🛠️" },
+    { href: "/interview", label: "Interview", icon: "🧠" },
+    { href: "/quests", label: "Quests", icon: "🎯" },
+    { href: "/leaderboard", label: "Leaderboard", icon: "🥇" },
+    { href: "/rewards", label: "Badges", icon: "🏆" },
+    { href: "/profile", label: "Profile", icon: "👤" },
   ];
 
-  const activePath = pathname === "/quests" ? "/" : pathname;
+  const activePath = pathname;
 
   return (
     <>
-      {user && (
-        <details className="profile-panel">
-          <summary>PROFILE</summary>
-          <div>
-            <b>{user.displayName || user.email?.split("@")[0] || "Player"}</b>
-            <span>{stats?.totalXp || 0} XP · {totalCleared} / 200 LEVELS CLEARED</span>
-            {["dsa", "code", "bugs", "boss"].map((campaignMode) => (
-              <small key={campaignMode}>
-                {campaignMode.toUpperCase()}: {stats?.campaigns?.[campaignMode]?.completedLevels?.length || 0} COMPLETE
-              </small>
-            ))}
-            <small style={{ color: "#a9ff43" }}>
-              REWARDS CLAIMED: {stats?.claimedRewards?.length || 0}
-            </small>
-          </div>
-        </details>
-      )}
-
       <header className="topbar">
         <Link href="/" className="wordmark">
-          <span>DS</span> DSA DUNGEON
+          <span>&lt;/&gt;</span> CODE NEXUS
         </Link>
-        <nav>
+        <nav className="topbar-nav-scroll">
           {navItems.map((item) => {
-            const isActive = activePath === item.href;
+            const isActive = activePath === item.href || (item.href !== "/" && activePath.startsWith(item.href));
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={`topbar-nav-link ${isActive ? "active" : ""}`}
               >
+                <span style={{ marginRight: 4 }}>{item.icon}</span>
                 {item.label}
               </Link>
             );
@@ -143,17 +132,29 @@ export default function Navbar({ onOpenLogin, onLaunchMode }) {
         </nav>
 
         <div className="account">
+          <Link href="/profile" className="hud-pill streak-pill" title="Daily Streak">
+            🔥 <b>{stats?.streak || 1}d</b>
+          </Link>
+          <Link href="/profile" className="hud-pill xp-pill" title="Total XP">
+            ⭐ <b>{stats?.totalXp || 0}</b>
+          </Link>
+          <Link href="/rewards" className="hud-pill badge-pill" title="Badges">
+            🏆 <b>{(stats?.unlockedBadges?.length || 1) + (stats?.claimedRewards?.length || 0)}</b>
+          </Link>
+
           {loading ? (
             <span className="account-loading">LOADING...</span>
           ) : user ? (
             <div className="user-menu">
-              <span className="avatar">
+              <Link href="/profile" className="avatar" title="View Profile">
                 {user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase() || "P"}
-              </span>
-              <span className="user-name">
-                <b>{user.displayName || user.email?.split("@")[0] || "Player"}</b>
-                <small>{stats?.totalXp || 0} XP · HIGH {stats?.highScore || 0}</small>
-              </span>
+              </Link>
+              <div className="user-name">
+                <Link href="/profile" style={{ textDecoration: "none", color: "inherit" }}>
+                  <b>{user.displayName || user.email?.split("@")[0] || "Player"}</b>
+                </Link>
+                <small>{stats?.totalXp || 0} XP</small>
+              </div>
               <button onClick={handleLogout} type="button">LOG OUT</button>
             </div>
           ) : (
