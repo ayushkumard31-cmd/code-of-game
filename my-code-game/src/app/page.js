@@ -1,11 +1,12 @@
 "use client";
 /* eslint-disable react/jsx-no-comment-textnodes */
-import { useEffect, useRef, useState, Suspense } from "react";
+import { useEffect, useRef, useState, Suspense, Component } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import { buildCampaign, getRank, tierConfig, getActiveTierConfig } from "./questionBank";
 import usePlayer from "./usePlayer";
+import MobileGamifiedApp from "./MobileGamifiedApp";
 
 function StackQuestionVisual({ prompt }) {
   const [items, setItems] = useState(() => (prompt?.match(/\d+/g) || []).slice(-3).map(Number));
@@ -532,10 +533,42 @@ function GameContent() {
   );
 }
 
+class SafeBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  componentDidCatch(error) {
+    console.warn("View boundary caught error:", error);
+  }
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback || null;
+    }
+    return this.props.children;
+  }
+}
+
 export default function Home() {
   return (
-    <Suspense fallback={<div className="adm-loading">LOADING DUNGEON...</div>}>
-      <GameContent />
-    </Suspense>
+    <>
+      <div className="desktop-website-wrapper">
+        <SafeBoundary fallback={null}>
+          <Suspense fallback={<div className="adm-loading">LOADING DUNGEON...</div>}>
+            <GameContent />
+          </Suspense>
+        </SafeBoundary>
+      </div>
+      <div className="mobile-gamified-wrapper">
+        <SafeBoundary fallback={<div style={{ padding: 20, color: "#444" }}>Loading mobile experience...</div>}>
+          <MobileGamifiedApp />
+        </SafeBoundary>
+      </div>
+    </>
   );
 }
+
+
