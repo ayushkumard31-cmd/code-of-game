@@ -1,5 +1,4 @@
 "use client";
-/* eslint-disable react/jsx-no-comment-textnodes */
 import { useEffect, useRef, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -326,7 +325,7 @@ function QuestsContent() {
             {has5050Perk && eliminatedChoices.length === 0 && (
               <div style={{ marginTop: 16 }}>
                 <button className="lifeline-5050" onClick={handle5050} type="button">
-                  🔮 Use Oracle's Sight (50/50)
+                  🔮 Use Oracle&apos;s Sight (50/50)
                 </button>
               </div>
             )}

@@ -146,7 +146,7 @@ export default function ProfilePage() {
               ))}
             </div>
             <small style={{ color: "#ff8b67", fontSize: 11, fontFamily: "var(--font-mono)" }}>
-              {streak} Days Streak Maintained! Don't break the chain!
+              {streak} Days Streak Maintained! Don&apos;t break the chain!
             </small>
           </div>
 

@@ -1,114 +1,70 @@
 "use client";
-<<<<<<< HEAD
-=======
-/* eslint-disable react/jsx-no-comment-textnodes */
 import { useEffect, useRef, useState, Suspense, Component } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
->>>>>>> aeb82adccf954e0918731b89c99fab344ed49a01
 import Link from "next/link";
 import Navbar from "./Navbar";
 import usePlayer from "./usePlayer";
 import MobileGamifiedApp from "./MobileGamifiedApp";
+import { buildCampaign, getRank, tierConfig } from "./questionBank";
 
-export default function HomePage() {
-  const { stats, user } = usePlayer();
 
-<<<<<<< HEAD
-  const totalXp = stats?.totalXp || 0;
-  const streak = stats?.streak || 1;
-  const currentRank = totalXp >= 5000 ? "Legendary Grandmaster" :
-                    totalXp >= 3000 ? "Boss Slayer" :
-                    totalXp >= 1500 ? "Systems Architect" :
-                    totalXp >= 500 ? "Algorithm Knight" : "Novice Explorer";
+const hubs = [
+  {
+    title: "Coding Quests",
+    desc: "Interactive C programming and data structure trials with live code editors and life management.",
+    href: "/quests",
+    color: "#a9ff43",
+    icon: "⚔️",
+    tag: "GAMIFIED TRIALS",
+    stats: "30+ Challenge Levels",
+  },
+  {
+    title: "Dungeon Topic Map",
+    desc: "Visual topic tree mapping core DSA concepts: Stacks, Queues, Linked Lists, Trees, and Graphs.",
+    href: "/map",
+    color: "#46d8e7",
+    icon: "🗺️",
+    tag: "TOPIC TREE",
+    stats: "Interactive Visualizers",
+  },
+  {
+    title: "Practice Hub",
+    desc: "Zero-XP subjective problem solving with step-by-step model solutions and self-evaluation checklists.",
+    href: "/practice",
+    color: "#ffb627",
+    icon: "🎯",
+    tag: "SELF-EVALUATION",
+    stats: "Subjective Drills",
+  },
+  {
+    title: "Rewards & Perks",
+    desc: "Earn XP, unlock achievement badges, and equip active power-ups like extra heart containers and 50/50 lifelines.",
+    href: "/rewards",
+    color: "#ff7875",
+    icon: "🏆",
+    tag: "POWER-UPS",
+    stats: "Badges & Perks",
+  },
+  {
+    title: "Build Projects",
+    desc: "Hands-on software projects in C: build shell interpreters, memory allocators, and game engines.",
+    href: "/projects",
+    color: "#b377ff",
+    icon: "🛠️",
+    tag: "SYSTEM PROJECTS",
+    stats: "Real-world C Apps",
+  },
+  {
+    title: "Leaderboard & Ranks",
+    desc: "Compete with fellow coders, climb rank tiers from Novice to Grandmaster, and track your global standing.",
+    href: "/leaderboard",
+    color: "#58d68d",
+    icon: "📊",
+    tag: "COMPETITIVE",
+    stats: "Rankings & Tiers",
+  },
+];
 
-  const dailyGoalTarget = 100;
-  const dailyGoalCurrent = Math.min(dailyGoalTarget, (totalXp % 200));
-  const dailyPercent = Math.round((dailyGoalCurrent / dailyGoalTarget) * 100);
-
-  const hubs = [
-    {
-      title: "Learning Path",
-      icon: "🗺️",
-      href: "/path",
-      tag: "4 TRACKS",
-      color: "#a9ff43",
-      desc: "Structured roadmaps from computational basics and C/C++/Java/Python to DSA and advanced distributed systems.",
-      stats: "5 Modules · 18 Milestones"
-    },
-    {
-      title: "Video Lectures",
-      icon: "🎥",
-      href: "/lectures",
-      tag: "CLASSROOM",
-      color: "#46d8e7",
-      desc: "Curated engineering video lectures with timestamped chapters, key takeaways, and sidecar code snippets.",
-      stats: "5 Core Lectures · +XP Rewards"
-    },
-    {
-      title: "Theory / Notes",
-      icon: "📖",
-      href: "/notes",
-      tag: "HANDBOOK",
-      color: "#ffb627",
-      desc: "Digital cheat sheets, asymptotic Big-O matrices, process memory segments, and multi-language comparisons.",
-      stats: "Verified Reference Guide"
-    },
-    {
-      title: "Code Practice",
-      icon: "💻",
-      href: "/practice",
-      tag: "4 MODES",
-      color: "#f052b5",
-      desc: "Interactive drills spanning MCQs, output prediction puzzles, bug forensics, and algorithmic problem solving.",
-      stats: "MCQ · Output · Debug · Coding"
-    },
-    {
-      title: "Real-World Projects",
-      icon: "🛠️",
-      href: "/projects",
-      tag: "3 TIERS",
-      color: "#ff5340",
-      desc: "Build production-caliber software: CLI expression calculators, custom malloc allocators, and mini-Redis engines.",
-      stats: "Beginner · Intermediate · Advanced"
-    },
-    {
-      title: "Interview Preparation",
-      icon: "🧠",
-      href: "/interview",
-      tag: "FAANG & TOP TECH",
-      color: "#6c35e8",
-      desc: "Curated interview questions tagged by difficulty and company (Google, Amazon, Meta, Uber) with mock timer.",
-      stats: "Easy · Medium · Hard · Company Tags"
-    },
-    {
-      title: "Gamified Quests",
-      icon: "🎯",
-      href: "/quests",
-      tag: "DUNGEON CAMPAIGN",
-      color: "#a9ff43",
-      desc: "High-stakes gamified dungeon trials with life hearts, combo multipliers, perks, and interactive stack machines.",
-      stats: "4 Trial Modes · Live Hearts"
-    },
-    {
-      title: "Global Leaderboard",
-      icon: "🥇",
-      href: "/leaderboard",
-      tag: "HALL OF FAME",
-      color: "#ffd700",
-      desc: "Compare your streak, XP, and solved challenges against developers and algorithm masters worldwide.",
-      stats: "Weekly & All-Time Rankings"
-    },
-    {
-      title: "Developer Profile",
-      icon: "👤",
-      href: "/profile",
-      tag: "PORTFOLIO",
-      color: "#46d8e7",
-      desc: "Personal statistics cockpit: streak flame calendar, mastery breakdown chart, and unlocked badge showcase.",
-      stats: "Level & Badges Showcase"
-    }
-  ];
-=======
 function GameContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -299,14 +255,11 @@ function GameContent() {
     setMessage(remaining ? "LIFE LOST — TRY AGAIN" : "OUT OF LIVES");
     if (!remaining) setTimeout(() => setScreen("lost"), 700);
   }
->>>>>>> aeb82adccf954e0918731b89c99fab344ed49a01
+
 
   return (
     <main className="shell">
       <div className="grid-bg" />
-<<<<<<< HEAD
-      <Navbar />
-=======
       {screen === "home" && (
         <Navbar
           isOpen={loginOpen}
@@ -314,7 +267,6 @@ function GameContent() {
           onOpenLogin={() => setLoginOpen(true)}
         />
       )}
->>>>>>> aeb82adccf954e0918731b89c99fab344ed49a01
 
       <div className="nexus-container">
         {/* Hero Section */}
@@ -343,19 +295,6 @@ function GameContent() {
               <span>⚡</span> ALL-IN-ONE CODE LEARNING ECOSYSTEM
             </div>
 
-<<<<<<< HEAD
-            <h1 style={{
-              fontSize: "clamp(38px, 5.5vw, 64px)",
-              fontWeight: 900,
-              letterSpacing: "-3px",
-              lineHeight: 1.05,
-              margin: "0 0 18px",
-              color: "#fff"
-            }}>
-              MASTER COMPUTER SCIENCE <br />
-              <span style={{ color: "#a9ff43" }}>FROM FIRST PRINCIPLES.</span>
-            </h1>
-=======
             {/* Compulsory Google Sign-In Banner if not signed in */}
             {!loading && !isGoogleSignedIn && (
               <div
@@ -439,7 +378,6 @@ function GameContent() {
                 </button>
               ))}
             </div>
->>>>>>> aeb82adccf954e0918731b89c99fab344ed49a01
 
             <p style={{
               fontSize: 16,
@@ -451,69 +389,6 @@ function GameContent() {
               Accelerate your engineering journey. Navigate structured learning paths, dive into systems lectures and cheat sheets, solve interactive coding drills, and construct production-grade projects.
             </p>
 
-<<<<<<< HEAD
-            <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link href="/path" className="btn-primary" style={{ padding: "14px 26px", fontSize: 13 }}>
-                🗺️ Explore Learning Paths
-              </Link>
-              <Link href="/practice" className="btn-secondary" style={{ padding: "14px 26px", fontSize: 13 }}>
-                💻 Code Practice Arena
-              </Link>
-              <Link href="/quests" className="btn-secondary" style={{ padding: "14px 26px", fontSize: 13 }}>
-                🎯 Enter Dungeon Quest
-              </Link>
-            </div>
-          </div>
-
-          {/* Gamification HUD Panel */}
-          <div className="nexus-card" style={{
-            background: "linear-gradient(145deg, #151c16, #0e120f)",
-            border: "1px solid #28382a",
-            boxShadow: "0 12px 40px rgba(0,0,0,0.6)"
-          }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-              <span style={{ fontSize: 11, color: "#a9ff43", fontFamily: "var(--font-mono)", fontWeight: 800, letterSpacing: 1 }}>
-                DEVELOPER COCKPIT
-              </span>
-              <span className="tag-badge tag-dsa">{currentRank}</span>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 20 }}>
-              <div style={{ background: "#090c0a", padding: "14px", borderRadius: 8, border: "1px solid #1c261e" }}>
-                <small style={{ color: "#7a847b", fontSize: 10, fontFamily: "var(--font-mono)", display: "block" }}>ACTIVE STREAK</small>
-                <b style={{ color: "#ff7047", fontSize: 24, fontFamily: "var(--font-mono)" }}>🔥 {streak} Days</b>
-              </div>
-              <div style={{ background: "#090c0a", padding: "14px", borderRadius: 8, border: "1px solid #1c261e" }}>
-                <small style={{ color: "#7a847b", fontSize: 10, fontFamily: "var(--font-mono)", display: "block" }}>TOTAL EXPERIENCE</small>
-                <b style={{ color: "#ffb627", fontSize: 24, fontFamily: "var(--font-mono)" }}>⭐ {totalXp} XP</b>
-              </div>
-            </div>
-
-            {/* Daily Goal */}
-            <div style={{ marginBottom: 18 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, fontFamily: "var(--font-mono)", marginBottom: 6 }}>
-                <span style={{ color: "#8a948b" }}>DAILY GOAL (100 XP)</span>
-                <b style={{ color: "#a9ff43" }}>{dailyGoalCurrent} / {dailyGoalTarget} XP</b>
-              </div>
-              <div style={{ height: 6, background: "#1c231d", borderRadius: 3, overflow: "hidden" }}>
-                <div style={{ height: "100%", width: `${dailyPercent}%`, background: "#a9ff43" }} />
-              </div>
-            </div>
-
-            <div style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              paddingTop: 12,
-              borderTop: "1px solid #1f2a21",
-              fontSize: 11
-            }}>
-              <span style={{ color: "#788279", fontFamily: "var(--font-mono)" }}>
-                Logged in as <b>{user?.displayName || user?.email?.split("@")[0] || "Guest Pioneer"}</b>
-              </span>
-              <Link href="/profile" style={{ color: "#a9ff43", textDecoration: "none", fontWeight: 700 }}>
-                Profile →
-=======
             {/* Quick Link Cards */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 14, marginTop: 40 }}>
               <Link
@@ -563,7 +438,6 @@ function GameContent() {
                 <b>Dungeon Map</b>
                 <span>Interactive Stack, Queue & List labs</span>
                 <em>OPEN MAP →</em>
->>>>>>> aeb82adccf954e0918731b89c99fab344ed49a01
               </Link>
             </div>
           </div>
@@ -653,13 +527,13 @@ function GameContent() {
         }}>
           <div>
             <span className="tag-badge tag-dsa" style={{ marginBottom: 8 }}>
-              🎯 TODAY'S SPOTLIGHT CHALLENGE
+              🎯 TODAY&apos;S SPOTLIGHT CHALLENGE
             </span>
             <h3 style={{ margin: "4px 0 6px", fontSize: 22, color: "#fff", fontWeight: 800 }}>
               Two Sum & Hash Table Traversal
             </h3>
             <p style={{ margin: 0, color: "#8a9792", fontSize: 13, maxWidth: 540 }}>
-              Solve today's featured algorithmic challenge in under 15 minutes to earn +80 XP and maintain your daily flame streak.
+              Solve today&apos;s featured algorithmic challenge in under 15 minutes to earn +80 XP and maintain your daily flame streak.
             </p>
           </div>
 
@@ -671,8 +545,6 @@ function GameContent() {
     </main>
   );
 }
-<<<<<<< HEAD
-=======
 
 class SafeBoundary extends Component {
   constructor(props) {
@@ -711,6 +583,3 @@ export default function Home() {
     </>
   );
 }
-
-
->>>>>>> aeb82adccf954e0918731b89c99fab344ed49a01

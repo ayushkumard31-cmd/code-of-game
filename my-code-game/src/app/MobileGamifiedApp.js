@@ -598,7 +598,7 @@ export default function MobileGamifiedApp() {
               <div className="gamified-mascot-row">
                 <span className="gamified-mascot-avatar">🦉</span>
                 <div className="gamified-mascot-speech">
-                  <b>Duo says:</b> "{activeUnit.tip}"
+                  <b>Duo says:</b> &quot;{activeUnit.tip}&quot;
                 </div>
               </div>
             </div>

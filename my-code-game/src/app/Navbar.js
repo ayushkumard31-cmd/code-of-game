@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import usePlayer from "./usePlayer";
+import PWAInstaller from "./PWAInstaller";
 
 const ADMIN_UIDS = ["ayush1212"];
 const ADMIN_EMAILS = ["ayushkumard31@gmail.com"];
@@ -148,6 +149,7 @@ export default function Navbar({ onOpenLogin, onLaunchMode, isOpen, onClose }) {
           <Link href="/rewards" className="hud-pill badge-pill" title="Badges">
             🏆 <b>{(stats?.unlockedBadges?.length || 1) + (stats?.claimedRewards?.length || 0)}</b>
           </Link>
+          <PWAInstaller />
 
           {loading ? (
             <span className="account-loading">LOADING...</span>
