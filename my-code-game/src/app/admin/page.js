@@ -45,7 +45,46 @@ const emptyQuestion = () => ({
   xpReward: 50,
 });
 
+import { useRouter } from "next/navigation";
+
+function updateChoice(q, setQ, idx, val) {
+  const choices = [...q.choices];
+  choices[idx] = val;
+  setQ({ ...q, choices });
+}
+
+function QForm({ q, setQ, onSave, onCancel }) {
+  return (
+    <div className="adm-qform">
+      <div className="adm-qform-row">
+        <label>Title<input value={q.title} onChange={(e) => setQ({ ...q, title: e.target.value })} placeholder="e.g. Array access" /></label>
+        <label>Type<select value={q.type} onChange={(e) => setQ({ ...q, type: e.target.value })}>
+          <option>DSA TRIAL</option><option>CODE FORGE</option><option>BUG HUNT</option>
+        </select></label>
+        <label>XP Reward<input type="number" value={q.xpReward} onChange={(e) => setQ({ ...q, xpReward: Number(e.target.value) })} min={1} /></label>
+      </div>
+      <label className="adm-full">Prompt / Question<textarea rows={2} value={q.prompt} onChange={(e) => setQ({ ...q, prompt: e.target.value })} placeholder="The question text shown to the player" /></label>
+      <label className="adm-full">Code snippet (optional — leave blank if none)<textarea rows={3} value={q.code || ""} onChange={(e) => setQ({ ...q, code: e.target.value || null })} placeholder="int x = 5;\n_____" className="adm-mono" /></label>
+      <div className="adm-choices">
+        {q.choices.map((c, idx) => (
+          <label key={idx} className={`adm-choice${q.answer === idx ? " adm-correct" : ""}`}>
+            <span>{String.fromCharCode(65 + idx)}</span>
+            <input value={c} onChange={(e) => updateChoice(q, setQ, idx, e.target.value)} placeholder={`Choice ${String.fromCharCode(65 + idx)}`} />
+            <button type="button" className={q.answer === idx ? "adm-mark-correct active" : "adm-mark-correct"} onClick={() => setQ({ ...q, answer: idx })} title="Mark as correct answer">✓</button>
+          </label>
+        ))}
+      </div>
+      <label className="adm-full">Hint<input value={q.hint} onChange={(e) => setQ({ ...q, hint: e.target.value })} placeholder="A helpful hint shown when player asks for one" /></label>
+      <div className="adm-qform-actions">
+        <button className="adm-btn adm-btn-primary" onClick={() => onSave(q)} disabled={!q.title || !q.prompt || q.choices.some((c) => !c)}>SAVE QUESTION</button>
+        <button className="adm-btn adm-btn-ghost" onClick={onCancel}>CANCEL</button>
+      </div>
+    </div>
+  );
+}
+
 export default function AdminPanel() {
+  const router = useRouter();
   const [user, setUser] = useState(undefined); // undefined = still loading
   const [tab, setTab] = useState("dashboard");
   const [qMode, setQMode] = useState("dsa");
@@ -77,7 +116,6 @@ export default function AdminPanel() {
     setEditQ(null);
     setNewQ(null);
   }, [qMode, user]);
-
 
   const showToast = useCallback((msg) => {
     setToast(msg);
@@ -121,12 +159,6 @@ export default function AdminPanel() {
     setTiers((prev) => prev.map((t, idx) => idx === i ? { ...t, [field]: field === "count" || field === "xp" ? Number(value) : value } : t));
   }
 
-  function updateChoice(q, setQ, idx, val) {
-    const choices = [...q.choices];
-    choices[idx] = val;
-    setQ({ ...q, choices });
-  }
-
   /* ── access denied ── */
   if (user === undefined) return <div className="adm-loading">LOADING...</div>;
   if (!user || !isAdmin(user)) return (
@@ -142,7 +174,7 @@ export default function AdminPanel() {
         ) : null}
         <div className="adm-denied-btns">
           {user && <button onClick={() => signOut(auth)}>Sign Out</button>}
-          <button onClick={() => window.location.href = "/"}>← Back to Game</button>
+          <button onClick={() => router.push("/")}>← Back to Game</button>
         </div>
       </div>
     </div>
@@ -155,37 +187,6 @@ export default function AdminPanel() {
   }, 0);
   const myRank = getRank(myStats?.totalXp || 0);
   const totalCleared = Object.values(myStats?.campaigns || {}).reduce((t, c) => t + (c.completedLevels?.length || 0), 0);
-
-  /* ── question editor form ── */
-  function QForm({ q, setQ, onSave, onCancel }) {
-    return (
-      <div className="adm-qform">
-        <div className="adm-qform-row">
-          <label>Title<input value={q.title} onChange={(e) => setQ({ ...q, title: e.target.value })} placeholder="e.g. Array access" /></label>
-          <label>Type<select value={q.type} onChange={(e) => setQ({ ...q, type: e.target.value })}>
-            <option>DSA TRIAL</option><option>CODE FORGE</option><option>BUG HUNT</option>
-          </select></label>
-          <label>XP Reward<input type="number" value={q.xpReward} onChange={(e) => setQ({ ...q, xpReward: Number(e.target.value) })} min={1} /></label>
-        </div>
-        <label className="adm-full">Prompt / Question<textarea rows={2} value={q.prompt} onChange={(e) => setQ({ ...q, prompt: e.target.value })} placeholder="The question text shown to the player" /></label>
-        <label className="adm-full">Code snippet (optional — leave blank if none)<textarea rows={3} value={q.code || ""} onChange={(e) => setQ({ ...q, code: e.target.value || null })} placeholder="int x = 5;\n_____" className="adm-mono" /></label>
-        <div className="adm-choices">
-          {q.choices.map((c, idx) => (
-            <label key={idx} className={`adm-choice${q.answer === idx ? " adm-correct" : ""}`}>
-              <span>{String.fromCharCode(65 + idx)}</span>
-              <input value={c} onChange={(e) => updateChoice(q, setQ, idx, e.target.value)} placeholder={`Choice ${String.fromCharCode(65 + idx)}`} />
-              <button type="button" className={q.answer === idx ? "adm-mark-correct active" : "adm-mark-correct"} onClick={() => setQ({ ...q, answer: idx })} title="Mark as correct answer">✓</button>
-            </label>
-          ))}
-        </div>
-        <label className="adm-full">Hint<input value={q.hint} onChange={(e) => setQ({ ...q, hint: e.target.value })} placeholder="A helpful hint shown when player asks for one" /></label>
-        <div className="adm-qform-actions">
-          <button className="adm-btn adm-btn-primary" onClick={() => onSave(q)} disabled={!q.title || !q.prompt || q.choices.some((c) => !c)}>SAVE QUESTION</button>
-          <button className="adm-btn adm-btn-ghost" onClick={onCancel}>CANCEL</button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="adm-shell">
@@ -212,8 +213,8 @@ export default function AdminPanel() {
             <div><b>{user.displayName || user.email?.split("@")[0]}</b><small>Admin · {user.uid}</small></div>
           </div>
           <div className="adm-sidebar-actions">
-            <button className="adm-btn adm-btn-ghost adm-sm" onClick={() => window.location.href = "/"}>← Game</button>
-            <button className="adm-btn adm-btn-ghost adm-sm" onClick={() => signOut(auth).then(() => window.location.href = "/")}>Sign Out</button>
+            <button className="adm-btn adm-btn-ghost adm-sm" onClick={() => router.push("/")}>← Game</button>
+            <button className="adm-btn adm-btn-ghost adm-sm" onClick={() => signOut(auth).then(() => router.push("/"))}>Sign Out</button>
           </div>
         </div>
       </aside>

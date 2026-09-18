@@ -1,48 +1,69 @@
 "use client";
-/* eslint-disable react/jsx-no-comment-textnodes */
 import { useEffect, useRef, useState, Suspense, Component } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "./Navbar";
-import { buildCampaign, getRank, tierConfig, getActiveTierConfig } from "./questionBank";
 import usePlayer from "./usePlayer";
 import MobileGamifiedApp from "./MobileGamifiedApp";
+import { buildCampaign, getRank, tierConfig } from "./questionBank";
 
-function StackQuestionVisual({ prompt }) {
-  const [items, setItems] = useState(() => (prompt?.match(/\d+/g) || []).slice(-3).map(Number));
-  const [status, setStatus] = useState("READ FROM BOTTOM → TOP");
-  function push() {
-    if (items.length >= 5) { setStatus("OVERFLOW — STACK IS FULL"); return; }
-    const value = Math.floor(Math.random() * 90) + 10;
-    setItems((curr) => [...curr, value]);
-    setStatus(`PUSHED ${value} TO TOP`);
-  }
-  function pop() {
-    if (!items.length) { setStatus("UNDERFLOW — STACK IS EMPTY"); return; }
-    const value = items[items.length - 1];
-    setItems((curr) => curr.slice(0, -1));
-    setStatus(`POPPED ${value} FROM TOP`);
-  }
-  return (
-    <div className="question-stack-lab">
-      <div>
-        <small>LIVE STACK VISUALIZER</small>
-        <b>Which item leaves first?</b>
-        <p>In LIFO, the newest top item is removed first.</p>
-        <code>{status}</code>
-        <div>
-          <button onClick={push} type="button">+ PUSH</button>
-          <button onClick={pop} type="button" disabled={!items.length}>− POP</button>
-        </div>
-      </div>
-      <div className="question-stack">
-        <span>TOP ↓</span>
-        <div>{[...items].reverse().map((item, index) => <i key={`${item}-${items.length - index}`}>{item}</i>)}</div>
-        <strong>BOTTOM</strong>
-      </div>
-    </div>
-  );
-}
+
+const hubs = [
+  {
+    title: "Coding Quests",
+    desc: "Interactive C programming and data structure trials with live code editors and life management.",
+    href: "/quests",
+    color: "#a9ff43",
+    icon: "⚔️",
+    tag: "GAMIFIED TRIALS",
+    stats: "30+ Challenge Levels",
+  },
+  {
+    title: "Dungeon Topic Map",
+    desc: "Visual topic tree mapping core DSA concepts: Stacks, Queues, Linked Lists, Trees, and Graphs.",
+    href: "/map",
+    color: "#46d8e7",
+    icon: "🗺️",
+    tag: "TOPIC TREE",
+    stats: "Interactive Visualizers",
+  },
+  {
+    title: "Practice Hub",
+    desc: "Zero-XP subjective problem solving with step-by-step model solutions and self-evaluation checklists.",
+    href: "/practice",
+    color: "#ffb627",
+    icon: "🎯",
+    tag: "SELF-EVALUATION",
+    stats: "Subjective Drills",
+  },
+  {
+    title: "Rewards & Perks",
+    desc: "Earn XP, unlock achievement badges, and equip active power-ups like extra heart containers and 50/50 lifelines.",
+    href: "/rewards",
+    color: "#ff7875",
+    icon: "🏆",
+    tag: "POWER-UPS",
+    stats: "Badges & Perks",
+  },
+  {
+    title: "Build Projects",
+    desc: "Hands-on software projects in C: build shell interpreters, memory allocators, and game engines.",
+    href: "/projects",
+    color: "#b377ff",
+    icon: "🛠️",
+    tag: "SYSTEM PROJECTS",
+    stats: "Real-world C Apps",
+  },
+  {
+    title: "Leaderboard & Ranks",
+    desc: "Compete with fellow coders, climb rank tiers from Novice to Grandmaster, and track your global standing.",
+    href: "/leaderboard",
+    color: "#58d68d",
+    icon: "📊",
+    tag: "COMPETITIVE",
+    stats: "Rankings & Tiers",
+  },
+];
 
 function GameContent() {
   const searchParams = useSearchParams();
@@ -235,8 +256,9 @@ function GameContent() {
     if (!remaining) setTimeout(() => setScreen("lost"), 700);
   }
 
+
   return (
-    <main className={`shell ${screen === "home" ? "storefront" : ""} ${hasNeonTheme ? "neon-glow" : ""}`}>
+    <main className="shell">
       <div className="grid-bg" />
       {screen === "home" && (
         <Navbar
@@ -246,14 +268,31 @@ function GameContent() {
         />
       )}
 
-      {/* Quests Campaign Home View */}
-      {screen === "home" && (
-        <section className="hs-quests" style={{ borderTop: 0, paddingTop: 48 }}>
-          <div className="hs-inner">
-            <div className="hs-head">
-              <small>CAMPAIGNS & BOSS RAIDS</small>
-              <h2>Pick your quest type</h2>
-              <p>Four challenge modes for mastering DSA in C from novice trials to the Final DSA Boss Test.</p>
+      <div className="nexus-container">
+        {/* Hero Section */}
+        <section style={{
+          padding: "40px 0 30px",
+          display: "grid",
+          gridTemplateColumns: "minmax(0, 1.3fr) minmax(320px, 0.7fr)",
+          gap: 36,
+          alignItems: "center"
+        }}>
+          <div>
+            <div style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "5px 12px",
+              borderRadius: 9999,
+              background: "rgba(169, 255, 67, 0.1)",
+              border: "1px solid rgba(169, 255, 67, 0.3)",
+              color: "#a9ff43",
+              fontSize: 11,
+              fontFamily: "var(--font-mono)",
+              fontWeight: 800,
+              marginBottom: 16
+            }}>
+              <span>⚡</span> ALL-IN-ONE CODE LEARNING ECOSYSTEM
             </div>
 
             {/* Compulsory Google Sign-In Banner if not signed in */}
@@ -340,14 +379,15 @@ function GameContent() {
               ))}
             </div>
 
-            <div className="tier-info">
-              {getActiveTierConfig().map((t, i) => (
-                <div key={i} className="tier-info-row" style={{ borderLeftColor: t.color }}>
-                  <b style={{ color: t.color }}>{t.name}</b>
-                  <span>{t.count} questions · +{t.xp} XP each</span>
-                </div>
-              ))}
-            </div>
+            <p style={{
+              fontSize: 16,
+              color: "#9ca59e",
+              lineHeight: 1.65,
+              maxWidth: 620,
+              margin: "0 0 28px"
+            }}>
+              Accelerate your engineering journey. Navigate structured learning paths, dive into systems lectures and cheat sheets, solve interactive coding drills, and construct production-grade projects.
+            </p>
 
             {/* Quick Link Cards */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 14, marginTop: 40 }}>
@@ -402,133 +442,106 @@ function GameContent() {
             </div>
           </div>
         </section>
-      )}
 
-      {/* In-Game Quest Mode */}
-      {screen === "game" && (
-        <section className="game">
-          <aside>
-            <small>CURRENT CAMPAIGN</small>
-            <h3>{current.type}</h3>
-            <div className="tier-badge" style={{ borderColor: tier.color, color: tier.color }}>
-              {tier.name}
-            </div>
-            <div className="counter">
-              <b>{String(current.tierQuestion || level + 1).padStart(2, "0")}</b> / {String(current.tierTotal || campaign.length).padStart(2, "0")}
-            </div>
-            <div className="bar">
-              <i style={{ width: `${((level + 1) / campaign.length) * 100}%` }} />
-            </div>
-            <div className="player-stats">
-              <span>XP <b>{xp}</b></span>
-              <span>RANK <b>{rank.name}</b></span>
-            </div>
-            <div className="rank-progress">
-              <i style={{ width: `${Math.min(100, (xp / rank.next) * 100)}%` }} />
-              <small>{rank.name === "LEGEND" ? "MAX RANK" : `${rank.next - xp} XP TO NEXT RANK`}</small>
-            </div>
-            <div className="life">
-              <span className="hearts">
-                {"♥".repeat(lives)}
-                {"♡".repeat(Math.max(0, maxLives - lives))}
-              </span>
-              <span>
-                <b>{lives} LIVES LEFT {hasExtraHeartPerk ? "(HEART CONTAINER ACTIVE)" : ""}</b>
-                <small>WRONG ANSWERS COST ONE</small>
-              </span>
-            </div>
-            <button onClick={() => setScreen("home")} type="button">× EXIT QUEST</button>
-          </aside>
+        {/* Platform Modules Hubs Grid */}
+        <section style={{ marginTop: 40 }}>
+          <div style={{ marginBottom: 24 }}>
+            <small style={{ color: "#a9ff43", fontSize: 10, letterSpacing: 2, fontFamily: "var(--font-mono)", fontWeight: 800 }}>
+              PLATFORM DIRECTORY
+            </small>
+            <h2 style={{ fontSize: 28, color: "#fff", fontWeight: 800, margin: "6px 0 0" }}>
+              Explore Platform Modules
+            </h2>
+          </div>
 
-          <article>
-            <div className="panel-head">
-              <span>QUESTION {level + 1} / {campaign.length}</span>
-              <b>REWARD +{current.xpReward} XP</b>
-            </div>
-            <h2>{current.title}</h2>
-            {current.code && (
-              <div className="editor">
-                <div><i /><i /><i /><span>challenge.c</span></div>
-                <pre>{current.code}</pre>
-              </div>
-            )}
-            <p className="instruction">{current.prompt}</p>
-
-            {current.title === "Stack behavior" && (
-              <StackQuestionVisual key={`${mode}-${level}`} prompt={current.prompt} />
-            )}
-
-            <div className="options">
-              {current.choices.map((item, i) => {
-                const isEliminated = eliminatedChoices.includes(i);
-                return (
-                  <button
-                    key={item}
-                    type="button"
-                    className={`${choice === i ? "active" : ""} ${isEliminated ? "option-hidden" : ""}`}
-                    disabled={isEliminated}
-                    onClick={() => setChoice(i)}
-                  >
-                    <b>{String.fromCharCode(65 + i)}</b>
-                    {item}
-                    <i>→</i>
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="submit">
-              <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                <button className="hint-button" type="button" onClick={() => setHint(!hint)}>
-                  💡 {hint ? "HIDE HINT" : "USE HINT"}
-                </button>
-                {has5050Perk && (
-                  <button
-                    type="button"
-                    className="lifeline-5050"
-                    disabled={eliminatedChoices.length > 0}
-                    onClick={use5050Lifeline}
-                  >
-                    🔮 50/50 LIFELINE
-                  </button>
-                )}
-              </div>
-              <span className={message.includes("CLEAR") ? "success" : "error"}>{message}</span>
-              <button
-                className="primary"
-                type="button"
-                disabled={choice === null || message.includes("CLEAR")}
-                onClick={submit}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: 20
+          }}>
+            {hubs.map((hub) => (
+              <Link
+                key={hub.title}
+                href={hub.href}
+                style={{ textDecoration: "none", color: "inherit" }}
               >
-                CONFIRM →
-              </button>
-            </div>
-            {hint && <p className="hint">// HINT: {current.hint}</p>}
-          </article>
-        </section>
-      )}
+                <div
+                  className="nexus-card"
+                  style={{
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    borderLeft: `3px solid ${hub.color}`,
+                    transition: "transform 0.2s, border-color 0.2s"
+                  }}
+                >
+                  <div>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+                      <span style={{ fontSize: 28 }}>{hub.icon}</span>
+                      <span className="tag-badge" style={{ background: `${hub.color}15`, color: hub.color, border: `1px solid ${hub.color}35` }}>
+                        {hub.tag}
+                      </span>
+                    </div>
 
-      {/* Ending Screen */}
-      {(screen === "win" || screen === "lost") && (
-        <section className={`ending ${screen === "lost" ? "lost" : ""}`}>
-          <code>{screen === "win" ? "CAMPAIGN_COMPLETE" : "RUN_ENDED"}</code>
-          <h2>{screen === "win" ? "QUEST\nCLEARED." : "OUT OF\nLIVES."}</h2>
-          <p>
-            {screen === "win"
-              ? `You earned ${xp} XP and finished as ${rank.name}.`
-              : `You reached ${rank.name} with ${xp} XP. Refill your hearts and try again.`}
-          </p>
-          <button className="primary" onClick={() => start(mode)} type="button">PLAY AGAIN</button>
-          <button className="ghost" onClick={() => setScreen("home")} type="button">LOBBY</button>
-        </section>
-      )}
+                    <h3 style={{ margin: "0 0 8px", fontSize: 19, color: "#fff", fontWeight: 800 }}>
+                      {hub.title}
+                    </h3>
 
-      {screen === "home" && (
-        <footer>
-          <span>© 2026 DSA DUNGEON</span>
-          <span>LEARN C · MASTER DSA · CLAIM REWARDS · FIX BUGS</span>
-        </footer>
-      )}
+                    <p style={{ margin: "0 0 16px", color: "#8d968e", fontSize: 13, lineHeight: 1.5 }}>
+                      {hub.desc}
+                    </p>
+                  </div>
+
+                  <div style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    paddingTop: 12,
+                    borderTop: "1px solid #1a221b",
+                    fontSize: 11,
+                    fontFamily: "var(--font-mono)",
+                    color: "#747d75"
+                  }}>
+                    <span>{hub.stats}</span>
+                    <span style={{ color: hub.color, fontWeight: 800 }}>Open →</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Daily Challenge Spotlight */}
+        <section style={{
+          marginTop: 60,
+          padding: "32px 36px",
+          borderRadius: 12,
+          background: "linear-gradient(135deg, rgba(70, 216, 231, 0.08), #101411)",
+          border: "1px solid #1f3336",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: 20
+        }}>
+          <div>
+            <span className="tag-badge tag-dsa" style={{ marginBottom: 8 }}>
+              🎯 TODAY&apos;S SPOTLIGHT CHALLENGE
+            </span>
+            <h3 style={{ margin: "4px 0 6px", fontSize: 22, color: "#fff", fontWeight: 800 }}>
+              Two Sum & Hash Table Traversal
+            </h3>
+            <p style={{ margin: 0, color: "#8a9792", fontSize: 13, maxWidth: 540 }}>
+              Solve today&apos;s featured algorithmic challenge in under 15 minutes to earn +80 XP and maintain your daily flame streak.
+            </p>
+          </div>
+
+          <Link href="/practice" className="btn-primary" style={{ padding: "14px 24px" }}>
+            Start Challenge Now →
+          </Link>
+        </section>
+      </div>
     </main>
   );
 }
@@ -570,5 +583,3 @@ export default function Home() {
     </>
   );
 }
-
-
