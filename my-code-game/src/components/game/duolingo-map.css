@@ -1,0 +1,76 @@
+/* Duolingo-style Game Map Animations & Styles */
+
+@keyframes duoBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes duoSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.duo-page-container {
+  min-height: 100vh;
+  background-color: #0e181c;
+  color: #ffffff;
+  display: flex;
+  font-family: var(--font-display), Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.duo-main-content {
+  margin-left: 250px;
+  flex: 1;
+  display: flex;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.duo-center-column {
+  flex: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.duo-right-column {
+  width: 360px;
+  padding: 30px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .duo-right-column {
+    display: none;
+  }
+  .duo-center-column {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .duo-main-content {
+    margin-left: 0;
+    padding-bottom: 70px;
+  }
+}
