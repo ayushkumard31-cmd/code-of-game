@@ -1,9 +1,16 @@
 "use client";
+
 import { useState } from "react";
-import Navbar from "../Navbar";
+import GameSidebar from "../../components/game/GameSidebar";
+import Streak from "../../components/game/Streak";
+import XPBar from "../../components/game/XPBar";
+import Hearts from "../../components/game/Hearts";
 import { notesArticles } from "../data/notesData";
+import usePlayer from "../usePlayer";
+import "../../components/game/duolingo-map.css";
 
 export default function NotesPage() {
+  const { stats } = usePlayer();
   const [activeArticleId, setActiveArticleId] = useState(notesArticles[0].id);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -29,175 +36,119 @@ export default function NotesPage() {
   }
 
   return (
-    <main className="shell">
-      <div className="grid-bg" />
-      <Navbar />
+    <div className="duo-page-container">
+      <GameSidebar />
 
-      <div className="nexus-container">
-        <div className="nexus-header">
-          <small>DIGITAL HANDBOOK & CHEAT SHEETS</small>
-          <h1>📖 Theory & Architecture Notes</h1>
-          <p>
-            Crisp, engineering-grade reference manuals covering asymptotic complexities, memory layouts, compiler pipelines, and system design patterns.
-          </p>
-        </div>
-
-        {/* Search & Category Filter Bar */}
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: 16,
-          flexWrap: "wrap",
-          marginBottom: 28
-        }}>
-          <div className="nexus-tabs" style={{ margin: 0, border: 0, padding: 0 }}>
-            {categories.map((c) => (
-              <button
-                key={c}
-                className={`nexus-tab-btn ${selectedCategory === c ? "active" : ""}`}
-                onClick={() => setSelectedCategory(c)}
-                type="button"
-              >
-                {c}
-              </button>
-            ))}
+      <div className="duo-main-content" style={{ padding: "30px 40px", width: "100%", maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{ width: "100%" }}>
+          
+          {/* Header row */}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 30 }}>
+            <div>
+              <small style={{ color: "#1cb0f6", fontWeight: 800, letterSpacing: 1.5, textTransform: "uppercase" }}>
+                DIGITAL CHEAT SHEETS
+              </small>
+              <h1 style={{ margin: "4px 0 0", fontSize: 28, fontWeight: 900, color: "#ffffff" }}>
+                📝 Theory & Notes
+              </h1>
+            </div>
+            <div style={{ display: "flex", gap: 10 }}>
+              <Streak count={stats?.streak || 1} />
+              <XPBar xp={stats?.totalXp || 0} />
+              <Hearts count={5} />
+            </div>
           </div>
 
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            background: "#0c100e",
-            border: "1px solid #232a24",
-            borderRadius: 6,
-            padding: "8px 14px",
-            minWidth: 260
-          }}>
-            <span style={{ marginRight: 8, color: "#6a736c" }}>🔍</span>
-            <input
-              type="text"
-              placeholder="Search concepts, Big-O, etc..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              style={{
-                background: "transparent",
-                border: 0,
-                outline: 0,
-                color: "#fff",
-                fontSize: 12,
-                width: "100%",
-                fontFamily: "var(--font-mono)"
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Layout: Sidebar list + Reader */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "320px minmax(0, 1fr)",
-          gap: 30,
-          alignItems: "start"
-        }}>
-          {/* Notes Index Sidebar */}
-          <div style={{ display: "grid", gap: 10 }}>
-            {filteredArticles.map((art) => {
-              const isSelected = art.id === activeArticle.id;
-              return (
+          {/* Search & Category Filter Bar */}
+          <div style={{ display: "flex", justifyContent: "space-between", gap: 16, marginBottom: 24, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 8 }}>
+              {categories.map((c) => (
                 <button
-                  key={art.id}
-                  onClick={() => setActiveArticleId(art.id)}
+                  key={c}
+                  onClick={() => setSelectedCategory(c)}
                   type="button"
                   style={{
-                    display: "block",
-                    width: "100%",
-                    padding: "16px 18px",
-                    borderRadius: 6,
-                    border: `1px solid ${isSelected ? "#a9ff43" : "#212822"}`,
-                    background: isSelected ? "#151e15" : "#0d110e",
-                    textAlign: "left",
-                    cursor: "pointer",
-                    transition: "all 0.15s"
+                    padding: "10px 18px",
+                    borderRadius: 14,
+                    background: selectedCategory === c ? "rgba(28,176,246,0.15)" : "#131f24",
+                    border: `2px solid ${selectedCategory === c ? "#1cb0f6" : "#202f36"}`,
+                    color: selectedCategory === c ? "#1cb0f6" : "#84959f",
+                    fontWeight: 800,
+                    fontSize: 13,
+                    cursor: "pointer"
                   }}
                 >
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-                    <span className="tag-badge tag-dsa">{art.category}</span>
-                    <span style={{ color: "#6d756e", fontSize: 10, fontFamily: "var(--font-mono)" }}>
-                      {art.readTime}
-                    </span>
-                  </div>
-                  <b style={{ display: "block", color: isSelected ? "#a9ff43" : "#e0e7e1", fontSize: 13, marginBottom: 4 }}>
-                    {art.title}
-                  </b>
-                  <p style={{ margin: 0, color: "#79827a", fontSize: 11, lineHeight: 1.4, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>
-                    {art.summary}
-                  </p>
+                  {c}
                 </button>
-              );
-            })}
+              ))}
+            </div>
+
+            <input
+              type="text"
+              placeholder="Search notes & topics..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{ padding: "10px 16px", borderRadius: 14, background: "#131f24", border: "2px solid #202f36", color: "#fff", outline: "none", fontSize: 13, minWidth: 240 }}
+            />
           </div>
 
-          {/* Article Reading Pane */}
-          <div className="nexus-card" style={{ padding: 36 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12, borderBottom: "1px solid #232b24", paddingBottom: 14 }}>
-              <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                <span className="tag-badge tag-dsa">{activeArticle.category}</span>
-                <span style={{ color: "#79827a", fontSize: 11, fontFamily: "var(--font-mono)" }}>
-                  ⏱️ {activeArticle.readTime}
-                </span>
-              </div>
-              <span style={{ color: "#a9ff43", fontSize: 11, fontFamily: "var(--font-mono)" }}>
-                VERIFIED REFERENCE
-              </span>
-            </div>
-
-            <h2 style={{ fontSize: 28, color: "#fff", fontWeight: 800, margin: "0 0 16px" }}>
-              {activeArticle.title}
-            </h2>
-
-            <p style={{ color: "#8f9990", fontSize: 14, lineHeight: 1.6, marginBottom: 24 }}>
-              {activeArticle.summary}
-            </p>
-
-            {/* Article Content Viewer */}
-            <div style={{
-              color: "#d8dfd9",
-              fontSize: 14,
-              lineHeight: 1.8,
-              whiteSpace: "pre-line",
-              fontFamily: "var(--font-mono)"
-            }}>
-              {activeArticle.content}
-            </div>
-
-            {/* Code Snippet with Copy Action */}
-            {activeArticle.codeSnippet && (
-              <div className="code-block-viewer" style={{ marginTop: 24 }}>
-                <div className="code-block-header">
-                  <span>SAMPLE CODE & IMPLEMENTATION</span>
+          {/* Main Grid: Article List + Reader */}
+          <div style={{ display: "grid", gridTemplateColumns: "320px 1fr", gap: 24 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {filteredArticles.map((art) => {
+                const isSelected = activeArticleId === art.id;
+                return (
                   <button
-                    onClick={() => copySnippet(activeArticle.codeSnippet)}
+                    key={art.id}
+                    onClick={() => setActiveArticleId(art.id)}
                     type="button"
                     style={{
-                      background: "none",
-                      border: "1px solid #323d33",
-                      color: copied ? "#a9ff43" : "#adb5ae",
-                      padding: "3px 8px",
-                      borderRadius: 4,
-                      fontSize: 10,
-                      cursor: "pointer",
-                      fontFamily: "var(--font-mono)"
+                      padding: "16px",
+                      borderRadius: 16,
+                      background: isSelected ? "rgba(28,176,246,0.12)" : "#131f24",
+                      border: `2px solid ${isSelected ? "#1cb0f6" : "#202f36"}`,
+                      color: "#fff",
+                      textAlign: "left",
+                      cursor: "pointer"
                     }}
                   >
-                    {copied ? "✓ Copied!" : "📋 Copy Code"}
+                    <div style={{ fontSize: 11, color: "#1cb0f6", fontWeight: 800, textTransform: "uppercase", marginBottom: 4 }}>
+                      {art.category} • {art.readTime}
+                    </div>
+                    <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 4 }}>{art.title}</div>
+                    <div style={{ fontSize: 12, color: "#84959f", lineHeight: 1.4 }}>{art.summary}</div>
                   </button>
+                );
+              })}
+            </div>
+
+            {/* Article Reader Box */}
+            <div style={{ background: "#131f24", border: "2px solid #202f36", borderRadius: 20, padding: 32 }}>
+              <small style={{ color: "#58cc02", fontWeight: 800, textTransform: "uppercase" }}>{activeArticle.category}</small>
+              <h2 style={{ color: "#fff", fontSize: 24, margin: "6px 0 16px", fontWeight: 900 }}>{activeArticle.title}</h2>
+              <p style={{ color: "#84959f", fontSize: 15, lineHeight: 1.6, marginBottom: 24 }}>{activeArticle.summary}</p>
+
+              {activeArticle.snippets?.map((snip, idx) => (
+                <div key={idx} style={{ marginBottom: 24 }}>
+                  <div style={{ color: "#ffc800", fontWeight: 800, fontSize: 14, marginBottom: 8 }}>{snip.label}</div>
+                  <div style={{ position: "relative", background: "#0b0d0c", border: "2px solid #202f36", borderRadius: 14, overflow: "hidden" }}>
+                    <button
+                      onClick={() => copySnippet(snip.code)}
+                      type="button"
+                      style={{ position: "absolute", top: 12, right: 12, padding: "6px 12px", borderRadius: 8, background: "#202f36", border: 0, color: "#fff", fontSize: 11, fontWeight: 800, cursor: "pointer" }}
+                    >
+                      {copied ? "COPIED ✓" : "COPY CODE"}
+                    </button>
+                    <pre style={{ margin: 0, padding: 20, color: "#a9ff43", fontFamily: "var(--font-mono)", fontSize: 13, overflowX: "auto" }}>
+                      {snip.code}
+                    </pre>
+                  </div>
                 </div>
-                <pre>{activeArticle.codeSnippet}</pre>
-              </div>
-            )}
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

@@ -1,11 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
-import Navbar from "../Navbar";
+import GameSidebar from "../../components/game/GameSidebar";
+import Streak from "../../components/game/Streak";
+import XPBar from "../../components/game/XPBar";
+import Hearts from "../../components/game/Hearts";
+import "../../components/game/duolingo-map.css";
 import usePlayer from "../usePlayer";
 import { interviewCategories, interviewQuestions } from "../data/interviewData";
 
 export default function InterviewPrepPage() {
-  const { stats, recordSolvedProblem } = usePlayer();
+  const { stats, recordSolvedProblem, user } = usePlayer();
+  const userXp = stats?.totalXp || 0;
+  const userStreak = stats?.streak || 1;
   const [selectedCat, setSelectedCat] = useState("all");
   const [activeQuestionId, setActiveQuestionId] = useState(interviewQuestions[0].id);
   const [timerSeconds, setTimerSeconds] = useState(0);
@@ -46,36 +52,40 @@ export default function InterviewPrepPage() {
   }
 
   return (
-    <main className="shell">
-      <div className="grid-bg" />
-      <Navbar />
+    <div className="duo-page-container">
+      <GameSidebar />
+      <div className="duo-main-content" style={{ padding: "30px 40px", width: "100%", maxWidth: 1200, margin: "0 auto" }}>
+        {toast && (
+          <div style={{
+            position: "fixed",
+            bottom: 24,
+            right: 24,
+            zIndex: 999,
+            background: "#a9ff43",
+            color: "#0b0d0c",
+            padding: "12px 20px",
+            borderRadius: 6,
+            fontWeight: 800,
+            fontFamily: "var(--font-mono)",
+            fontSize: 12,
+            boxShadow: "0 8px 24px rgba(0,0,0,0.5)"
+          }}>
+            {toast}
+          </div>
+        )}
 
-      {toast && (
-        <div style={{
-          position: "fixed",
-          bottom: 24,
-          right: 24,
-          zIndex: 999,
-          background: "#a9ff43",
-          color: "#0b0d0c",
-          padding: "12px 20px",
-          borderRadius: 6,
-          fontWeight: 800,
-          fontFamily: "var(--font-mono)",
-          fontSize: 12,
-          boxShadow: "0 8px 24px rgba(0,0,0,0.5)"
-        }}>
-          {toast}
-        </div>
-      )}
-
-      <div className="nexus-container">
-        <div className="nexus-header">
-          <small>FAANG & HIGH-GROWTH TECH TRACK</small>
-          <h1>🧠 Interview Preparation</h1>
-          <p>
-            Curated high-frequency coding interview questions tagged by difficulty and company (Google, Amazon, Meta, Uber) with mock timer and evaluation rubrics.
-          </p>
+        {/* Header row */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 30 }}>
+          <div>
+            <small style={{ color: "#84959f", fontWeight: 800, letterSpacing: 1.5, textTransform: "uppercase" }}>FAANG &amp; HIGH-GROWTH TECH TRACK</small>
+            <h1 style={{ margin: "4px 0 0", fontSize: 28, fontWeight: 900, color: "#ffffff" }}>🧠 Interview Preparation</h1>
+            <p style={{ margin: "8px 0 0", fontSize: 13, color: "#84959f", maxWidth: 500 }}>Curated high-frequency coding interview questions with mock timer and evaluation rubrics.</p>
+          </div>
+          <div style={{ display: "flex", gap: 10 }}>
+            <Streak count={userStreak} />
+            <XPBar xp={userXp} />
+            <Hearts count={5} />
+          </div>
         </div>
 
         {/* Filter Categories */}
@@ -299,6 +309,6 @@ export default function InterviewPrepPage() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

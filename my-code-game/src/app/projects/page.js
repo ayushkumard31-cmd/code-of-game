@@ -1,8 +1,13 @@
 "use client";
+
 import { useState } from "react";
-import Navbar from "../Navbar";
-import usePlayer from "../usePlayer";
+import GameSidebar from "../../components/game/GameSidebar";
+import Streak from "../../components/game/Streak";
+import XPBar from "../../components/game/XPBar";
+import Hearts from "../../components/game/Hearts";
 import { projectTiers, projectsList } from "../data/projectsData";
+import usePlayer from "../usePlayer";
+import "../../components/game/duolingo-map.css";
 
 export default function ProjectsHubPage() {
   const { stats, recordProjectCompleted } = usePlayer();
@@ -30,195 +35,157 @@ export default function ProjectsHubPage() {
   }
 
   return (
-    <main className="shell">
-      <div className="grid-bg" />
-      <Navbar />
+    <div className="duo-page-container">
+      <GameSidebar />
 
-      {toast && (
-        <div style={{
-          position: "fixed",
-          bottom: 24,
-          right: 24,
-          zIndex: 999,
-          background: "#a9ff43",
-          color: "#0b0d0c",
-          padding: "12px 20px",
-          borderRadius: 6,
-          fontWeight: 800,
-          fontFamily: "var(--font-mono)",
-          fontSize: 12,
-          boxShadow: "0 8px 24px rgba(0,0,0,0.5)"
-        }}>
-          {toast}
-        </div>
-      )}
-
-      <div className="nexus-container">
-        <div className="nexus-header">
-          <small>REAL-WORLD SYSTEMS LAB</small>
-          <h1>🛠️ Hands-on Projects</h1>
-          <p>
-            Build industry-standard software from scratch: from CLI expression parsers to multi-threaded web servers and mini-Redis engines.
-          </p>
-        </div>
-
-        {/* Tier Filter Tabs */}
-        <div className="nexus-tabs">
-          <button
-            className={`nexus-tab-btn ${selectedTier === "all" ? "active" : ""}`}
-            onClick={() => setSelectedTier("all")}
-            type="button"
-          >
-            All Projects ({projectsList.length})
-          </button>
-          {projectTiers.map((tier) => (
-            <button
-              key={tier.id}
-              className={`nexus-tab-btn ${selectedTier === tier.id ? "active" : ""}`}
-              onClick={() => setSelectedTier(tier.id)}
-              type="button"
-            >
-              <span>{tier.icon}</span>
-              <span>{tier.label}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* Layout: Project Cards Grid + Selected Deep-Dive */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 1.2fr) minmax(360px, 0.8fr)",
-          gap: 30,
-          alignItems: "start"
-        }}>
-          {/* Projects Shelf */}
-          <div style={{ display: "grid", gap: 16 }}>
-            {filteredProjects.map((proj) => {
-              const isSelected = proj.id === activeProject.id;
-              const isDone = completedList.includes(proj.id);
-              return (
-                <div
-                  key={proj.id}
-                  className="nexus-card"
-                  onClick={() => setActiveProjectId(proj.id)}
-                  style={{
-                    cursor: "pointer",
-                    border: `1px solid ${isSelected ? "#a9ff43" : "#222a24"}`,
-                    background: isSelected ? "#141c14" : "#101411"
-                  }}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
-                    <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                      <span className={`tag-badge ${
-                        proj.tier === "beginner" ? "tag-easy" : proj.tier === "intermediate" ? "tag-medium" : "tag-hard"
-                      }`}>
-                        {proj.difficulty}
-                      </span>
-                      <span style={{ color: "#79827a", fontSize: 11, fontFamily: "var(--font-mono)" }}>
-                        ⏱️ {proj.estimatedTime}
-                      </span>
-                    </div>
-
-                    <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                      <span style={{ color: "#ffb627", fontSize: 11, fontFamily: "var(--font-mono)" }}>
-                        ⭐ +{proj.xpReward} XP
-                      </span>
-                      {isDone && (
-                        <span style={{ color: "#a9ff43", fontSize: 11, fontWeight: 800 }}>
-                          ✓ BUILT
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  <h3 style={{ margin: "0 0 6px", fontSize: 18, color: "#fff", fontWeight: 700 }}>
-                    {proj.title}
-                  </h3>
-
-                  <p style={{ margin: "0 0 14px", color: "#8a948c", fontSize: 13, lineHeight: 1.5 }}>
-                    {proj.tagline}
-                  </p>
-
-                  <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                    {proj.languages.map((lang, lIdx) => (
-                      <span
-                        key={lIdx}
-                        style={{
-                          fontSize: 10,
-                          fontFamily: "var(--font-mono)",
-                          padding: "2px 7px",
-                          borderRadius: 4,
-                          background: "#0a0e0b",
-                          border: "1px solid #1c261e",
-                          color: "#9db8a0"
-                        }}
-                      >
-                        {lang}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
+      <div className="duo-main-content" style={{ padding: "30px 40px", width: "100%", maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{ width: "100%" }}>
+          
+          {/* Header row */}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 30 }}>
+            <div>
+              <small style={{ color: "#58cc02", fontWeight: 800, letterSpacing: 1.5, textTransform: "uppercase" }}>
+                REAL-WORLD SYSTEMS LAB
+              </small>
+              <h1 style={{ margin: "4px 0 0", fontSize: 28, fontWeight: 900, color: "#ffffff" }}>
+                🛠️ Hands-on Projects
+              </h1>
+            </div>
+            <div style={{ display: "flex", gap: 10 }}>
+              <Streak count={stats?.streak || 1} />
+              <XPBar xp={stats?.totalXp || 0} />
+              <Hearts count={5} />
+            </div>
           </div>
 
-          {/* Project Details / Blueprint Panel */}
-          <div className="nexus-card" style={{ position: "sticky", top: 80 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-              <span className="tag-badge tag-dsa">PROJECT BLUEPRINT</span>
+          {/* Tier selector */}
+          <div style={{ display: "flex", gap: 10, marginBottom: 28 }}>
+            <button
+              onClick={() => setSelectedTier("all")}
+              type="button"
+              style={{
+                padding: "10px 18px",
+                borderRadius: 14,
+                background: selectedTier === "all" ? "rgba(88,204,2,0.15)" : "#131f24",
+                border: `2px solid ${selectedTier === "all" ? "#58cc02" : "#202f36"}`,
+                color: selectedTier === "all" ? "#58cc02" : "#84959f",
+                fontWeight: 800,
+                fontSize: 13,
+                cursor: "pointer"
+              }}
+            >
+              All Projects
+            </button>
+            {projectTiers.map((tier) => (
               <button
-                className={isCompleted ? "btn-secondary" : "btn-primary"}
-                onClick={() => handleCompleteProject(activeProject)}
+                key={tier.id}
+                onClick={() => setSelectedTier(tier.id)}
                 type="button"
-                style={{ padding: "8px 14px", fontSize: 11 }}
+                style={{
+                  padding: "10px 18px",
+                  borderRadius: 14,
+                  background: selectedTier === tier.id ? "rgba(88,204,2,0.15)" : "#131f24",
+                  border: `2px solid ${selectedTier === tier.id ? "#58cc02" : "#202f36"}`,
+                  color: selectedTier === tier.id ? "#58cc02" : "#84959f",
+                  fontWeight: 800,
+                  fontSize: 13,
+                  cursor: "pointer"
+                }}
               >
-                {isCompleted ? "✓ Completed" : `Mark Built (+${activeProject.xpReward} XP)`}
+                {tier.label}
               </button>
+            ))}
+          </div>
+
+          {/* Grid Layout */}
+          <div style={{ display: "grid", gridTemplateColumns: "320px 1fr", gap: 24 }}>
+            {/* Project List */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {filteredProjects.map((proj) => {
+                const isSelected = activeProjectId === proj.id;
+                const isDone = completedList.includes(proj.id);
+                return (
+                  <button
+                    key={proj.id}
+                    onClick={() => setActiveProjectId(proj.id)}
+                    type="button"
+                    style={{
+                      padding: "16px",
+                      borderRadius: 16,
+                      background: isSelected ? "rgba(88,204,2,0.12)" : "#131f24",
+                      border: `2px solid ${isSelected ? "#58cc02" : "#202f36"}`,
+                      color: "#fff",
+                      textAlign: "left",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 12
+                    }}
+                  >
+                    <span style={{ fontSize: 24 }}>{isDone ? "✅" : "🔨"}</span>
+                    <div>
+                      <div style={{ fontWeight: 800, fontSize: 14, marginBottom: 2 }}>{proj.title}</div>
+                      <div style={{ fontSize: 11, color: "#84959f" }}>{proj.difficulty} • +{proj.xpReward} XP</div>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
 
-            <h2 style={{ fontSize: 22, color: "#fff", fontWeight: 800, margin: "0 0 10px" }}>
-              {activeProject.title}
-            </h2>
-
-            {/* Architecture flow */}
-            <div style={{
-              padding: "12px 14px",
-              borderRadius: 6,
-              background: "#080c09",
-              border: "1px solid #1d281f",
-              margin: "14px 0",
-              fontSize: 11,
-              fontFamily: "var(--font-mono)",
-              color: "#a9ff43",
-              lineHeight: 1.5
-            }}>
-              <b style={{ color: "#fff", display: "block", marginBottom: 4 }}>System Architecture:</b>
-              {activeProject.architecture}
-            </div>
-
-            {/* Step-by-Step Milestones */}
-            <b style={{ display: "block", color: "#fff", fontSize: 12, fontFamily: "var(--font-mono)", margin: "16px 0 8px" }}>
-              IMPLEMENTATION CHECKLIST:
-            </b>
-            <div style={{ display: "grid", gap: 8, marginBottom: 20 }}>
-              {activeProject.milestones.map((ms, idx) => (
-                <div key={idx} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 12, color: "#9ca59e" }}>
-                  <span style={{ color: "#a9ff43", fontWeight: 800 }}>□</span>
-                  <span>{ms}</span>
+            {/* Active Project Viewer */}
+            <div style={{ background: "#131f24", border: "2px solid #202f36", borderRadius: 20, padding: 32 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
+                <div>
+                  <small style={{ color: "#58cc02", fontWeight: 800, textTransform: "uppercase" }}>{activeProject.tier.toUpperCase()} PROJECT</small>
+                  <h2 style={{ color: "#fff", fontSize: 24, margin: "4px 0 0", fontWeight: 900 }}>{activeProject.title}</h2>
                 </div>
-              ))}
-            </div>
-
-            {/* Starter Code Skeleton */}
-            <div className="code-block-viewer">
-              <div className="code-block-header">
-                <span>STARTER BOILERPLATE</span>
+                <button
+                  onClick={() => handleCompleteProject(activeProject)}
+                  type="button"
+                  style={{
+                    padding: "12px 20px",
+                    borderRadius: 14,
+                    background: isCompleted ? "#202f36" : "#58cc02",
+                    color: "#fff",
+                    border: "none",
+                    fontWeight: 900,
+                    fontSize: 13,
+                    cursor: "pointer"
+                  }}
+                >
+                  {isCompleted ? "✓ COMPLETED" : `COMPLETE PROJECT (+${activeProject.xpReward} XP)`}
+                </button>
               </div>
-              <pre style={{ maxHeight: 240 }}>{activeProject.starterSnippet}</pre>
+
+              <p style={{ color: "#84959f", fontSize: 15, lineHeight: 1.6, marginBottom: 24 }}>{activeProject.tagline}</p>
+
+              <div style={{ marginBottom: 24 }}>
+                <h3 style={{ color: "#fff", fontSize: 16, fontWeight: 900, marginBottom: 12 }}>Architecture Specs</h3>
+                <ul style={{ color: "#84959f", fontSize: 14, lineHeight: 1.8, paddingLeft: 20, margin: 0 }}>
+                  {activeProject.milestones?.map((spec, i) => (
+                    <li key={i}>{spec}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 style={{ color: "#ffc800", fontSize: 16, fontWeight: 900, marginBottom: 12 }}>Starter Template</h3>
+                <div style={{ background: "#0b0d0c", border: "2px solid #202f36", borderRadius: 14, padding: 20 }}>
+                  <pre style={{ margin: 0, color: "#a9ff43", fontFamily: "var(--font-mono)", fontSize: 13 }}>
+                    {activeProject.starterSnippet || "// Implementation template available in repository"}
+                  </pre>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+
+      {toast && (
+        <div style={{ position: "fixed", bottom: 24, left: "50%", transform: "translateX(-50%)", zIndex: 9999, background: "#58cc02", color: "#fff", padding: "12px 24px", borderRadius: 16, fontWeight: 900, fontSize: 14 }}>
+          {toast}
+        </div>
+      )}
+    </div>
   );
 }
